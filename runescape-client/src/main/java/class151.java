@@ -2,59 +2,91 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("fq")
-public class class151 extends class147 {
-	@ObfuscatedName("fk")
-	@ObfuscatedSignature(
-		descriptor = "Loz;"
-	)
-	static Archive field1715;
-	@ObfuscatedName("aq")
+@ObfuscatedName("fx")
+public class class151 extends class150 {
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = 278243013
+		intValue = -203536179
 	)
-	int field1712;
-	@ObfuscatedName("ad")
-	byte field1716;
+	int field1708;
+	@ObfuscatedName("ae")
+	boolean field1707;
 	// $FF: synthetic field
 	@ObfuscatedSignature(
-		descriptor = "Lfn;"
+		descriptor = "Lfz;"
 	)
-	final class150 this$0;
+	final class153 this$0;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lfn;)V"
+		descriptor = "(Lfz;)V"
 	)
-	class151(class150 var1) {
+	class151(class153 var1) {
 		this.this$0 = var1;
-		this.field1712 = -1;
+		this.field1708 = -1;
 	}
 
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(Lvp;B)V",
-		garbageValue = "118"
+		descriptor = "(Lvf;B)V",
+		garbageValue = "127"
 	)
-	void vmethod3528(Buffer var1) {
-		this.field1712 = var1.readUnsignedShort();
-		this.field1716 = var1.readByte();
+	void vmethod3778(Buffer var1) {
+		this.field1708 = var1.readUnsignedShort();
+		this.field1707 = var1.readUnsignedByte() == 1;
 	}
 
-	@ObfuscatedName("ad")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "(Lgk;B)V",
-		garbageValue = "3"
+		descriptor = "(Lgo;B)V",
+		garbageValue = "32"
 	)
-	void vmethod3530(ClanSettings var1) {
-		var1.method3360(this.field1712, this.field1716);
+	void vmethod3771(ClanSettings var1) {
+		var1.method3588(this.field1708, this.field1707);
 	}
 
-	@ObfuscatedName("it")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "(IB)I",
-		garbageValue = "57"
+		descriptor = "(B)V",
+		garbageValue = "16"
 	)
-	static final int method3293(int var0) {
-		return Math.min(Math.max(var0, 128), 383);
+	public static void method3492() {
+		HttpAuthenticationHeader.SpriteBuffer_xOffsets = null;
+		Login.SpriteBuffer_yOffsets = null;
+		GrandExchangeEvents.SpriteBuffer_spriteWidths = null;
+		ModelData0.SpriteBuffer_spriteHeights = null;
+		SpriteBufferProperties.SpriteBuffer_spritePalette = null;
+		MusicPatchPcmStream.SpriteBuffer_pixels = null;
+	}
+
+	@ObfuscatedName("az")
+	@ObfuscatedSignature(
+		descriptor = "(ZI)V",
+		garbageValue = "-4045494"
+	)
+	static void method3482(boolean var0) {
+		if (var0) {
+			class60.method1192();
+		} else {
+			for (int var1 = 0; var1 < class334.musicSongs.size(); ++var1) {
+				MusicSong var2 = (MusicSong)class334.musicSongs.get(var1);
+				if (var2 == null) {
+					class334.musicSongs.remove(var1);
+					--var1;
+				} else if (var2.field3735) {
+					if (var2.midiPcmStream.field3637 > 0) {
+						--var2.midiPcmStream.field3637;
+					}
+
+					var2.midiPcmStream.clear();
+					var2.midiPcmStream.method6510();
+					var2.midiPcmStream.setPcmStreamVolume(0);
+					class334.musicSongs.remove(var1);
+					--var1;
+				} else {
+					var2.field3735 = true;
+				}
+			}
+		}
+
 	}
 }

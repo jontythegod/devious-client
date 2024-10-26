@@ -4,133 +4,66 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("bo")
+@ObfuscatedName("bf")
 public class class30 {
-	@ObfuscatedName("az")
-	@ObfuscatedSignature(
-		descriptor = "Lnx;"
-	)
-	@Export("scriptActiveWidget")
-	static Widget scriptActiveWidget;
-	@ObfuscatedName("iz")
+	@ObfuscatedName("gl")
 	@ObfuscatedGetter(
-		intValue = 1323524365
+		intValue = 662621097
 	)
-	@Export("Players_count")
-	static int Players_count;
-	@ObfuscatedName("jn")
-	static int[] field147;
+	@Export("worldPort")
+	static int worldPort;
+	@ObfuscatedName("if")
+	@ObfuscatedSignature(
+		descriptor = "Lsk;"
+	)
+	static AbstractSocket field141;
 
 	static {
 		ImageIO.setUseCache(false);
 	}
 
-	@ObfuscatedName("bs")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(Lbk;I)V",
-		garbageValue = "1908706038"
+		descriptor = "(S)V",
+		garbageValue = "255"
 	)
-	@Export("PcmStream_disable")
-	static final void PcmStream_disable(PcmStream var0) {
-		var0.active = false;
-		if (var0.sound != null) {
-			var0.sound.position = 0;
-		}
-
-		for (PcmStream var1 = var0.firstSubStream(); var1 != null; var1 = var0.nextSubStream()) {
-			PcmStream_disable(var1);
-		}
-
+	public static void method448() {
+		class179.field1915.clear();
 	}
 
-	@ObfuscatedName("kv")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(IIIIIII)V",
-		garbageValue = "249019892"
+		descriptor = "(I)V",
+		garbageValue = "435011510"
 	)
-	static void method446(int var0, int var1, int var2, int var3, int var4, int var5) {
-		NodeDeque var6 = HttpResponse.worldView.groundItems[var0][var1][var2];
-		if (var6 != null) {
-			for (TileItem var7 = (TileItem)var6.last(); var7 != null; var7 = (TileItem)var6.previous()) {
-				if ((var3 & 32767) == var7.id && var4 == var7.quantity) {
-					var7.quantity = var5;
-					break;
-				}
-			}
-
-			WorldMapRenderer.updateItemPile(var0, var1, var2);
-		}
-
+	public static void method445() {
+		class204.field1909.clear();
 	}
 
-	@ObfuscatedName("mu")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(IIIIII)V",
-		garbageValue = "-1948030057"
+		descriptor = "(I)V",
+		garbageValue = "1795528755"
 	)
-	@Export("drawScrollBar")
-	static final void drawScrollBar(int var0, int var1, int var2, int var3, int var4) {
-		UrlRequest.scrollBarSprites[0].drawAt(var0, var1);
-		UrlRequest.scrollBarSprites[1].drawAt(var0, var3 + var1 - 16);
-		Rasterizer2D.Rasterizer2D_fillRectangle(var0, var1 + 16, 16, var3 - 32, Client.field693);
-		int var5 = var3 * (var3 - 32) / var4;
-		if (var5 < 8) {
-			var5 = 8;
+	static void method450() {
+		Login.Login_username = Login.Login_username.trim();
+		if (Login.Login_username.length() == 0) {
+			Login.setLoginResponseString("", "Please enter your username/email address.", "");
+		} else if (Login.Login_password.length() == 0) {
+			Login.setLoginResponseString("", "Please enter your password.", "");
+		} else {
+			Login.setLoginResponseString("", "Connecting to server...", "");
+			class162.setAuthenticationScheme(false);
+			class464.updateGameState(20);
 		}
-
-		int var6 = (var3 - 32 - var5) * var2 / (var4 - var3);
-		Rasterizer2D.Rasterizer2D_fillRectangle(var0, var6 + var1 + 16, 16, var5, Client.field583);
-		Rasterizer2D.Rasterizer2D_drawVerticalLine(var0, var6 + var1 + 16, var5, Client.field747);
-		Rasterizer2D.Rasterizer2D_drawVerticalLine(var0 + 1, var6 + var1 + 16, var5, Client.field747);
-		Rasterizer2D.Rasterizer2D_drawHorizontalLine(var0, var6 + var1 + 16, 16, Client.field747);
-		Rasterizer2D.Rasterizer2D_drawHorizontalLine(var0, var6 + var1 + 17, 16, Client.field747);
-		Rasterizer2D.Rasterizer2D_drawVerticalLine(var0 + 15, var6 + var1 + 16, var5, Client.field584);
-		Rasterizer2D.Rasterizer2D_drawVerticalLine(var0 + 14, var6 + var1 + 17, var5 - 1, Client.field584);
-		Rasterizer2D.Rasterizer2D_drawHorizontalLine(var0, var5 + var6 + var1 + 15, 16, Client.field584);
-		Rasterizer2D.Rasterizer2D_drawHorizontalLine(var0 + 1, var6 + var5 + var1 + 14, 15, Client.field584);
 	}
 
-	@ObfuscatedName("nb")
+	@ObfuscatedName("ih")
 	@ObfuscatedSignature(
-		descriptor = "(Lnx;I)V",
-		garbageValue = "-1265045225"
+		descriptor = "(II)I",
+		garbageValue = "810306685"
 	)
-	static final void method451(Widget var0) {
-		int var1 = var0.contentType;
-		if (var1 == 324) {
-			if (Client.field790 == -1) {
-				Client.field790 = var0.spriteId2;
-				Client.field665 = var0.spriteId;
-			}
-
-			if (Client.playerAppearance.gender == 1) {
-				var0.spriteId2 = Client.field790;
-			} else {
-				var0.spriteId2 = Client.field665;
-			}
-
-		} else if (var1 == 325) {
-			if (Client.field790 == -1) {
-				Client.field790 = var0.spriteId2;
-				Client.field665 = var0.spriteId;
-			}
-
-			if (Client.playerAppearance.gender == 1) {
-				var0.spriteId2 = Client.field665;
-			} else {
-				var0.spriteId2 = Client.field790;
-			}
-
-		} else if (var1 == 327) {
-			var0.modelAngleX = 150;
-			var0.modelAngleY = (int)(Math.sin((double)Client.cycle / 40.0D) * 256.0D) & 2047;
-			var0.modelType = 5;
-			var0.modelId = 0;
-		} else if (var1 == 328) {
-			var0.modelAngleX = 150;
-			var0.modelAngleY = (int)(Math.sin((double)Client.cycle / 40.0D) * 256.0D) & 2047;
-			var0.modelType = 5;
-			var0.modelId = 1;
-		}
+	static final int method447(int var0) {
+		return Math.min(Math.max(var0, 128), 383);
 	}
 }

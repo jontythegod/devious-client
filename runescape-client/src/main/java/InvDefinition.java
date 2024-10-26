@@ -4,18 +4,24 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("gx")
+@ObfuscatedName("gi")
 @Implements("InvDefinition")
 public class InvDefinition extends DualNode {
-	@ObfuscatedName("ad")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "Lmo;"
+		descriptor = "Lpo;"
+	)
+	@Export("InvDefinition_archive")
+	public static AbstractArchive InvDefinition_archive;
+	@ObfuscatedName("ae")
+	@ObfuscatedSignature(
+		descriptor = "Lml;"
 	)
 	@Export("InvDefinition_cached")
-	static EvictingDualNodeHashTable InvDefinition_cached;
+	public static EvictingDualNodeHashTable InvDefinition_cached;
 	@ObfuscatedName("ag")
 	@ObfuscatedGetter(
-		intValue = 142521319
+		intValue = 1191618633
 	)
 	@Export("size")
 	public int size;
@@ -28,10 +34,10 @@ public class InvDefinition extends DualNode {
 		this.size = 0;
 	}
 
-	@ObfuscatedName("ag")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "(Lvp;B)V",
-		garbageValue = "0"
+		descriptor = "(Lvf;I)V",
+		garbageValue = "-1786354781"
 	)
 	@Export("decode")
 	void decode(Buffer var1) {
@@ -45,10 +51,10 @@ public class InvDefinition extends DualNode {
 		}
 	}
 
-	@ObfuscatedName("ak")
+	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "(Lvp;IS)V",
-		garbageValue = "-28230"
+		descriptor = "(Lvf;II)V",
+		garbageValue = "1731411368"
 	)
 	@Export("decodeNext")
 	void decodeNext(Buffer var1, int var2) {
@@ -58,29 +64,40 @@ public class InvDefinition extends DualNode {
 
 	}
 
-	@ObfuscatedName("ns")
-	static final void method3555(double var0) {
-		Rasterizer3D.method5248(var0);
-		((TextureProvider)Rasterizer3D.clips.Rasterizer3D_textureLoader).setBrightness(var0);
-		if (VertexNormal.worldMap != null) {
-			VertexNormal.worldMap.method9066();
-		}
-
-		ItemComposition.ItemDefinition_cachedSprites.clear();
-		class105.clientPreferences.updateBrightness(var0);
-	}
-
-	@ObfuscatedName("pl")
+	@ObfuscatedName("mt")
 	@ObfuscatedSignature(
-		descriptor = "(IB)Luh;",
-		garbageValue = "-82"
+		descriptor = "(Lny;III)V",
+		garbageValue = "-218319392"
 	)
-	static DbTable method3556(int var0) {
-		DbTable var1 = (DbTable)Client.archive11.get((long)var0);
-		if (var1 == null) {
-			var1 = new DbTable(AbstractWorldMapData.field2675, var0);
+	@Export("alignWidgetPosition")
+	static void alignWidgetPosition(Widget var0, int var1, int var2) {
+		if (var0.xAlignment == 0) {
+			var0.x = var0.rawX;
+		} else if (var0.xAlignment == 1) {
+			var0.x = var0.rawX + (var1 - var0.width) / 2;
+		} else if (var0.xAlignment == 2) {
+			var0.x = var1 - var0.width - var0.rawX;
+		} else if (var0.xAlignment == 3) {
+			var0.x = var0.rawX * var1 >> 14;
+		} else if (var0.xAlignment == 4) {
+			var0.x = (var0.rawX * var1 >> 14) + (var1 - var0.width) / 2;
+		} else {
+			var0.x = var1 - var0.width - (var0.rawX * var1 >> 14);
 		}
 
-		return var1;
+		if (var0.yAlignment == 0) {
+			var0.y = var0.rawY;
+		} else if (var0.yAlignment == 1) {
+			var0.y = (var2 - var0.height) / 2 + var0.rawY;
+		} else if (var0.yAlignment == 2) {
+			var0.y = var2 - var0.height - var0.rawY;
+		} else if (var0.yAlignment == 3) {
+			var0.y = var2 * var0.rawY >> 14;
+		} else if (var0.yAlignment == 4) {
+			var0.y = (var2 - var0.height) / 2 + (var2 * var0.rawY >> 14);
+		} else {
+			var0.y = var2 - var0.height - (var2 * var0.rawY >> 14);
+		}
+
 	}
 }

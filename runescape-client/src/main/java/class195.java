@@ -2,43 +2,37 @@ import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("hn")
+@ObfuscatedName("hb")
 public class class195 extends DualNode {
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "Lmo;"
+		descriptor = "Lml;"
 	)
-	@Export("field2022")
-	public static EvictingDualNodeHashTable field2022;
-	@ObfuscatedName("fi")
-	@ObfuscatedSignature(
-		descriptor = "Loz;"
-	)
-	static Archive field2052;
+	@Export("field2100")
+	static EvictingDualNodeHashTable field2100;
 
 	static {
-		field2022 = new EvictingDualNodeHashTable(64);
+		field2100 = new EvictingDualNodeHashTable(64);
 	}
 
-	@ObfuscatedName("aq")
+	@ObfuscatedName("az")
 	@ObfuscatedSignature(
-		descriptor = "(II)Ldg;",
-		garbageValue = "-1503991204"
+		descriptor = "(III)I",
+		garbageValue = "1833985701"
 	)
-	@Export("getScript")
-	static Script getScript(int var0) {
-		Script var1 = (Script)Script.Script_cached.get((long)var0);
-		if (var1 != null) {
-			return var1;
-		} else {
-			byte[] var2 = WorldEntity.archive12.takeFile(var0, 0);
-			if (var2 == null) {
-				return null;
-			} else {
-				var1 = class154.newScript(var2);
-				Script.Script_cached.put(var1, (long)var0);
-				return var1;
-			}
-		}
+	static final int method4015(int var0, int var1) {
+		int var2 = var1 * 57 + var0;
+		var2 ^= var2 << 13;
+		int var3 = (var2 * var2 * 15731 + 789221) * var2 + 1376312589 & Integer.MAX_VALUE;
+		return var3 >> 19 & 255;
+	}
+
+	@ObfuscatedName("jj")
+	@ObfuscatedSignature(
+		descriptor = "(I)Lpk;",
+		garbageValue = "245517560"
+	)
+	public static NodeDeque method4014() {
+		return Client.scriptEvents;
 	}
 }

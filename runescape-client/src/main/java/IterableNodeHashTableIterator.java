@@ -4,33 +4,33 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("to")
+@ObfuscatedName("us")
 @Implements("IterableNodeHashTableIterator")
 public class IterableNodeHashTableIterator implements Iterator {
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "Lth;"
+		descriptor = "Lui;"
 	)
 	@Export("hashTable")
 	IterableNodeHashTable hashTable;
-	@ObfuscatedName("ad")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "Ltz;"
+		descriptor = "Lto;"
 	)
 	@Export("head")
 	Node head;
 	@ObfuscatedName("ag")
 	@Export("index")
 	int index;
-	@ObfuscatedName("ak")
+	@ObfuscatedName("am")
 	@ObfuscatedSignature(
-		descriptor = "Ltz;"
+		descriptor = "Lto;"
 	)
 	@Export("last")
 	Node last;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lth;)V"
+		descriptor = "(Lui;)V"
 	)
 	public IterableNodeHashTableIterator(IterableNodeHashTable var1) {
 		this.last = null;
@@ -38,7 +38,7 @@ public class IterableNodeHashTableIterator implements Iterator {
 		this.start();
 	}
 
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ac")
 	@Export("start")
 	void start() {
 		this.head = this.hashTable.buckets[0].previous;
@@ -46,11 +46,11 @@ public class IterableNodeHashTableIterator implements Iterator {
 		this.last = null;
 	}
 
-	@ObfuscatedName("ad")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "()Ltz;"
+		descriptor = "()Lto;"
 	)
-	public Node method9230() {
+	public Node method9565() {
 		this.start();
 		return (Node)this.next();
 	}
@@ -77,6 +77,15 @@ public class IterableNodeHashTableIterator implements Iterator {
 		}
 	}
 
+	public void remove() {
+		if (this.last == null) {
+			throw new IllegalStateException();
+		} else {
+			this.last.remove();
+			this.last = null;
+		}
+	}
+
 	public boolean hasNext() {
 		if (this.hashTable.buckets[this.index - 1] != this.head) {
 			return true;
@@ -91,15 +100,6 @@ public class IterableNodeHashTableIterator implements Iterator {
 			}
 
 			return false;
-		}
-	}
-
-	public void remove() {
-		if (this.last == null) {
-			throw new IllegalStateException();
-		} else {
-			this.last.remove();
-			this.last = null;
 		}
 	}
 }

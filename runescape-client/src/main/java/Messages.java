@@ -1,5 +1,4 @@
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
@@ -7,35 +6,30 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ek")
+@ObfuscatedName("eo")
 @Implements("Messages")
 public class Messages {
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ac")
 	@Export("Messages_channels")
 	static final Map Messages_channels;
-	@ObfuscatedName("ad")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "Lth;"
+		descriptor = "Lui;"
 	)
 	@Export("Messages_hashTable")
 	static final IterableNodeHashTable Messages_hashTable;
 	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "Lpt;"
+		descriptor = "Lpq;"
 	)
 	@Export("Messages_queue")
 	static final IterableDualNodeQueue Messages_queue;
-	@ObfuscatedName("ak")
+	@ObfuscatedName("am")
 	@ObfuscatedGetter(
-		intValue = 108964459
+		intValue = 108754031
 	)
 	@Export("Messages_count")
 	static int Messages_count;
-	@ObfuscatedName("dp")
-	@ObfuscatedSignature(
-		descriptor = "Lvv;"
-	)
-	static IndexedSprite field1449;
 
 	static {
 		Messages_channels = new HashMap();
@@ -44,58 +38,65 @@ public class Messages {
 		Messages_count = 0;
 	}
 
-	@ObfuscatedName("aq")
-	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "0"
-	)
-	public static void method2916() {
-		class177.field1915.clear();
-	}
-
-	@ObfuscatedName("ab")
-	@ObfuscatedSignature(
-		descriptor = "(B)Ljava/lang/String;",
-		garbageValue = "-125"
-	)
-	static String method2917() {
-		StringBuilder var0 = new StringBuilder();
-
-		Message var2;
-		for (Iterator var1 = Messages_hashTable.iterator(); var1.hasNext(); var0.append(var2.text).append('\n')) {
-			var2 = (Message)var1.next();
-			if (var2.sender != null && !var2.sender.isEmpty()) {
-				var0.append(var2.sender).append(':');
-			}
-		}
-
-		return var0.toString();
-	}
-
-	@ObfuscatedName("og")
-	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;B)V",
-		garbageValue = "32"
-	)
-	@Export("clanKickUser")
-	static final void clanKickUser(String var0) {
-		if (Decimator.friendsChat != null) {
-			PacketBufferNode var1 = class170.getPacketBufferNode(ClientPacket.CLAN_KICKUSER, Client.packetWriter.isaacCipher);
-			var1.packetBuffer.writeByte(Actor.stringCp1252NullTerminatedByteSize(var0));
-			var1.packetBuffer.writeStringCp1252NullTerminated(var0);
-			Client.packetWriter.addNode(var1);
-		}
-	}
-
-	@ObfuscatedName("oc")
+	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "-2136125959"
+		garbageValue = "-76126880"
 	)
-	@Export("Clan_leaveChat")
-	static final void Clan_leaveChat() {
-		PacketBufferNode var0 = class170.getPacketBufferNode(ClientPacket.field3365, Client.packetWriter.isaacCipher);
-		var0.packetBuffer.writeByte(0);
-		Client.packetWriter.addNode(var0);
+	public static void method3083() {
+		FileSystem.FileSystem_cacheFiles.clear();
+	}
+
+	@ObfuscatedName("lc")
+	@ObfuscatedSignature(
+		descriptor = "(Ldd;IIII)V",
+		garbageValue = "1535475848"
+	)
+	@Export("updateItemPile2")
+	static final void updateItemPile2(WorldView var0, int var1, int var2, int var3) {
+		NodeDeque var4 = var0.groundItems[var1][var2][var3];
+		if (var4 == null) {
+			var0.scene.removeGroundItemPile(var1, var2, var3);
+		} else {
+			long var5 = -99999999L;
+			TileItem var7 = null;
+
+			TileItem var8;
+			for (var8 = (TileItem)var4.last(); var8 != null; var8 = (TileItem)var4.previous()) {
+				ItemComposition var9 = MouseRecorder.ItemDefinition_get(var8.id);
+				long var13 = (long)var9.price;
+				if (var9.isStackable == 1) {
+					var13 *= var8.quantity < Integer.MAX_VALUE ? (long)(var8.quantity + 1) : (long)var8.quantity;
+				}
+
+				if (var13 > var5) {
+					var5 = var13;
+					var7 = var8;
+				}
+			}
+
+			if (var7 == null) {
+				var0.scene.removeGroundItemPile(var1, var2, var3);
+			} else {
+				var4.addLast(var7);
+				TileItem var15 = null;
+				TileItem var10 = null;
+
+				for (var8 = (TileItem)var4.last(); var8 != null; var8 = (TileItem)var4.previous()) {
+					if (var7.id != var8.id) {
+						if (var15 == null) {
+							var15 = var8;
+						}
+
+						if (var15.id != var8.id && var10 == null) {
+							var10 = var8;
+						}
+					}
+				}
+
+				long var11 = class273.calculateTag(var2, var3, 3, false, 0, var0.id);
+				var0.scene.newGroundItemPile(var1, var2, var3, VarcInt.getTileHeight(var0, Coord.method6797(var2), Coord.method6797(var3), var1), var7, var11, var15, var10);
+			}
+		}
 	}
 }

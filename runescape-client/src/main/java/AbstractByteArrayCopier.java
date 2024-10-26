@@ -1,43 +1,69 @@
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("np")
+@ObfuscatedName("oe")
 @Implements("AbstractByteArrayCopier")
 public abstract class AbstractByteArrayCopier {
+	@ObfuscatedName("ag")
+	@Export("Tiles_overlays")
+	static short[][][] Tiles_overlays;
+	@ObfuscatedName("av")
+	@ObfuscatedGetter(
+		intValue = 2045762615
+	)
+	@Export("loginBoxCenter")
+	static int loginBoxCenter;
+
 	AbstractByteArrayCopier() {
 	}
 
-	@ObfuscatedName("ak")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "(B)[B",
-		garbageValue = "-7"
+		descriptor = "(I)[B",
+		garbageValue = "-63683089"
 	)
 	@Export("get")
 	abstract byte[] get();
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "([BI)V",
-		garbageValue = "-1806958833"
+		descriptor = "([BB)V",
+		garbageValue = "-70"
 	)
 	@Export("set")
-	abstract void set(byte[] var1);
+	public abstract void set(byte[] var1);
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("ax")
 	@ObfuscatedSignature(
-		descriptor = "(Lnx;I)I",
-		garbageValue = "1352728934"
+		descriptor = "(II)V",
+		garbageValue = "-558949762"
 	)
-	static int method7026(Widget var0) {
-		if (var0.type != 11) {
-			Interpreter.Interpreter_stringStack[class337.Interpreter_stringStackSize - 1] = "";
-			return 1;
-		} else {
-			String var1 = Interpreter.Interpreter_stringStack[--class337.Interpreter_stringStackSize];
-			Interpreter.Interpreter_stringStack[++class337.Interpreter_stringStackSize - 1] = var0.method6942(var1);
-			return 1;
+	@Export("clearItemContainer")
+	static void clearItemContainer(int var0) {
+		ItemContainer var1 = (ItemContainer)ItemContainer.itemContainers.get((long)var0);
+		if (var1 != null) {
+			for (int var2 = 0; var2 < var1.ids.length; ++var2) {
+				var1.ids[var2] = -1;
+				var1.quantities[var2] = 0;
+			}
+
 		}
+	}
+
+	@ObfuscatedName("hv")
+	@ObfuscatedSignature(
+		descriptor = "(IZZZZZI)Lof;",
+		garbageValue = "1918811219"
+	)
+	static Archive method7402(int var0, boolean var1, boolean var2, boolean var3, boolean var4, boolean var5) {
+		ArchiveDisk var6 = null;
+		if (JagexCache.JagexCache_dat2File != null) {
+			var6 = new ArchiveDisk(var0, JagexCache.JagexCache_dat2File, class215.JagexCache_idxFiles[var0], 1000000);
+		}
+
+		return new Archive(var6, class382.masterDisk, FontName.field5260, var0, var1, var2, var3, var4, var5);
 	}
 }

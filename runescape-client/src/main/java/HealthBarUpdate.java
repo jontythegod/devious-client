@@ -4,33 +4,35 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("dh")
+@ObfuscatedName("ds")
 @Implements("HealthBarUpdate")
 public class HealthBarUpdate extends Node {
-	@ObfuscatedName("as")
-	@Export("osNameLowercase")
-	public static String osNameLowercase;
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ms")
 	@ObfuscatedGetter(
-		intValue = -2015000729
+		intValue = -809297581
+	)
+	static int field1304;
+	@ObfuscatedName("ac")
+	@ObfuscatedGetter(
+		intValue = -1662493805
 	)
 	@Export("cycle")
 	int cycle;
-	@ObfuscatedName("ad")
+	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
-		intValue = -1494090523
+		intValue = -156689479
 	)
 	@Export("health")
 	int health;
 	@ObfuscatedName("ag")
 	@ObfuscatedGetter(
-		intValue = -71484607
+		intValue = -428027423
 	)
 	@Export("health2")
 	int health2;
-	@ObfuscatedName("ak")
+	@ObfuscatedName("am")
 	@ObfuscatedGetter(
-		intValue = -1704684721
+		intValue = 1070811061
 	)
 	@Export("cycleOffset")
 	int cycleOffset;
@@ -42,10 +44,10 @@ public class HealthBarUpdate extends Node {
 		this.cycleOffset = var4;
 	}
 
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(IIIIB)V",
-		garbageValue = "7"
+		descriptor = "(IIIII)V",
+		garbageValue = "-611296192"
 	)
 	@Export("set")
 	void set(int var1, int var2, int var3, int var4) {
@@ -55,113 +57,54 @@ public class HealthBarUpdate extends Node {
 		this.cycleOffset = var4;
 	}
 
-	@ObfuscatedName("ad")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/CharSequence;I)Z",
-		garbageValue = "-324766040"
+		descriptor = "(II)Lif;",
+		garbageValue = "-683358200"
 	)
-	@Export("isNumber")
-	public static boolean isNumber(CharSequence var0) {
-		boolean var2 = false;
-		boolean var3 = false;
-		int var4 = 0;
-		int var5 = var0.length();
-		int var6 = 0;
-
-		boolean var1;
-		while (true) {
-			if (var6 >= var5) {
-				var1 = var3;
-				break;
+	@Export("SequenceDefinition_get")
+	public static SequenceDefinition SequenceDefinition_get(int var0) {
+		SequenceDefinition var1 = (SequenceDefinition)SequenceDefinition.SequenceDefinition_cached.get((long)var0);
+		if (var1 != null) {
+			return var1;
+		} else {
+			byte[] var2 = SequenceDefinition.SequenceDefinition_archive.takeFile(12, var0);
+			var1 = new SequenceDefinition();
+			if (var2 != null) {
+				var1.decode(new Buffer(var2));
 			}
 
-			label84: {
-				char var7 = var0.charAt(var6);
-				if (var6 == 0) {
-					if (var7 == '-') {
-						var2 = true;
-						break label84;
-					}
-
-					if (var7 == '+') {
-						break label84;
-					}
-				}
-
-				int var9;
-				if (var7 >= '0' && var7 <= '9') {
-					var9 = var7 - '0';
-				} else if (var7 >= 'A' && var7 <= 'Z') {
-					var9 = var7 - '7';
-				} else {
-					if (var7 < 'a' || var7 > 'z') {
-						var1 = false;
-						break;
-					}
-
-					var9 = var7 - 'W';
-				}
-
-				if (var9 >= 10) {
-					var1 = false;
-					break;
-				}
-
-				if (var2) {
-					var9 = -var9;
-				}
-
-				int var8 = var9 + var4 * 10;
-				if (var4 != var8 / 10) {
-					var1 = false;
-					break;
-				}
-
-				var4 = var8;
-				var3 = true;
-			}
-
-			++var6;
+			var1.postDecode();
+			SequenceDefinition.SequenceDefinition_cached.put(var1, (long)var0);
+			return var1;
 		}
-
-		return var1;
 	}
 
-	@ObfuscatedName("an")
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-1040978209"
+		descriptor = "(CI)Z",
+		garbageValue = "-467912855"
 	)
-	static void method2528() {
-		Messages.Messages_channels.clear();
-		Messages.Messages_hashTable.clear();
-		Messages.Messages_queue.clear();
-		Messages.Messages_count = 0;
+	@Export("isDigit")
+	public static boolean isDigit(char var0) {
+		return var0 >= '0' && var0 <= '9';
 	}
 
-	@ObfuscatedName("aa")
+	@ObfuscatedName("ch")
 	@ObfuscatedSignature(
-		descriptor = "(IIII)I",
-		garbageValue = "-591091524"
+		descriptor = "(ILdt;ZB)I",
+		garbageValue = "44"
 	)
-	static final int method2533(int var0, int var1, int var2) {
-		if (var2 > 179) {
-			var1 /= 2;
+	static int method2693(int var0, Script var1, boolean var2) {
+		if (var0 == 7900) {
+			int var3 = Interpreter.Interpreter_intStack[--class320.Interpreter_intStackSize];
+			Client.field811 = Math.max(var3, 0);
+			return 1;
+		} else if (var0 == 7901) {
+			Interpreter.Interpreter_intStack[++class320.Interpreter_intStackSize - 1] = Client.field811;
+			return 1;
+		} else {
+			return 2;
 		}
-
-		if (var2 > 192) {
-			var1 /= 2;
-		}
-
-		if (var2 > 217) {
-			var1 /= 2;
-		}
-
-		if (var2 > 243) {
-			var1 /= 2;
-		}
-
-		int var3 = (var1 / 32 << 7) + (var0 / 4 << 10) + var2 / 2;
-		return var3;
 	}
 }

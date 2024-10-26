@@ -1,247 +1,108 @@
+import java.util.ArrayList;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("gi")
-public class class164 {
-	@ObfuscatedName("ce")
+@ObfuscatedName("gf")
+public class class164 extends class150 {
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = -592304533
+		intValue = 1409222067
 	)
-	static int field1812;
-	@ObfuscatedName("aq")
-	@ObfuscatedGetter(
-		longValue = -2954807226888514321L
-	)
-	long field1811;
-	@ObfuscatedName("ad")
-	@ObfuscatedGetter(
-		longValue = 7504978253578014429L
-	)
-	public long field1808;
-	@ObfuscatedName("ag")
+	int field1805;
+	// $FF: synthetic field
 	@ObfuscatedSignature(
-		descriptor = "Lpi;"
+		descriptor = "Lfz;"
 	)
-	IterableNodeDeque field1809;
+	final class153 this$0;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lvp;)V"
+		descriptor = "(Lfz;)V"
 	)
-	public class164(Buffer var1) {
-		this.field1808 = -1L;
-		this.field1809 = new IterableNodeDeque();
-		this.method3452(var1);
+	class164(class153 var1) {
+		this.this$0 = var1;
+		this.field1805 = -1;
 	}
 
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(Lvp;I)V",
-		garbageValue = "2078305167"
+		descriptor = "(Lvf;B)V",
+		garbageValue = "127"
 	)
-	void method3452(Buffer var1) {
-		this.field1811 = var1.readLong();
-		this.field1808 = var1.readLong();
+	void vmethod3778(Buffer var1) {
+		this.field1805 = var1.readUnsignedShort();
+	}
 
-		for (int var2 = var1.readUnsignedByte(); var2 != 0; var2 = var1.readUnsignedByte()) {
-			Object var3;
-			if (var2 == 1) {
-				var3 = new class159(this);
-			} else if (var2 == 4) {
-				var3 = new class170(this);
-			} else if (var2 == 3) {
-				var3 = new class155(this);
-			} else if (var2 == 2) {
-				var3 = new class153(this);
-			} else {
-				if (var2 != 5) {
-					throw new RuntimeException("");
-				}
+	@ObfuscatedName("ae")
+	@ObfuscatedSignature(
+		descriptor = "(Lgo;B)V",
+		garbageValue = "32"
+	)
+	void vmethod3771(ClanSettings var1) {
+		var1.method3629(this.field1805);
+	}
 
-				var3 = new class160(this);
+	@ObfuscatedName("af")
+	@ObfuscatedSignature(
+		descriptor = "(IIIIB)V",
+		garbageValue = "72"
+	)
+	public static void method3669(int var0, int var1, int var2, int var3) {
+		if (class334.musicSongs.size() > 1 && class334.musicSongs.get(0) != null && ((MusicSong)class334.musicSongs.get(0)).midiPcmStream.isReady() && class334.musicSongs.get(1) != null && ((MusicSong)class334.musicSongs.get(1)).midiPcmStream.isReady()) {
+			class433.method8269(var0, var1, var2, var3);
+			class334.field3620.add(new SwapSongTask((SongTask)null));
+			ArrayList var4 = new ArrayList();
+			var4.add(new DelayFadeTask(new FadeInTask((SongTask)null, 1, false, class334.field3625), class334.field3624));
+			var4.add(new DelayFadeTask(new FadeOutTask((SongTask)null, 0, false, class334.field3614), class334.musicPlayerStatus));
+			class334.field3620.add(new ConcurrentMidiTask((SongTask)null, var4));
+			if (class334.field3619.get(0) != null && class334.field3619.get(1) != null) {
+				MusicSong var5 = (MusicSong)class334.field3619.get(0);
+				class334.field3619.set(0, class334.musicSongs.get(1));
+				class334.field3619.set(1, var5);
 			}
-
-			((class163)var3).vmethod3524(var1);
-			this.field1809.addFirst((Node)var3);
 		}
 
 	}
 
-	@ObfuscatedName("ad")
+	@ObfuscatedName("as")
 	@ObfuscatedSignature(
-		descriptor = "(Lgj;I)V",
-		garbageValue = "1710439935"
+		descriptor = "(IZII)V",
+		garbageValue = "1217335396"
 	)
-	public void method3453(ClanChannel var1) {
-		if (var1.key == this.field1811 && var1.field1821 == this.field1808) {
-			for (class163 var2 = (class163)this.field1809.last(); var2 != null; var2 = (class163)this.field1809.previous()) {
-				var2.vmethod3523(var1);
-			}
-
-			++var1.field1821;
+	public static final void method3670(int var0, boolean var1, int var2) {
+		if (var0 >= 8000 && var0 <= 48000) {
+			PcmPlayer.field270 = var0;
+			PcmPlayer.PcmPlayer_stereo = var1;
+			RunException.field5583 = var2;
 		} else {
-			throw new RuntimeException("");
+			throw new IllegalArgumentException();
 		}
 	}
 
-	@ObfuscatedName("ad")
+	@ObfuscatedName("om")
 	@ObfuscatedSignature(
-		descriptor = "(II)Lhe;",
-		garbageValue = "371239413"
+		descriptor = "(IIIILvv;Lnl;B)V",
+		garbageValue = "106"
 	)
-	@Export("ItemDefinition_get")
-	public static ItemComposition ItemDefinition_get(int var0) {
-		ItemComposition var1 = (ItemComposition)ItemComposition.ItemDefinition_cached.get((long)var0);
-		if (var1 != null) {
-			return var1;
+	@Export("worldToMinimap")
+	static final void worldToMinimap(int var0, int var1, int var2, int var3, SpritePixels var4, SpriteMask var5) {
+		int var6 = var3 * var3 + var2 * var2;
+		if (var6 > 4225 && var6 < 90000) {
+			int var7 = Client.camAngleY & 2047;
+			int var8 = Rasterizer3D.Rasterizer3D_sine[var7];
+			int var9 = Rasterizer3D.Rasterizer3D_cosine[var7];
+			int var10 = var9 * var2 + var3 * var8 >> 16;
+			int var11 = var3 * var9 - var8 * var2 >> 16;
+			double var12 = Math.atan2((double)var10, (double)var11);
+			int var14 = var5.width / 2 - 25;
+			int var15 = (int)(Math.sin(var12) * (double)var14);
+			int var16 = (int)(Math.cos(var12) * (double)var14);
+			byte var17 = 20;
+			ClanSettings.redHintArrowSprite.method10395(var15 + (var0 + var5.width / 2 - var17 / 2), var5.height / 2 + var1 - var17 / 2 - var16 - 10, var17, var17, 15, 15, var12, 256);
 		} else {
-			byte[] var2 = ItemComposition.ItemDefinition_archive.takeFile(10, var0);
-			var1 = new ItemComposition();
-			var1.id = var0;
-			if (var2 != null) {
-				var1.decode(new Buffer(var2));
-			}
-
-			var1.post();
-			if (var1.noteTemplate != -1) {
-				var1.genCert(ItemDefinition_get(var1.noteTemplate), ItemDefinition_get(var1.note));
-			}
-
-			if (var1.notedId != -1) {
-				var1.genBought(ItemDefinition_get(var1.notedId), ItemDefinition_get(var1.unnotedId));
-			}
-
-			if (var1.placeholderTemplate != -1) {
-				var1.genPlaceholder(ItemDefinition_get(var1.placeholderTemplate), ItemDefinition_get(var1.placeholder));
-			}
-
-			if (!ItemComposition.ItemDefinition_inMembersWorld && var1.isMembersOnly) {
-				if (var1.noteTemplate == -1 && var1.notedId == -1 && var1.placeholderTemplate == -1) {
-					var1.name = var1.name + " (Members)";
-				}
-
-				var1.examine = "Login to a members' server to use this object.";
-				var1.isTradable = false;
-
-				int var3;
-				for (var3 = 0; var3 < var1.groundActions.length; ++var3) {
-					var1.groundActions[var3] = null;
-				}
-
-				for (var3 = 0; var3 < var1.inventoryActions.length; ++var3) {
-					if (var3 != 4) {
-						var1.inventoryActions[var3] = null;
-					}
-				}
-
-				var1.shiftClickIndex = -2;
-				var1.team = 0;
-				if (var1.params != null) {
-					boolean var6 = false;
-
-					for (Node var4 = var1.params.first(); var4 != null; var4 = var1.params.next()) {
-						ParamComposition var5 = ApproximateRouteStrategy.getParamDefinition((int)var4.key);
-						if (var5.autoDisable) {
-							var4.remove();
-						} else {
-							var6 = true;
-						}
-					}
-
-					if (!var6) {
-						var1.params = null;
-					}
-				}
-			}
-
-			ItemComposition.ItemDefinition_cached.put(var1, (long)var0);
-			return var1;
-		}
-	}
-
-	@ObfuscatedName("ix")
-	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;I)V",
-		garbageValue = "-693831415"
-	)
-	@Export("doCheat")
-	static final void doCheat(String var0) {
-		if (var0.equalsIgnoreCase("toggleroof")) {
-			class105.clientPreferences.updateRoofsHidden(!class105.clientPreferences.isRoofsHidden());
-			if (class105.clientPreferences.isRoofsHidden()) {
-				VarbitComposition.addGameMessage(99, "", "Roofs are now all hidden");
-			} else {
-				VarbitComposition.addGameMessage(99, "", "Roofs will only be removed selectively");
-			}
+			FloorOverlayDefinition.drawSpriteOnMinimap(var0, var1, var2, var3, var4, var5);
 		}
 
-		if (var0.startsWith("zbuf")) {
-			boolean var1 = GrandExchangeEvent.method7351(var0.substring(5).trim()) == 1;
-			class415.client.method501(var1);
-			Rasterizer3D.method5325(var1);
-		}
-
-		if (var0.equalsIgnoreCase("z")) {
-			Client.z = !Client.z;
-		}
-
-		if (var0.equalsIgnoreCase("displayfps")) {
-			class105.clientPreferences.toggleDisplayFps();
-		}
-
-		if (var0.equalsIgnoreCase("renderself")) {
-			Client.renderSelf = !Client.renderSelf;
-		}
-
-		if (var0.equalsIgnoreCase("mouseovertext")) {
-			Client.showMouseOverText = !Client.showMouseOverText;
-		}
-
-		if (var0.startsWith("setdrawdistance")) {
-			String[] var3 = var0.split(" ");
-
-			try {
-				int var2 = Integer.parseInt(var3[1]);
-				class105.clientPreferences.setDrawDistance(var2);
-			} catch (NumberFormatException var5) {
-				VarbitComposition.addGameMessage(99, "", String.format("Error setting draw distance. setdrawdistance should be in the format \"::setdrawdistance X\" where X is a valid number. Value provided: %s", var3[1]));
-			}
-		}
-
-		if (var0.equalsIgnoreCase("getdrawdistance")) {
-			VarbitComposition.addGameMessage(99, "", String.format("%d", class105.clientPreferences.getDrawDistance()));
-		}
-
-		if (Client.staffModLevel >= 2) {
-			if (var0.equalsIgnoreCase("errortest")) {
-				throw new RuntimeException();
-			}
-
-			if (var0.equalsIgnoreCase("showcoord")) {
-				VertexNormal.worldMap.showCoord = !VertexNormal.worldMap.showCoord;
-			}
-
-			if (var0.equalsIgnoreCase("fpson")) {
-				class105.clientPreferences.updateDisplayFps(true);
-			}
-
-			if (var0.equalsIgnoreCase("fpsoff")) {
-				class105.clientPreferences.updateDisplayFps(false);
-			}
-
-			if (var0.equalsIgnoreCase("gc")) {
-				System.gc();
-			}
-
-			if (var0.equalsIgnoreCase("clientdrop")) {
-				class131.method3068();
-			}
-		}
-
-		PacketBufferNode var6 = class170.getPacketBufferNode(ClientPacket.DOCHEAT, Client.packetWriter.isaacCipher);
-		var6.packetBuffer.writeByte(var0.length() + 1);
-		var6.packetBuffer.writeStringCp1252NullTerminated(var0);
-		Client.packetWriter.addNode(var6);
 	}
 }

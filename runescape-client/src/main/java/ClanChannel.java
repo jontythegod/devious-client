@@ -7,49 +7,49 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("gj")
+@ObfuscatedName("gm")
 @Implements("ClanChannel")
 public class ClanChannel extends Node {
-	@ObfuscatedName("aq")
-	boolean field1826;
-	@ObfuscatedName("ad")
-	boolean field1818;
+	@ObfuscatedName("ac")
+	boolean field1838;
+	@ObfuscatedName("ae")
+	boolean field1834;
 	@ObfuscatedName("ag")
 	@Export("members")
 	public List members;
-	@ObfuscatedName("ak")
+	@ObfuscatedName("am")
 	@Export("sortedMembers")
 	int[] sortedMembers;
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ax")
 	@ObfuscatedGetter(
-		longValue = -2959055586149088951L
+		longValue = 713846940201558631L
 	)
-	public long field1821;
-	@ObfuscatedName("an")
+	public long field1837;
+	@ObfuscatedName("aq")
 	@Export("name")
 	public String name;
-	@ObfuscatedName("aj")
-	public byte field1823;
-	@ObfuscatedName("av")
-	public byte field1817;
+	@ObfuscatedName("af")
+	public byte field1839;
+	@ObfuscatedName("at")
+	public byte field1833;
 
 	static {
 		new BitSet(65536);
 	}
 
 	@ObfuscatedSignature(
-		descriptor = "(Lvp;)V"
+		descriptor = "(Lvf;)V"
 	)
 	public ClanChannel(Buffer var1) {
-		this.field1818 = true;
+		this.field1834 = true;
 		this.name = null;
-		this.method3485(var1);
+		this.method3736(var1);
 	}
 
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(B)[I",
-		garbageValue = "-105"
+		descriptor = "(I)[I",
+		garbageValue = "1750247817"
 	)
 	@Export("getSortedMembers")
 	public int[] getSortedMembers() {
@@ -58,19 +58,19 @@ public class ClanChannel extends Node {
 			this.sortedMembers = new int[this.members.size()];
 
 			for (int var2 = 0; var2 < this.members.size(); this.sortedMembers[var2] = var2++) {
-				var1[var2] = ((ClanChannelMember)this.members.get(var2)).username.method10189();
+				var1[var2] = ((ClanChannelMember)this.members.get(var2)).username.method10592();
 			}
 
-			VarcInt.method3622(var1, this.sortedMembers);
+			class143.method3389(var1, this.sortedMembers);
 		}
 
 		return this.sortedMembers;
 	}
 
-	@ObfuscatedName("ad")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "(Lfa;I)V",
-		garbageValue = "780541394"
+		descriptor = "(Lfy;B)V",
+		garbageValue = "9"
 	)
 	@Export("addMember")
 	void addMember(ClanChannelMember var1) {
@@ -80,8 +80,8 @@ public class ClanChannel extends Node {
 
 	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "(IB)V",
-		garbageValue = "0"
+		descriptor = "(II)V",
+		garbageValue = "-1598387098"
 	)
 	@Export("removeMember")
 	void removeMember(int var1) {
@@ -89,22 +89,22 @@ public class ClanChannel extends Node {
 		this.sortedMembers = null;
 	}
 
-	@ObfuscatedName("ak")
+	@ObfuscatedName("am")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",
-		garbageValue = "-2055617677"
+		garbageValue = "-366055431"
 	)
-	public int method3501() {
+	public int method3726() {
 		return this.members.size();
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ax")
 	@ObfuscatedSignature(
 		descriptor = "(Ljava/lang/String;I)I",
-		garbageValue = "-58662709"
+		garbageValue = "2008595423"
 	)
-	public int method3484(String var1) {
-		if (!this.field1818) {
+	public int method3727(String var1) {
+		if (!this.field1834) {
 			throw new RuntimeException("Displaynames not available");
 		} else {
 			for (int var2 = 0; var2 < this.members.size(); ++var2) {
@@ -117,19 +117,19 @@ public class ClanChannel extends Node {
 		}
 	}
 
-	@ObfuscatedName("an")
+	@ObfuscatedName("aq")
 	@ObfuscatedSignature(
-		descriptor = "(Lvp;I)V",
-		garbageValue = "-15655574"
+		descriptor = "(Lvf;I)V",
+		garbageValue = "-571778818"
 	)
-	void method3485(Buffer var1) {
+	void method3736(Buffer var1) {
 		int var2 = var1.readUnsignedByte();
 		if ((var2 & 1) != 0) {
-			this.field1826 = true;
+			this.field1838 = true;
 		}
 
 		if ((var2 & 2) != 0) {
-			this.field1818 = true;
+			this.field1834 = true;
 		}
 
 		int var3 = 2;
@@ -138,22 +138,22 @@ public class ClanChannel extends Node {
 		}
 
 		super.key = var1.readLong();
-		this.field1821 = var1.readLong();
+		this.field1837 = var1.readLong();
 		this.name = var1.readStringCp1252NullTerminated();
 		var1.readBoolean();
-		this.field1817 = var1.readByte();
-		this.field1823 = var1.readByte();
+		this.field1833 = var1.readByte();
+		this.field1839 = var1.readByte();
 		int var4 = var1.readUnsignedShort();
 		if (var4 > 0) {
 			this.members = new ArrayList(var4);
 
 			for (int var5 = 0; var5 < var4; ++var5) {
 				ClanChannelMember var6 = new ClanChannelMember();
-				if (this.field1826) {
+				if (this.field1838) {
 					var1.readLong();
 				}
 
-				if (this.field1818) {
+				if (this.field1834) {
 					var6.username = new Username(var1.readStringCp1252NullTerminated());
 				}
 
@@ -169,50 +169,68 @@ public class ClanChannel extends Node {
 
 	}
 
-	@ObfuscatedName("an")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(B)Z",
-		garbageValue = "8"
+		descriptor = "(IZI)[B",
+		garbageValue = "-2029916541"
 	)
-	public static boolean method3506() {
-		if (!class330.field3581.isEmpty()) {
-			return true;
-		} else {
-			return !class330.musicSongs.isEmpty() && class330.musicSongs.get(0) != null && ((MusicSong)class330.musicSongs.get(0)).midiPcmStream != null ? ((MusicSong)class330.musicSongs.get(0)).midiPcmStream.isReady() : false;
+	@Export("ByteArrayPool_getArrayBool")
+	public static byte[] ByteArrayPool_getArrayBool(int var0, boolean var1) {
+		synchronized(ByteArrayPool.field4860) {
+			byte[] var3;
+			if ((var0 == 100 || var0 < 100 && var1) && ByteArrayPool.ByteArrayPool_smallCount > 0) {
+				var3 = ByteArrayPool.ByteArrayPool_small[--ByteArrayPool.ByteArrayPool_smallCount];
+				ByteArrayPool.ByteArrayPool_small[ByteArrayPool.ByteArrayPool_smallCount] = null;
+				return var3;
+			}
+
+			if ((var0 == 5000 || var0 < 5000 && var1) && ByteArrayPool.ByteArrayPool_mediumCount > 0) {
+				var3 = ByteArrayPool.ByteArrayPool_medium[--ByteArrayPool.ByteArrayPool_mediumCount];
+				ByteArrayPool.ByteArrayPool_medium[ByteArrayPool.ByteArrayPool_mediumCount] = null;
+				return var3;
+			}
+
+			if ((var0 == 10000 || var0 < 10000 && var1) && ByteArrayPool.ByteArrayPool_largeCount > 0) {
+				var3 = ByteArrayPool.ByteArrayPool_large[--ByteArrayPool.ByteArrayPool_largeCount];
+				ByteArrayPool.ByteArrayPool_large[ByteArrayPool.ByteArrayPool_largeCount] = null;
+				return var3;
+			}
+
+			if ((var0 == 30000 || var0 < 30000 && var1) && ByteArrayPool.field4863 > 0) {
+				var3 = ByteArrayPool.field4872[--ByteArrayPool.field4863];
+				ByteArrayPool.field4872[ByteArrayPool.field4863] = null;
+				return var3;
+			}
+
+			int var6;
+			if (class416.ByteArrayPool_arrays != null) {
+				for (var6 = 0; var6 < MusicSong.ByteArrayPool_alternativeSizes.length; ++var6) {
+					if ((MusicSong.ByteArrayPool_alternativeSizes[var6] == var0 || var0 < MusicSong.ByteArrayPool_alternativeSizes[var6] && var1) && class159.ByteArrayPool_altSizeArrayCounts[var6] > 0) {
+						byte[] var4 = class416.ByteArrayPool_arrays[var6][--class159.ByteArrayPool_altSizeArrayCounts[var6]];
+						class416.ByteArrayPool_arrays[var6][class159.ByteArrayPool_altSizeArrayCounts[var6]] = null;
+						return var4;
+					}
+				}
+			}
+
+			if (var1 && MusicSong.ByteArrayPool_alternativeSizes != null) {
+				for (var6 = 0; var6 < MusicSong.ByteArrayPool_alternativeSizes.length; ++var6) {
+					if (var0 <= MusicSong.ByteArrayPool_alternativeSizes[var6] && class159.ByteArrayPool_altSizeArrayCounts[var6] < class416.ByteArrayPool_arrays[var6].length) {
+						return new byte[MusicSong.ByteArrayPool_alternativeSizes[var6]];
+					}
+				}
+			}
 		}
+
+		return new byte[var0];
 	}
 
-	@ObfuscatedName("jc")
+	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "(Lde;I)V",
-		garbageValue = "938117130"
+		descriptor = "(IIIII)I",
+		garbageValue = "1304036151"
 	)
-	static void method3505(WorldView var0) {
-		if (Client.renderSelf) {
-			class341.addPlayerToScene(var0, Client.localPlayerIndex, false);
-		}
-
-	}
-
-	@ObfuscatedName("mc")
-	@ObfuscatedSignature(
-		descriptor = "(IIIZB)V",
-		garbageValue = "10"
-	)
-	static final void method3488(int var0, int var1, int var2, boolean var3) {
-		if (ModeWhere.widgetDefinition.loadInterface(var0)) {
-			ArchiveLoader.resizeInterface(ModeWhere.widgetDefinition.Widget_interfaceComponents[var0], -1, var1, var2, var3);
-		}
-	}
-
-	@ObfuscatedName("ou")
-	@ObfuscatedSignature(
-		descriptor = "(Lnx;I)I",
-		garbageValue = "-1815013130"
-	)
-	@Export("getWidgetFlags")
-	static int getWidgetFlags(Widget var0) {
-		IntegerNode var1 = (IntegerNode)Client.widgetFlags.get((long)var0.childIndex + ((long)var0.id << 32));
-		return var1 != null ? var1.integer : var0.flags;
+	static final int method3741(int var0, int var1, int var2, int var3) {
+		return var3 * var0 + var2 * var1 >> 16;
 	}
 }

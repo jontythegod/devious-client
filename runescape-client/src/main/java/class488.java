@@ -1,36 +1,54 @@
+import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("si")
-public class class488 extends class489 {
-	@ObfuscatedName("ah")
+@ObfuscatedName("sv")
+public enum class488 implements Enum {
+	@ObfuscatedName("ac")
+	@ObfuscatedSignature(
+		descriptor = "Lsv;"
+	)
+	field5071(0, 1),
+	@ObfuscatedName("ae")
+	@ObfuscatedSignature(
+		descriptor = "Lsv;"
+	)
+	field5072(1, 2),
+	@ObfuscatedName("ag")
+	@ObfuscatedSignature(
+		descriptor = "Lsv;"
+	)
+	field5074(3, 3),
+	@ObfuscatedName("am")
+	@ObfuscatedSignature(
+		descriptor = "Lsv;"
+	)
+	field5077(2, 10);
+
+	@ObfuscatedName("ax")
 	@ObfuscatedGetter(
-		intValue = -1951596397
+		intValue = 1354248917
 	)
-	static int field5035;
-
-	public class488(int var1) {
-		super(var1);
-	}
-
+	final int field5075;
 	@ObfuscatedName("aq")
-	@ObfuscatedSignature(
-		descriptor = "(Lvp;II)V",
-		garbageValue = "191575790"
+	@ObfuscatedGetter(
+		intValue = -21513731
 	)
-	void vmethod8827(Buffer var1, int var2) {
+	final int field5076;
+
+	class488(int var3, int var4) {
+		this.field5075 = var3;
+		this.field5076 = var4;
 	}
 
-	@ObfuscatedName("az")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-1370649268"
+		descriptor = "(I)I",
+		garbageValue = "-350930589"
 	)
-	public static void method8816() {
-		ObjectComposition.ObjectDefinition_cached.clear();
-		ObjectComposition.ObjectDefinition_cachedModelData.clear();
-		ObjectComposition.ObjectDefinition_cachedEntities.clear();
-		ObjectComposition.ObjectDefinition_cachedModels.clear();
+	@Export("rsOrdinal")
+	public int rsOrdinal() {
+		return this.field5076;
 	}
 }

@@ -4,25 +4,22 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("dd")
+@ObfuscatedName("dv")
 @Implements("SecureRandomFuture")
 public class SecureRandomFuture {
-	@ObfuscatedName("an")
-	@Export("PcmPlayer_stereo")
-	public static boolean PcmPlayer_stereo;
-	@ObfuscatedName("aj")
-	@ObfuscatedSignature(
-		descriptor = "Lok;"
+	@ObfuscatedName("gp")
+	@ObfuscatedGetter(
+		intValue = 1805236159
 	)
-	@Export("ItemDefinition_modelArchive")
-	static AbstractArchive ItemDefinition_modelArchive;
-	@ObfuscatedName("aq")
+	static int field1019;
+	@ObfuscatedName("ac")
 	@Export("executor")
 	ExecutorService executor;
-	@ObfuscatedName("ad")
+	@ObfuscatedName("ae")
 	@Export("future")
 	Future future;
 
@@ -31,10 +28,10 @@ public class SecureRandomFuture {
 		this.future = this.executor.submit(new SecureRandomCallable());
 	}
 
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "-847803201"
+		garbageValue = "-1928656312"
 	)
 	@Export("shutdown")
 	void shutdown() {
@@ -42,10 +39,10 @@ public class SecureRandomFuture {
 		this.executor = null;
 	}
 
-	@ObfuscatedName("ad")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
 		descriptor = "(I)Z",
-		garbageValue = "-390046423"
+		garbageValue = "-1034908456"
 	)
 	@Export("isDone")
 	boolean isDone() {
@@ -54,152 +51,95 @@ public class SecureRandomFuture {
 
 	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "(S)Ljava/security/SecureRandom;",
-		garbageValue = "128"
+		descriptor = "(I)Ljava/security/SecureRandom;",
+		garbageValue = "844691753"
 	)
 	@Export("get")
 	SecureRandom get() {
 		try {
 			return (SecureRandom)this.future.get();
-		} catch (Exception var2) {
-			return class401.method7407();
+		} catch (Exception var4) {
+			SecureRandom var3 = new SecureRandom();
+			var3.nextInt();
+			return var3;
 		}
 	}
 
-	@ObfuscatedName("nr")
+	@ObfuscatedName("am")
 	@ObfuscatedSignature(
-		descriptor = "(IB)V",
-		garbageValue = "-66"
+		descriptor = "(IZIZI)V",
+		garbageValue = "1677590448"
 	)
-	@Export("changeGameOptions")
-	static final void changeGameOptions(int var0) {
-		class31.method462();
-		class237.method4496();
-		int var1 = MilliClock.VarpDefinition_get(var0).type;
-		if (var1 != 0) {
-			int var2 = Varps.Varps_main[var0];
-			if (var1 == 1) {
-				if (var2 == 1) {
-					InvDefinition.method3555(0.9D);
-				}
-
-				if (var2 == 2) {
-					InvDefinition.method3555(0.8D);
-				}
-
-				if (var2 == 3) {
-					InvDefinition.method3555(0.7D);
-				}
-
-				if (var2 == 4) {
-					InvDefinition.method3555(0.6D);
-				}
-			}
-
-			if (var1 == 3) {
-				if (var2 == 0) {
-					Script.setMusicVolume(255);
-				}
-
-				if (var2 == 1) {
-					Script.setMusicVolume(192);
-				}
-
-				if (var2 == 2) {
-					Script.setMusicVolume(128);
-				}
-
-				if (var2 == 3) {
-					Script.setMusicVolume(64);
-				}
-
-				if (var2 == 4) {
-					Script.setMusicVolume(0);
-				}
-			}
-
-			if (var1 == 4) {
-				if (var2 == 0) {
-					class105.method2785(127);
-				}
-
-				if (var2 == 1) {
-					class105.method2785(96);
-				}
-
-				if (var2 == 2) {
-					class105.method2785(64);
-				}
-
-				if (var2 == 3) {
-					class105.method2785(32);
-				}
-
-				if (var2 == 4) {
-					class105.method2785(0);
-				}
-			}
-
-			if (var1 == 5) {
-				Client.leftClickOpensMenu = var2 == 1;
-			}
-
-			if (var1 == 6) {
-				Client.chatEffects = var2;
-			}
-
-			if (var1 == 9) {
-			}
-
-			if (var1 == 10) {
-				if (var2 == 0) {
-					class148.method3278(127);
-				}
-
-				if (var2 == 1) {
-					class148.method3278(96);
-				}
-
-				if (var2 == 2) {
-					class148.method3278(64);
-				}
-
-				if (var2 == 3) {
-					class148.method3278(32);
-				}
-
-				if (var2 == 4) {
-					class148.method3278(0);
-				}
-			}
-
-			if (var1 == 17) {
-				Client.followerIndex = var2 & 65535;
-			}
-
-			if (var1 == 18) {
-				AttackOption[] var3 = new AttackOption[]{AttackOption.AttackOption_alwaysRightClick, AttackOption.field1384, AttackOption.field1385, AttackOption.AttackOption_dependsOnCombatLevels, AttackOption.AttackOption_hidden};
-				Client.playerAttackOption = (AttackOption)class210.findEnumerated(var3, var2);
-				if (Client.playerAttackOption == null) {
-					Client.playerAttackOption = AttackOption.AttackOption_dependsOnCombatLevels;
-				}
-			}
-
-			if (var1 == 19) {
-				if (var2 == -1) {
-					Client.combatTargetPlayerIndex = -1;
-				} else {
-					Client.combatTargetPlayerIndex = var2 & 2047;
-				}
-			}
-
-			if (var1 == 22) {
-				Client.npcAttackOption = (AttackOption)class210.findEnumerated(class142.method3233(), var2);
-				if (Client.npcAttackOption == null) {
-					Client.npcAttackOption = AttackOption.AttackOption_dependsOnCombatLevels;
-				}
-			}
-
+	@Export("sortWorldList")
+	static void sortWorldList(int var0, boolean var1, int var2, boolean var3) {
+		if (SoundSystem.World_worlds != null) {
+			class332.doWorldSorting(0, SoundSystem.World_worlds.length - 1, var0, var1, var2, var3);
 		}
+
+	}
+
+	@ObfuscatedName("jz")
+	@ObfuscatedSignature(
+		descriptor = "(Ldd;I)V",
+		garbageValue = "253417057"
+	)
+	static void method2379(WorldView var0) {
+		int var1 = 0;
+
+		for (int var2 = 0; var2 < var0.worldEntityCount; ++var2) {
+			WorldEntity var3 = var0.worldEntities[var0.worldEntityIndices[var2]];
+			if (var3 != null) {
+				boolean var4 = var3.worldView.id == HealthBarUpdate.field1304;
+				if (!var4) {
+					boolean var5 = var1 < Client.field811;
+					if (!var5) {
+						continue;
+					}
+
+					++var1;
+				}
+
+				var3.tileHeight = VarcInt.getTileHeight(var0, var3.x, var3.y, var0.plane);
+				var3.worldView.scene.cycle = Client.cycle;
+				var3.initScenePlane();
+				var0.scene.drawEntity(var0.plane, var3.x, var3.y, var3.tileHeight, 60, var3.worldView.scene, var3.currentRotationAngle, 0L, false);
+				IgnoreList.method8786(var3.worldView);
+				WorldView var10 = var3.worldView;
+				if (Client.combatTargetPlayerIndex >= 0 && var10.players[Client.combatTargetPlayerIndex] != null) {
+					Decimator.addPlayerToScene(var10, Client.combatTargetPlayerIndex, false);
+				}
+
+				class132.addNpcsToScene(var3.worldView, true);
+				WorldView var6 = var3.worldView;
+				int var7 = Client.playerUpdateManager.playerCount;
+				int[] var8 = Client.playerUpdateManager.playerIndices;
+
+				for (int var9 = 0; var9 < var7; ++var9) {
+					if (var8[var9] != Client.combatTargetPlayerIndex && var8[var9] != Client.localPlayerIndex) {
+						Decimator.addPlayerToScene(var6, var8[var9], true);
+					}
+				}
+
+				class132.addNpcsToScene(var3.worldView, false);
+				class7.method55(var3.worldView);
+				WorldView var11 = var3.worldView;
+
+				for (GraphicsObject var12 = (GraphicsObject)var11.graphicsObjects.last(); var12 != null; var12 = (GraphicsObject)var11.graphicsObjects.previous()) {
+					if (var12.plane == var11.plane && !var12.isFinished) {
+						if (Client.cycle >= var12.cycleStart) {
+							var12.advance(Client.graphicsCycle);
+							if (var12.isFinished) {
+								var12.remove();
+							} else {
+								var11.scene.drawEntity(var12.plane, var12.x, var12.y, var12.z, 60, var12, 0, -1L, false);
+							}
+						}
+					} else {
+						var12.remove();
+					}
+				}
+			}
+		}
+
 	}
 }

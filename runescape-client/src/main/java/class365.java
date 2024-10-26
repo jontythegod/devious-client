@@ -1,13 +1,19 @@
 import net.runelite.mapping.Export;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("oq")
+@ObfuscatedName("ot")
 public class class365 {
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "Lon;"
+		descriptor = "Loc;"
 	)
 	@Export("huffman")
-	public static Huffman huffman;
+	static Huffman huffman;
+	@ObfuscatedName("ax")
+	@ObfuscatedGetter(
+		intValue = -46119271
+	)
+	public static int field4014;
 }

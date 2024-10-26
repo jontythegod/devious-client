@@ -1,23 +1,32 @@
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("rr")
+@ObfuscatedName("rg")
 @Implements("HttpAuthenticationHeader")
 public class HttpAuthenticationHeader {
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "Lrr;"
+		descriptor = "Lrg;"
 	)
 	@Export("BASIC")
 	static final HttpAuthenticationHeader BASIC;
-	@ObfuscatedName("ad")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "Lrr;"
+		descriptor = "Lrg;"
 	)
 	@Export("BEARER")
 	static final HttpAuthenticationHeader BEARER;
+	@ObfuscatedName("am")
+	@Export("SpriteBuffer_xOffsets")
+	public static int[] SpriteBuffer_xOffsets;
+	@ObfuscatedName("uf")
+	@ObfuscatedGetter(
+		intValue = 40932503
+	)
+	static int field4918;
 	@ObfuscatedName("ag")
 	@Export("key")
 	final String key;
@@ -31,10 +40,10 @@ public class HttpAuthenticationHeader {
 		this.key = var1;
 	}
 
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(I)Ljava/lang/String;",
-		garbageValue = "193474009"
+		descriptor = "(B)Ljava/lang/String;",
+		garbageValue = "-61"
 	)
 	@Export("getKey")
 	String getKey() {

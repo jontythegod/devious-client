@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
 import net.runelite.mapping.Export;
@@ -7,657 +8,664 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("nx")
+@ObfuscatedName("ny")
 @Implements("Widget")
 public class Widget extends Node {
-	@ObfuscatedName("ar")
-	public static boolean field3828;
-	@ObfuscatedName("bt")
+	@ObfuscatedName("ak")
+	public static boolean field3987;
+	@ObfuscatedName("bn")
 	@Export("isIf3")
 	public boolean isIf3;
-	@ObfuscatedName("bj")
+	@ObfuscatedName("bh")
 	@ObfuscatedGetter(
-		intValue = 765201367
+		intValue = -1565465557
 	)
 	@Export("id")
 	public int id;
-	@ObfuscatedName("be")
+	@ObfuscatedName("bd")
 	@ObfuscatedGetter(
-		intValue = 1114547637
+		intValue = -1614754997
 	)
 	@Export("childIndex")
 	public int childIndex;
-	@ObfuscatedName("bm")
-	String field3832;
-	@ObfuscatedName("bo")
+	@ObfuscatedName("bx")
+	String field3853;
+	@ObfuscatedName("bf")
 	@ObfuscatedGetter(
-		intValue = 505032615
+		intValue = -1256894539
 	)
 	@Export("type")
 	public int type;
-	@ObfuscatedName("bi")
+	@ObfuscatedName("bm")
 	@ObfuscatedGetter(
-		intValue = -845014677
+		intValue = -605463391
 	)
 	@Export("buttonType")
 	public int buttonType;
-	@ObfuscatedName("ba")
+	@ObfuscatedName("bs")
 	@ObfuscatedGetter(
-		intValue = 650299475
+		intValue = 571012371
 	)
 	@Export("contentType")
 	public int contentType;
-	@ObfuscatedName("bg")
+	@ObfuscatedName("bw")
 	@ObfuscatedGetter(
-		intValue = -700936881
+		intValue = 372547349
 	)
 	@Export("xAlignment")
 	public int xAlignment;
-	@ObfuscatedName("bs")
+	@ObfuscatedName("ba")
 	@ObfuscatedGetter(
-		intValue = -1081332403
+		intValue = -128670653
 	)
 	@Export("yAlignment")
 	public int yAlignment;
-	@ObfuscatedName("bp")
+	@ObfuscatedName("bj")
 	@ObfuscatedGetter(
-		intValue = -817282947
+		intValue = 1444043925
 	)
 	@Export("widthAlignment")
 	public int widthAlignment;
-	@ObfuscatedName("bx")
+	@ObfuscatedName("bp")
 	@ObfuscatedGetter(
-		intValue = -74447201
+		intValue = -616720447
 	)
 	@Export("heightAlignment")
 	public int heightAlignment;
-	@ObfuscatedName("bu")
+	@ObfuscatedName("by")
 	@ObfuscatedGetter(
-		intValue = -1060131217
+		intValue = 515235543
 	)
 	@Export("rawX")
 	public int rawX;
-	@ObfuscatedName("by")
+	@ObfuscatedName("bb")
 	@ObfuscatedGetter(
-		intValue = 1553952287
+		intValue = 1945757037
 	)
 	@Export("rawY")
 	public int rawY;
-	@ObfuscatedName("bw")
+	@ObfuscatedName("bi")
 	@ObfuscatedGetter(
-		intValue = 313524553
+		intValue = 1848455111
 	)
 	@Export("rawWidth")
 	public int rawWidth;
-	@ObfuscatedName("bl")
+	@ObfuscatedName("bg")
 	@ObfuscatedGetter(
-		intValue = 1100508457
+		intValue = -1438703239
 	)
 	@Export("rawHeight")
 	public int rawHeight;
-	@ObfuscatedName("bc")
+	@ObfuscatedName("bl")
 	@ObfuscatedGetter(
-		intValue = -2062618881
+		intValue = 1930080551
 	)
 	@Export("x")
 	public int x;
-	@ObfuscatedName("bv")
+	@ObfuscatedName("bz")
 	@ObfuscatedGetter(
-		intValue = 1102193885
+		intValue = 688753001
 	)
 	@Export("y")
 	public int y;
-	@ObfuscatedName("bb")
+	@ObfuscatedName("bu")
 	@ObfuscatedGetter(
-		intValue = -616855855
+		intValue = -1339552805
 	)
 	@Export("width")
 	public int width;
-	@ObfuscatedName("bn")
+	@ObfuscatedName("br")
 	@ObfuscatedGetter(
-		intValue = -1888969631
+		intValue = 1036386215
 	)
 	@Export("height")
 	public int height;
-	@ObfuscatedName("bh")
+	@ObfuscatedName("bo")
 	@ObfuscatedGetter(
-		intValue = -1306856855
+		intValue = 1118128065
 	)
-	public int field3848;
-	@ObfuscatedName("bq")
+	public int field3869;
+	@ObfuscatedName("bv")
 	@ObfuscatedGetter(
-		intValue = -331675015
+		intValue = 94521325
 	)
-	public int field3849;
-	@ObfuscatedName("bd")
+	public int field3870;
+	@ObfuscatedName("bt")
 	@ObfuscatedGetter(
-		intValue = 222435761
+		intValue = -1678119623
 	)
 	@Export("parentId")
 	public int parentId;
-	@ObfuscatedName("bz")
+	@ObfuscatedName("bq")
 	@Export("isHidden")
 	public boolean isHidden;
 	@ObfuscatedName("bk")
 	@ObfuscatedGetter(
-		intValue = -1141305685
+		intValue = 699342125
 	)
 	@Export("scrollX")
 	public int scrollX;
-	@ObfuscatedName("br")
+	@ObfuscatedName("be")
 	@ObfuscatedGetter(
-		intValue = 257051461
+		intValue = 1372468429
 	)
 	@Export("scrollY")
 	public int scrollY;
-	@ObfuscatedName("bf")
+	@ObfuscatedName("bc")
 	@ObfuscatedGetter(
-		intValue = -1289302289
+		intValue = 1096441855
 	)
 	@Export("scrollWidth")
 	public int scrollWidth;
-	@ObfuscatedName("cf")
+	@ObfuscatedName("cn")
 	@ObfuscatedGetter(
-		intValue = -117409281
+		intValue = 2090701815
 	)
 	@Export("scrollHeight")
 	public int scrollHeight;
-	@ObfuscatedName("cv")
+	@ObfuscatedName("ch")
 	@ObfuscatedGetter(
-		intValue = 989679041
+		intValue = 925761921
 	)
 	@Export("color")
 	public int color;
-	@ObfuscatedName("cl")
+	@ObfuscatedName("cf")
 	@ObfuscatedGetter(
-		intValue = -2140916845
+		intValue = -670497933
 	)
 	@Export("color2")
 	public int color2;
-	@ObfuscatedName("cm")
+	@ObfuscatedName("cu")
 	@ObfuscatedGetter(
-		intValue = 331773959
+		intValue = -1822539197
 	)
 	@Export("mouseOverColor")
 	public int mouseOverColor;
-	@ObfuscatedName("cg")
+	@ObfuscatedName("cm")
 	@ObfuscatedGetter(
-		intValue = 374155529
+		intValue = 1893530277
 	)
 	@Export("mouseOverColor2")
 	public int mouseOverColor2;
-	@ObfuscatedName("cu")
+	@ObfuscatedName("cj")
 	@Export("fill")
 	public boolean fill;
-	@ObfuscatedName("cn")
+	@ObfuscatedName("cx")
 	@ObfuscatedSignature(
-		descriptor = "Lvq;"
+		descriptor = "Lvo;"
 	)
 	@Export("fillMode")
 	public FillMode fillMode;
-	@ObfuscatedName("ce")
+	@ObfuscatedName("ci")
 	@ObfuscatedGetter(
-		intValue = 1049665797
+		intValue = 601293795
 	)
 	@Export("transparencyTop")
 	public int transparencyTop;
-	@ObfuscatedName("co")
+	@ObfuscatedName("cy")
 	@ObfuscatedGetter(
-		intValue = 1803990569
+		intValue = -1462108059
 	)
 	@Export("transparencyBot")
 	public int transparencyBot;
-	@ObfuscatedName("ch")
+	@ObfuscatedName("co")
 	@ObfuscatedGetter(
-		intValue = 1594570601
+		intValue = -1091814791
 	)
 	@Export("lineWid")
 	public int lineWid;
-	@ObfuscatedName("ct")
-	public boolean field3880;
-	@ObfuscatedName("cd")
+	@ObfuscatedName("cv")
+	public boolean field3886;
+	@ObfuscatedName("cg")
 	@ObfuscatedGetter(
-		intValue = -969610781
+		intValue = 400929199
 	)
 	@Export("spriteId2")
 	public int spriteId2;
-	@ObfuscatedName("ck")
+	@ObfuscatedName("ct")
 	@ObfuscatedGetter(
-		intValue = 2039865883
+		intValue = -292354061
 	)
 	@Export("spriteId")
 	public int spriteId;
 	@ObfuscatedName("cq")
-	public String field3868;
-	@ObfuscatedName("cs")
+	public String field3889;
+	@ObfuscatedName("cc")
 	@ObfuscatedGetter(
-		intValue = 428367569
+		intValue = -1930022295
 	)
 	@Export("spriteAngle")
 	public int spriteAngle;
-	@ObfuscatedName("cp")
+	@ObfuscatedName("cz")
 	@Export("spriteTiling")
 	public boolean spriteTiling;
-	@ObfuscatedName("cy")
+	@ObfuscatedName("cw")
 	@ObfuscatedGetter(
-		intValue = 1483878917
+		intValue = -1043678643
 	)
 	@Export("outline")
 	public int outline;
-	@ObfuscatedName("cw")
+	@ObfuscatedName("cr")
 	@ObfuscatedGetter(
-		intValue = -1600044683
+		intValue = 1122039687
 	)
 	@Export("spriteShadow")
 	public int spriteShadow;
-	@ObfuscatedName("ci")
+	@ObfuscatedName("cl")
 	@Export("spriteFlipV")
 	public boolean spriteFlipV;
-	@ObfuscatedName("cc")
+	@ObfuscatedName("ca")
 	@Export("spriteFlipH")
 	public boolean spriteFlipH;
-	@ObfuscatedName("cr")
+	@ObfuscatedName("cs")
 	@ObfuscatedGetter(
-		intValue = -1599213851
+		intValue = -1015584877
 	)
 	@Export("modelType")
 	public int modelType;
-	@ObfuscatedName("cb")
+	@ObfuscatedName("cp")
 	@ObfuscatedGetter(
-		intValue = -200792735
+		intValue = -2008812015
 	)
 	@Export("modelId")
 	public int modelId;
-	@ObfuscatedName("cz")
+	@ObfuscatedName("cb")
 	@ObfuscatedGetter(
-		intValue = 1218710441
+		intValue = 1390072395
 	)
 	@Export("modelType2")
 	int modelType2;
-	@ObfuscatedName("cj")
+	@ObfuscatedName("cd")
 	@ObfuscatedGetter(
-		intValue = 1696450891
+		intValue = 557250465
 	)
 	@Export("modelId2")
 	int modelId2;
-	@ObfuscatedName("cx")
+	@ObfuscatedName("ce")
 	@ObfuscatedGetter(
-		intValue = -102888283
+		intValue = -23315571
 	)
 	@Export("sequenceId")
 	public int sequenceId;
-	@ObfuscatedName("ca")
+	@ObfuscatedName("ck")
 	@ObfuscatedGetter(
-		intValue = 46722313
+		intValue = 547301279
 	)
 	@Export("sequenceId2")
 	public int sequenceId2;
-	@ObfuscatedName("df")
+	@ObfuscatedName("dp")
 	@ObfuscatedGetter(
-		intValue = 1340193501
+		intValue = 1367658837
 	)
 	@Export("modelOffsetX")
 	public int modelOffsetX;
-	@ObfuscatedName("dd")
+	@ObfuscatedName("df")
 	@ObfuscatedGetter(
-		intValue = 1097487619
+		intValue = -1148787691
 	)
 	@Export("modelOffsetY")
 	public int modelOffsetY;
-	@ObfuscatedName("dg")
+	@ObfuscatedName("dv")
 	@ObfuscatedGetter(
-		intValue = -1574425945
+		intValue = -1523887835
 	)
 	@Export("modelAngleX")
 	public int modelAngleX;
-	@ObfuscatedName("dr")
+	@ObfuscatedName("dt")
 	@ObfuscatedGetter(
-		intValue = -1277206625
+		intValue = -1927853495
 	)
 	@Export("modelAngleY")
 	public int modelAngleY;
-	@ObfuscatedName("dn")
+	@ObfuscatedName("dk")
 	@ObfuscatedGetter(
-		intValue = 797774769
+		intValue = 993428467
 	)
 	@Export("modelAngleZ")
 	public int modelAngleZ;
-	@ObfuscatedName("ds")
+	@ObfuscatedName("dl")
 	@ObfuscatedGetter(
-		intValue = -235408515
+		intValue = 5443921
 	)
 	@Export("modelZoom")
 	public int modelZoom;
-	@ObfuscatedName("do")
+	@ObfuscatedName("db")
 	@ObfuscatedGetter(
-		intValue = 1016527051
+		intValue = 1485045609
 	)
-	public int field3887;
-	@ObfuscatedName("dm")
+	public int field3908;
+	@ObfuscatedName("dc")
 	@ObfuscatedGetter(
-		intValue = 1736947013
+		intValue = -1970074661
 	)
-	public int field3943;
-	@ObfuscatedName("dk")
+	public int field3909;
+	@ObfuscatedName("dw")
 	@ObfuscatedSignature(
-		descriptor = "Lne;"
+		descriptor = "Lnr;"
 	)
-	public PlayerComposition field3838;
-	@ObfuscatedName("dp")
+	public PlayerComposition field3910;
+	@ObfuscatedName("de")
 	@Export("modelOrthog")
 	public boolean modelOrthog;
-	@ObfuscatedName("dv")
+	@ObfuscatedName("dx")
 	@Export("modelTransparency")
 	public boolean modelTransparency;
-	@ObfuscatedName("du")
+	@ObfuscatedName("dj")
 	@ObfuscatedGetter(
-		intValue = -1462515793
+		intValue = 784106017
 	)
 	@Export("itemQuantityMode")
 	public int itemQuantityMode;
-	@ObfuscatedName("di")
+	@ObfuscatedName("do")
 	@ObfuscatedGetter(
-		intValue = -700546895
+		intValue = -1856794435
 	)
 	@Export("fontId")
 	public int fontId;
-	@ObfuscatedName("dt")
+	@ObfuscatedName("dh")
 	@Export("text")
 	public String text;
-	@ObfuscatedName("da")
+	@ObfuscatedName("dm")
 	@Export("text2")
 	public String text2;
-	@ObfuscatedName("db")
+	@ObfuscatedName("dq")
 	@ObfuscatedGetter(
-		intValue = -831075649
+		intValue = 1355531467
 	)
 	@Export("textLineHeight")
 	public int textLineHeight;
-	@ObfuscatedName("dz")
+	@ObfuscatedName("di")
 	@ObfuscatedGetter(
-		intValue = -1161106127
+		intValue = -2024686311
 	)
 	@Export("textXAlignment")
 	public int textXAlignment;
-	@ObfuscatedName("dc")
+	@ObfuscatedName("da")
 	@ObfuscatedGetter(
-		intValue = 1734965623
+		intValue = -1973017857
 	)
 	@Export("textYAlignment")
 	public int textYAlignment;
-	@ObfuscatedName("dy")
+	@ObfuscatedName("dz")
 	@Export("textShadowed")
 	public boolean textShadowed;
-	@ObfuscatedName("dw")
+	@ObfuscatedName("dg")
 	@ObfuscatedSignature(
-		descriptor = "Lis;"
+		descriptor = "Lip;"
 	)
-	class213 field3900;
-	@ObfuscatedName("dh")
+	class216 field3921;
+	@ObfuscatedName("dr")
 	@ObfuscatedGetter(
-		intValue = -1544517309
+		intValue = 265656093
 	)
-	int field3901;
-	@ObfuscatedName("dj")
-	HashMap field3973;
-	@ObfuscatedName("dq")
-	HashMap field3925;
-	@ObfuscatedName("dl")
+	int field3934;
+	@ObfuscatedName("dy")
+	HashMap field3939;
+	@ObfuscatedName("ds")
+	HashMap field3924;
+	@ObfuscatedName("du")
 	@ObfuscatedSignature(
-		descriptor = "Lnd;"
+		descriptor = "Lnu;"
 	)
-	class354 field3904;
-	@ObfuscatedName("dx")
+	class358 field3925;
+	@ObfuscatedName("dd")
 	@ObfuscatedGetter(
-		intValue = 286263045
+		intValue = -2124213689
 	)
 	@Export("flags")
 	public int flags;
 	@ObfuscatedName("eg")
-	public boolean field3915;
-	@ObfuscatedName("es")
-	public byte[][] field3907;
+	public boolean field3852;
+	@ObfuscatedName("ea")
+	public byte[][] field3928;
+	@ObfuscatedName("ez")
+	public byte[][] field3929;
+	@ObfuscatedName("ev")
+	public int[] field3931;
+	@ObfuscatedName("ef")
+	public int[] field3997;
 	@ObfuscatedName("ei")
-	public byte[][] field3980;
-	@ObfuscatedName("eo")
-	public int[] field3966;
-	@ObfuscatedName("ex")
-	public int[] field3910;
-	@ObfuscatedName("ek")
 	@Export("dataText")
 	public String dataText;
-	@ObfuscatedName("ev")
+	@ObfuscatedName("eo")
 	@Export("actions")
 	public String[] actions;
-	@ObfuscatedName("eu")
+	@ObfuscatedName("el")
+	public String[][] field3898;
+	@ObfuscatedName("em")
+	@ObfuscatedGetter(
+		intValue = 666034631
+	)
+	public int field3968;
+	@ObfuscatedName("en")
 	@ObfuscatedSignature(
-		descriptor = "Lnx;"
+		descriptor = "Lny;"
 	)
 	@Export("parent")
 	public Widget parent;
-	@ObfuscatedName("ea")
+	@ObfuscatedName("eb")
 	@ObfuscatedGetter(
-		intValue = -2091171195
+		intValue = 65803135
 	)
 	@Export("dragZoneSize")
 	public int dragZoneSize;
-	@ObfuscatedName("en")
+	@ObfuscatedName("ek")
 	@ObfuscatedGetter(
-		intValue = -655581333
+		intValue = -1378961615
 	)
 	@Export("dragThreshold")
 	public int dragThreshold;
-	@ObfuscatedName("ez")
+	@ObfuscatedName("es")
 	@Export("isScrollBar")
 	public boolean isScrollBar;
-	@ObfuscatedName("eq")
+	@ObfuscatedName("ey")
 	@Export("spellActionName")
 	public String spellActionName;
 	@ObfuscatedName("er")
 	@Export("hasListener")
 	public boolean hasListener;
-	@ObfuscatedName("em")
+	@ObfuscatedName("ed")
 	@Export("onLoad")
 	public Object[] onLoad;
-	@ObfuscatedName("et")
+	@ObfuscatedName("ee")
 	@Export("onClick")
 	public Object[] onClick;
-	@ObfuscatedName("ec")
+	@ObfuscatedName("eq")
 	@Export("onClickRepeat")
 	public Object[] onClickRepeat;
-	@ObfuscatedName("ep")
+	@ObfuscatedName("ej")
 	@Export("onRelease")
 	public Object[] onRelease;
-	@ObfuscatedName("ed")
+	@ObfuscatedName("ec")
 	@Export("onHold")
 	public Object[] onHold;
-	@ObfuscatedName("ee")
+	@ObfuscatedName("et")
 	@Export("onMouseOver")
 	public Object[] onMouseOver;
-	@ObfuscatedName("ey")
+	@ObfuscatedName("fv")
 	@Export("onMouseRepeat")
 	public Object[] onMouseRepeat;
-	@ObfuscatedName("ef")
+	@ObfuscatedName("ff")
 	@Export("onMouseLeave")
 	public Object[] onMouseLeave;
-	@ObfuscatedName("el")
+	@ObfuscatedName("fe")
 	@Export("onDrag")
 	public Object[] onDrag;
-	@ObfuscatedName("ff")
+	@ObfuscatedName("ft")
 	@Export("onDragComplete")
 	public Object[] onDragComplete;
-	@ObfuscatedName("fw")
+	@ObfuscatedName("fb")
 	@Export("onTargetEnter")
 	public Object[] onTargetEnter;
-	@ObfuscatedName("fv")
+	@ObfuscatedName("fk")
 	@Export("onTargetLeave")
 	public Object[] onTargetLeave;
-	@ObfuscatedName("fh")
+	@ObfuscatedName("fp")
 	@Export("onVarTransmit")
 	public Object[] onVarTransmit;
-	@ObfuscatedName("fg")
+	@ObfuscatedName("fr")
 	@Export("varTransmitTriggers")
 	public int[] varTransmitTriggers;
-	@ObfuscatedName("fd")
+	@ObfuscatedName("fg")
 	@Export("onInvTransmit")
 	public Object[] onInvTransmit;
-	@ObfuscatedName("fi")
+	@ObfuscatedName("fu")
 	@Export("invTransmitTriggers")
 	public int[] invTransmitTriggers;
-	@ObfuscatedName("fb")
+	@ObfuscatedName("fj")
 	@Export("onStatTransmit")
 	public Object[] onStatTransmit;
-	@ObfuscatedName("fp")
+	@ObfuscatedName("fs")
 	@Export("statTransmitTriggers")
 	public int[] statTransmitTriggers;
-	@ObfuscatedName("fe")
+	@ObfuscatedName("fq")
 	@Export("onTimer")
 	public Object[] onTimer;
-	@ObfuscatedName("fl")
+	@ObfuscatedName("fn")
 	@Export("onOp")
 	public Object[] onOp;
-	@ObfuscatedName("fz")
-	public Object[] field3939;
-	@ObfuscatedName("ft")
+	@ObfuscatedName("fh")
+	public Object[] field3982;
+	@ObfuscatedName("fo")
 	@Export("onScroll")
 	public Object[] onScroll;
-	@ObfuscatedName("fr")
+	@ObfuscatedName("fw")
 	@Export("onChatTransmit")
 	public Object[] onChatTransmit;
-	@ObfuscatedName("fk")
+	@ObfuscatedName("fd")
 	@Export("onKey")
 	public Object[] onKey;
+	@ObfuscatedName("fi")
+	public Object[] field3966;
 	@ObfuscatedName("fc")
-	public Object[] field3840;
-	@ObfuscatedName("fu")
-	public Object[] field3829;
-	@ObfuscatedName("fs")
+	public Object[] field3967;
+	@ObfuscatedName("fm")
 	@Export("onFriendTransmit")
 	public Object[] onFriendTransmit;
-	@ObfuscatedName("fm")
+	@ObfuscatedName("fx")
 	@Export("onClanTransmit")
 	public Object[] onClanTransmit;
+	@ObfuscatedName("fy")
+	public Object[] field3970;
+	@ObfuscatedName("fz")
+	public Object[] field3971;
 	@ObfuscatedName("fa")
-	public Object[] field3947;
-	@ObfuscatedName("fn")
-	public Object[] field3865;
-	@ObfuscatedName("fq")
 	@Export("onMiscTransmit")
 	public Object[] onMiscTransmit;
-	@ObfuscatedName("fo")
+	@ObfuscatedName("fl")
 	@Export("onDialogAbort")
 	public Object[] onDialogAbort;
-	@ObfuscatedName("fy")
+	@ObfuscatedName("ga")
 	@Export("onSubChange")
 	public Object[] onSubChange;
-	@ObfuscatedName("fx")
+	@ObfuscatedName("gd")
 	@Export("onResize")
 	public Object[] onResize;
-	@ObfuscatedName("fj")
+	@ObfuscatedName("gl")
 	@Export("onStockTransmit")
 	public Object[] onStockTransmit;
-	@ObfuscatedName("gs")
-	public Object[] field3954;
-	@ObfuscatedName("gq")
-	public Object[] field3955;
-	@ObfuscatedName("gk")
+	@ObfuscatedName("ge")
+	public Object[] field3963;
+	@ObfuscatedName("gb")
+	public Object[] field3905;
+	@ObfuscatedName("go")
 	@Export("cs1Instructions")
 	public int[][] cs1Instructions;
-	@ObfuscatedName("ge")
+	@ObfuscatedName("gs")
 	@Export("cs1Comparisons")
 	public int[] cs1Comparisons;
-	@ObfuscatedName("gr")
+	@ObfuscatedName("gp")
 	@Export("cs1ComparisonValues")
 	public int[] cs1ComparisonValues;
-	@ObfuscatedName("gu")
+	@ObfuscatedName("gf")
 	@ObfuscatedGetter(
-		intValue = 735025779
+		intValue = -1024346521
 	)
 	@Export("mouseOverRedirect")
 	public int mouseOverRedirect;
-	@ObfuscatedName("gc")
-	public String field3960;
-	@ObfuscatedName("ga")
+	@ObfuscatedName("gx")
+	public String field3983;
+	@ObfuscatedName("gu")
 	@Export("buttonText")
 	public String buttonText;
-	@ObfuscatedName("gi")
+	@ObfuscatedName("gj")
 	@Export("itemIds")
 	public int[] itemIds;
-	@ObfuscatedName("gn")
+	@ObfuscatedName("gt")
 	@Export("itemQuantities")
 	public int[] itemQuantities;
-	@ObfuscatedName("gp")
+	@ObfuscatedName("gz")
 	@ObfuscatedGetter(
-		intValue = -1740363595
+		intValue = 1679475031
 	)
 	@Export("itemId")
 	public int itemId;
-	@ObfuscatedName("gj")
+	@ObfuscatedName("gm")
 	@ObfuscatedGetter(
-		intValue = -1807299683
+		intValue = 1333335699
 	)
 	@Export("itemQuantity")
 	public int itemQuantity;
-	@ObfuscatedName("gh")
+	@ObfuscatedName("gc")
 	@ObfuscatedGetter(
-		intValue = 936512001
+		intValue = -1753142817
 	)
 	@Export("modelFrame")
 	public int modelFrame;
-	@ObfuscatedName("gm")
+	@ObfuscatedName("gw")
 	@ObfuscatedGetter(
-		intValue = 515760285
+		intValue = 580905577
 	)
 	@Export("modelFrameCycle")
 	public int modelFrameCycle;
-	@ObfuscatedName("gl")
+	@ObfuscatedName("gr")
 	@ObfuscatedSignature(
-		descriptor = "[Lnx;"
+		descriptor = "[Lny;"
 	)
 	@Export("children")
 	public Widget[] children;
-	@ObfuscatedName("gf")
-	public boolean field3969;
-	@ObfuscatedName("gz")
-	public boolean field3842;
-	@ObfuscatedName("go")
-	@ObfuscatedGetter(
-		intValue = -1221296269
-	)
-	public int field3971;
-	@ObfuscatedName("gx")
-	@ObfuscatedGetter(
-		intValue = 1878600795
-	)
-	public int field3899;
-	@ObfuscatedName("gd")
-	@ObfuscatedGetter(
-		intValue = -1468682019
-	)
-	public int field3911;
+	@ObfuscatedName("gq")
+	public boolean field3992;
 	@ObfuscatedName("gv")
+	public boolean field3984;
+	@ObfuscatedName("gi")
 	@ObfuscatedGetter(
-		intValue = -124626521
+		intValue = -1139573635
 	)
-	public int field3974;
-	@ObfuscatedName("gb")
+	public int field3994;
+	@ObfuscatedName("gk")
 	@ObfuscatedGetter(
-		intValue = 188073995
+		intValue = -1225763731
+	)
+	public int field3995;
+	@ObfuscatedName("gh")
+	@ObfuscatedGetter(
+		intValue = -580975495
+	)
+	public int field3978;
+	@ObfuscatedName("gn")
+	@ObfuscatedGetter(
+		intValue = 323796567
+	)
+	public int field3975;
+	@ObfuscatedName("gg")
+	@ObfuscatedGetter(
+		intValue = -1670589827
 	)
 	@Export("rootIndex")
 	public int rootIndex;
-	@ObfuscatedName("gw")
+	@ObfuscatedName("gy")
 	@ObfuscatedGetter(
-		intValue = -1645523529
+		intValue = -2005214187
 	)
 	@Export("cycle")
 	public int cycle;
-	@ObfuscatedName("gt")
-	public int[] field3977;
-	@ObfuscatedName("gy")
+	@ObfuscatedName("hc")
+	public int[] field4000;
+	@ObfuscatedName("hf")
 	@Export("noClickThrough")
 	public boolean noClickThrough;
-	@ObfuscatedName("gg")
+	@ObfuscatedName("he")
 	@Export("noScrollThrough")
 	public boolean noScrollThrough;
 	@ObfuscatedName("hr")
@@ -665,7 +673,7 @@ public class Widget extends Node {
 	public boolean prioritizeMenuEntry;
 
 	static {
-		field3828 = false;
+		field3987 = false;
 	}
 
 	public Widget() {
@@ -686,8 +694,8 @@ public class Widget extends Node {
 		this.y = 0;
 		this.width = 0;
 		this.height = 0;
-		this.field3848 = 1;
-		this.field3849 = 1;
+		this.field3869 = 1;
+		this.field3870 = 1;
 		this.parentId = -1;
 		this.isHidden = false;
 		this.scrollX = 0;
@@ -703,7 +711,7 @@ public class Widget extends Node {
 		this.transparencyTop = 0;
 		this.transparencyBot = 0;
 		this.lineWid = 1;
-		this.field3880 = false;
+		this.field3886 = false;
 		this.spriteId2 = -1;
 		this.spriteId = -1;
 		this.spriteAngle = 0;
@@ -722,8 +730,8 @@ public class Widget extends Node {
 		this.modelAngleY = 0;
 		this.modelAngleZ = 0;
 		this.modelZoom = 100;
-		this.field3887 = 0;
-		this.field3943 = 0;
+		this.field3908 = 0;
+		this.field3909 = 0;
 		this.modelOrthog = false;
 		this.modelTransparency = false;
 		this.itemQuantityMode = 2;
@@ -734,10 +742,11 @@ public class Widget extends Node {
 		this.textXAlignment = 0;
 		this.textYAlignment = 0;
 		this.textShadowed = false;
-		this.field3901 = -1;
+		this.field3934 = -1;
 		this.flags = 0;
-		this.field3915 = false;
+		this.field3852 = false;
 		this.dataText = "";
+		this.field3968 = 4;
 		this.parent = null;
 		this.dragZoneSize = 0;
 		this.dragThreshold = 0;
@@ -745,18 +754,18 @@ public class Widget extends Node {
 		this.spellActionName = "";
 		this.hasListener = false;
 		this.mouseOverRedirect = -1;
-		this.field3960 = "";
+		this.field3983 = "";
 		this.buttonText = "Ok";
 		this.itemId = -1;
 		this.itemQuantity = 0;
 		this.modelFrame = 0;
 		this.modelFrameCycle = 0;
-		this.field3969 = false;
-		this.field3842 = false;
-		this.field3971 = -1;
-		this.field3899 = 0;
-		this.field3911 = 0;
-		this.field3974 = 0;
+		this.field3992 = false;
+		this.field3984 = false;
+		this.field3994 = -1;
+		this.field3995 = 0;
+		this.field3978 = 0;
+		this.field3975 = 0;
 		this.rootIndex = -1;
 		this.cycle = -1;
 		this.noClickThrough = false;
@@ -764,10 +773,10 @@ public class Widget extends Node {
 		this.prioritizeMenuEntry = false;
 	}
 
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(Lvp;I)V",
-		garbageValue = "-1473192041"
+		descriptor = "(Lvf;I)V",
+		garbageValue = "-419725187"
 	)
 	@Export("decodeLegacy")
 	void decodeLegacy(Buffer var1) {
@@ -902,7 +911,7 @@ public class Widget extends Node {
 
 		if (this.buttonType == 2) {
 			this.spellActionName = var1.readStringCp1252NullTerminated();
-			this.field3960 = var1.readStringCp1252NullTerminated();
+			this.field3983 = var1.readStringCp1252NullTerminated();
 			var4 = var1.readUnsignedShort() & 63;
 			this.flags |= var4 << 11;
 		}
@@ -938,10 +947,10 @@ public class Widget extends Node {
 
 	}
 
-	@ObfuscatedName("ad")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "(Lvp;I)V",
-		garbageValue = "-1148470664"
+		descriptor = "(Lvf;I)V",
+		garbageValue = "1684534044"
 	)
 	@Export("decode")
 	void decode(Buffer var1) {
@@ -1008,7 +1017,7 @@ public class Widget extends Node {
 			this.modelOrthog = var1.readUnsignedByte() == 1;
 			var1.readUnsignedShort();
 			if (this.widthAlignment != 0) {
-				this.field3887 = var1.readUnsignedShort();
+				this.field3908 = var1.readUnsignedShort();
 			}
 
 			if (this.heightAlignment != 0) {
@@ -1039,7 +1048,7 @@ public class Widget extends Node {
 		if (this.type == 9) {
 			this.lineWid = var1.readUnsignedByte();
 			this.color = var1.readInt();
-			this.field3880 = var1.readUnsignedByte() == 1;
+			this.field3886 = var1.readUnsignedByte() == 1;
 		}
 
 		this.flags = var1.readMedium();
@@ -1082,17 +1091,17 @@ public class Widget extends Node {
 
 	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "(Lvp;I)V",
-		garbageValue = "1311162477"
+		descriptor = "(Lvf;I)V",
+		garbageValue = "1314938647"
 	)
-	void method6858(Buffer var1) {
-		this.field3832 = var1.readStringCp1252NullTerminated();
+	void method7333(Buffer var1) {
+		this.field3853 = var1.readStringCp1252NullTerminated();
 	}
 
-	@ObfuscatedName("ak")
+	@ObfuscatedName("am")
 	@ObfuscatedSignature(
-		descriptor = "(Lvp;B)[Ljava/lang/Object;",
-		garbageValue = "-44"
+		descriptor = "(Lvf;B)[Ljava/lang/Object;",
+		garbageValue = "-21"
 	)
 	@Export("readListener")
 	Object[] readListener(Buffer var1) {
@@ -1116,10 +1125,10 @@ public class Widget extends Node {
 		}
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ax")
 	@ObfuscatedSignature(
-		descriptor = "(Lvp;I)[I",
-		garbageValue = "765201367"
+		descriptor = "(Lvf;S)[I",
+		garbageValue = "1828"
 	)
 	@Export("readListenerTriggers")
 	int[] readListenerTriggers(Buffer var1) {
@@ -1137,16 +1146,16 @@ public class Widget extends Node {
 		}
 	}
 
-	@ObfuscatedName("an")
+	@ObfuscatedName("aq")
 	@ObfuscatedSignature(
-		descriptor = "(Lnc;ZLea;I)Lvg;",
-		garbageValue = "1975017005"
+		descriptor = "(Lna;ZLen;I)Lvv;",
+		garbageValue = "-1858535344"
 	)
 	@Export("getSprite")
 	public SpritePixels getSprite(WidgetDefinition var1, boolean var2, UrlRequester var3) {
-		field3828 = false;
-		if (this.field3868 != null) {
-			SpritePixels var4 = this.method6862(var1, var3);
+		field3987 = false;
+		if (this.field3889 != null) {
+			SpritePixels var4 = this.method7240(var1, var3);
 			if (var4 != null) {
 				return var4;
 			}
@@ -1162,17 +1171,17 @@ public class Widget extends Node {
 		if (var8 == -1) {
 			return null;
 		} else {
-			long var5 = ((this.spriteFlipH ? 1L : 0L) << 39) + (long)var8 + ((long)this.outline << 36) + ((this.spriteFlipV ? 1L : 0L) << 38) + ((long)this.spriteShadow << 40);
+			long var5 = ((this.spriteFlipV ? 1L : 0L) << 38) + ((long)this.outline << 36) + (long)var8 + ((this.spriteFlipH ? 1L : 0L) << 39) + ((long)this.spriteShadow << 40);
 			SpritePixels var7 = (SpritePixels)var1.Widget_cachedSprites.get(var5);
 			if (var7 != null) {
 				return var7;
 			} else {
-				var7 = ArchiveDiskActionHandler.SpriteBuffer_getSprite(var1.field3748, var8, 0);
+				var7 = AbstractUserComparator.SpriteBuffer_getSprite(var1.field3759, var8, 0);
 				if (var7 == null) {
-					field3828 = true;
+					field3987 = true;
 					return null;
 				} else {
-					this.method6865(var7);
+					this.method7243(var7);
 					var1.Widget_cachedSprites.put(var7, var5);
 					return var7;
 				}
@@ -1180,23 +1189,23 @@ public class Widget extends Node {
 		}
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "(Lnc;Lea;B)Lvg;",
-		garbageValue = "4"
+		descriptor = "(Lna;Len;I)Lvv;",
+		garbageValue = "2088203856"
 	)
-	SpritePixels method6862(WidgetDefinition var1, UrlRequester var2) {
-		if (!this.method6864()) {
-			return this.method6887(var1, var2);
+	SpritePixels method7240(WidgetDefinition var1, UrlRequester var2) {
+		if (!this.method7242()) {
+			return this.method7241(var1, var2);
 		} else {
-			String var3 = this.field3868 + (this.spriteFlipV ? 1 : 0) + (this.spriteFlipH ? 1 : 0) + this.outline + this.spriteShadow;
-			SpritePixels var4 = (SpritePixels)var1.field3745.method8418(var3);
+			String var3 = this.field3889 + (this.spriteFlipV ? 1 : 0) + (this.spriteFlipH ? 1 : 0) + this.outline + this.spriteShadow;
+			SpritePixels var4 = (SpritePixels)var1.field3768.method8754(var3);
 			if (var4 == null) {
-				SpritePixels var5 = this.method6887(var1, var2);
+				SpritePixels var5 = this.method7241(var1, var2);
 				if (var5 != null) {
-					var4 = var5.method9997();
-					this.method6865(var4);
-					var1.field3745.method8419(var3, var4);
+					var4 = var5.method10427();
+					this.method7243(var4);
+					var1.field3768.method8755(var3, var4);
 				}
 			}
 
@@ -1204,40 +1213,40 @@ public class Widget extends Node {
 		}
 	}
 
-	@ObfuscatedName("av")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(Lnc;Lea;I)Lvg;",
-		garbageValue = "1974922267"
+		descriptor = "(Lna;Len;B)Lvv;",
+		garbageValue = "88"
 	)
-	SpritePixels method6887(WidgetDefinition var1, UrlRequester var2) {
-		if (this.field3868 != null && var2 != null) {
-			class353 var3 = (class353)var1.field3747.method8418(this.field3868);
+	SpritePixels method7241(WidgetDefinition var1, UrlRequester var2) {
+		if (this.field3889 != null && var2 != null) {
+			class357 var3 = (class357)var1.field3767.method8754(this.field3889);
 			if (var3 == null) {
-				var3 = new class353(this.field3868, var2);
-				var1.field3747.method8419(this.field3868, var3);
+				var3 = new class357(this.field3889, var2);
+				var1.field3767.method8755(this.field3889, var3);
 			}
 
-			return var3.method6530();
+			return var3.method6871();
 		} else {
 			return null;
 		}
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "(B)Z",
-		garbageValue = "-11"
+		descriptor = "(I)Z",
+		garbageValue = "1942488836"
 	)
-	boolean method6864() {
+	boolean method7242() {
 		return this.spriteFlipV || this.spriteFlipH || this.outline != 0 || this.spriteShadow != 0;
 	}
 
-	@ObfuscatedName("ai")
+	@ObfuscatedName("ar")
 	@ObfuscatedSignature(
-		descriptor = "(Lvg;B)V",
-		garbageValue = "-13"
+		descriptor = "(Lvv;I)V",
+		garbageValue = "-1565681414"
 	)
-	void method6865(SpritePixels var1) {
+	void method7243(SpritePixels var1) {
 		if (this.spriteFlipV) {
 			var1.flipVertically();
 		}
@@ -1264,14 +1273,14 @@ public class Widget extends Node {
 
 	}
 
-	@ObfuscatedName("ae")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "(Lnc;B)Lqh;",
-		garbageValue = "-125"
+		descriptor = "(Lna;I)Lqu;",
+		garbageValue = "-1400348288"
 	)
 	@Export("getFont")
 	public Font getFont(WidgetDefinition var1) {
-		field3828 = false;
+		field3987 = false;
 		if (this.fontId == -1) {
 			return null;
 		} else {
@@ -1279,100 +1288,127 @@ public class Widget extends Node {
 			if (var2 != null) {
 				return var2;
 			} else {
-				var2 = class148.method3275(var1.field3748, var1.field3738, this.fontId, 0);
-				if (var2 != null) {
-					var1.Widget_cachedFonts.put(var2, (long)this.fontId);
+				AbstractArchive var4 = var1.field3759;
+				AbstractArchive var5 = var1.field3760;
+				int var6 = this.fontId;
+				Font var3;
+				if (!HttpJsonRequestBody.method9207(var4, var6, 0)) {
+					var3 = null;
 				} else {
-					field3828 = true;
+					byte[] var8 = var5.takeFile(var6, 0);
+					Font var7;
+					if (var8 == null) {
+						var7 = null;
+					} else {
+						Font var9 = new Font(var8, HttpAuthenticationHeader.SpriteBuffer_xOffsets, Login.SpriteBuffer_yOffsets, GrandExchangeEvents.SpriteBuffer_spriteWidths, ModelData0.SpriteBuffer_spriteHeights, SpriteBufferProperties.SpriteBuffer_spritePalette, MusicPatchPcmStream.SpriteBuffer_pixels);
+						class151.method3492();
+						var7 = var9;
+					}
+
+					var3 = var7;
 				}
 
-				return var2;
+				if (var3 != null) {
+					var1.Widget_cachedFonts.put(var3, (long)this.fontId);
+				} else {
+					field3987 = true;
+				}
+
+				return var3;
 			}
 		}
 	}
 
-	@ObfuscatedName("au")
+	@ObfuscatedName("ad")
 	@ObfuscatedSignature(
-		descriptor = "(Lnc;Lii;IZLne;Lhh;I)Llv;",
-		garbageValue = "1051555386"
+		descriptor = "(Lna;Lif;IZLnr;Lhn;Lhp;B)Ljm;",
+		garbageValue = "80"
 	)
 	@Export("getModel")
-	public Model getModel(WidgetDefinition var1, SequenceDefinition var2, int var3, boolean var4, PlayerComposition var5, NpcOverrides var6) {
-		field3828 = false;
-		int var7;
+	public Model getModel(WidgetDefinition var1, SequenceDefinition var2, int var3, boolean var4, PlayerComposition var5, NPCComposition var6, NpcOverrides var7) {
+		field3987 = false;
 		int var8;
+		int var9;
 		if (var4) {
-			var7 = this.modelType2;
-			var8 = this.modelId2;
+			var8 = this.modelType2;
+			var9 = this.modelId2;
 		} else {
-			var7 = this.modelType;
-			var8 = this.modelId;
+			var8 = this.modelType;
+			var9 = this.modelId;
 		}
 
-		if (var7 == 0) {
+		if (var8 == 0) {
 			return null;
-		} else if (var7 == 1 && var8 == -1) {
+		} else if (var8 == 1 && var9 == -1) {
 			return null;
 		} else {
-			if (var6 != null && var6.useLocalPlayer && var7 == 6) {
-				var7 = 3;
+			if (var7 != null && var7.useLocalPlayer && var8 == 6) {
+				var8 = 3;
 			}
 
-			long var9 = (long)(var8 + (var7 << 16));
-			if (var6 != null) {
-				var9 |= var6.field1981 << 20;
+			long var10 = (long)(var9 + (var8 << 16));
+			if (var7 != null) {
+				var10 |= var7.field1996 << 20;
 			}
 
-			Model var11 = (Model)var1.Widget_cachedModels.get(var9);
-			if (var11 == null) {
-				ModelData var12 = null;
-				int var13 = 64;
-				int var14 = 768;
-				switch(var7) {
+			Model var12 = (Model)var1.Widget_cachedModels.get(var10);
+			if (var12 == null) {
+				ModelData var13 = null;
+				int var14 = 64;
+				int var15 = 768;
+				switch(var8) {
 				case 1:
-					var12 = ModelData.ModelData_get(var1.field3743, var8, 0);
+					var13 = ModelData.ModelData_get(var1.field3758, var9, 0);
 					break;
 				case 2:
-					var12 = class76.getNpcDefinition(var8).method3706((NpcOverrides)null);
+					if (var6 == null) {
+						return null;
+					}
+
+					var13 = var6.method3966((NpcOverrides)null);
 					break;
 				case 3:
-					var12 = var5 != null ? var5.getModelData() : null;
+					var13 = var5 != null ? var5.getModelData() : null;
 					break;
 				case 4:
-					ItemComposition var15 = class164.ItemDefinition_get(var8);
-					var12 = var15.getModelData(10);
-					var13 += var15.ambient;
-					var14 += var15.contrast;
+					ItemComposition var16 = MouseRecorder.ItemDefinition_get(var9);
+					var13 = var16.getModelData(10);
+					var14 += var16.ambient;
+					var15 += var16.contrast;
 				case 5:
 				default:
 					break;
 				case 6:
-					var12 = class76.getNpcDefinition(var8).method3706(var6);
+					if (var6 == null) {
+						return null;
+					}
+
+					var13 = var6.method3966(var7);
 				}
 
-				if (var12 == null) {
-					field3828 = true;
+				if (var13 == null) {
+					field3987 = true;
 					return null;
 				}
 
-				var11 = var12.toModel(var13, var14, -50, -10, -50);
-				var1.Widget_cachedModels.put(var11, var9);
+				var12 = var13.toModel(var14, var15, -50, -10, -50);
+				var1.Widget_cachedModels.put(var12, var10);
 			}
 
 			if (var2 != null) {
-				var11 = var2.transformWidgetModel(var11, var3);
+				var12 = var2.transformWidgetModel(var12, var3);
 			}
 
-			return var11;
+			return var12;
 		}
 	}
 
 	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "(Lnc;ZI)Lnw;",
-		garbageValue = "768776562"
+		descriptor = "(Lna;ZI)Lnl;",
+		garbageValue = "-625336255"
 	)
-	public SpriteMask method6943(WidgetDefinition var1, boolean var2) {
+	public SpriteMask method7244(WidgetDefinition var1, boolean var2) {
 		if (this.spriteId == -1) {
 			var2 = false;
 		}
@@ -1381,7 +1417,7 @@ public class Widget extends Node {
 		if (var3 == -1) {
 			return null;
 		} else {
-			long var4 = ((this.spriteFlipH ? 1L : 0L) << 39) + ((this.spriteFlipV ? 1L : 0L) << 38) + ((long)this.outline << 36) + (long)var3 + ((long)this.spriteShadow << 40);
+			long var4 = ((long)this.spriteShadow << 40) + (long)var3 + ((long)this.outline << 36) + ((this.spriteFlipV ? 1L : 0L) << 38) + ((this.spriteFlipH ? 1L : 0L) << 39);
 			SpriteMask var6 = (SpriteMask)var1.Widget_cachedSpriteMasks.get(var4);
 			if (var6 != null) {
 				return var6;
@@ -1425,10 +1461,10 @@ public class Widget extends Node {
 		}
 	}
 
-	@ObfuscatedName("az")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
 		descriptor = "(ILjava/lang/String;B)V",
-		garbageValue = "-17"
+		garbageValue = "1"
 	)
 	@Export("setAction")
 	public void setAction(int var1, String var2) {
@@ -1446,199 +1482,226 @@ public class Widget extends Node {
 		this.actions[var1] = var2;
 	}
 
-	@ObfuscatedName("ax")
+	@ObfuscatedName("ab")
+	@ObfuscatedSignature(
+		descriptor = "(IILjava/lang/String;S)V",
+		garbageValue = "255"
+	)
+	public void method7365(int var1, int var2, String var3) {
+		if (this.field3898 == null || this.field3898.length <= var1) {
+			String[][] var4 = new String[var1 + 1][];
+			if (this.field3898 != null) {
+				System.arraycopy(this.field3898, 0, var4, 0, this.field3898.length);
+			}
+
+			this.field3898 = var4;
+		}
+
+		if (this.field3898[var1] == null || this.field3898[var1].length <= var2) {
+			String[] var5 = new String[var2 + 1];
+			if (this.field3898[var1] != null) {
+				System.arraycopy(this.field3898[var1], 0, var5, 0, this.field3898[var1].length);
+			}
+
+			this.field3898[var1] = var5;
+		}
+
+		this.field3898[var1][var2] = var3;
+	}
+
+	@ObfuscatedName("az")
 	@ObfuscatedSignature(
 		descriptor = "(I)Z",
-		garbageValue = "-1430637540"
+		garbageValue = "2003506548"
 	)
-	public boolean method6870() {
+	public boolean method7249() {
 		return !this.isIf3 || this.type == 0 || this.type == 11 || this.hasListener || this.contentType == 1338 || this.type == 12;
 	}
 
-	@ObfuscatedName("ac")
+	@ObfuscatedName("aa")
 	@ObfuscatedSignature(
 		descriptor = "(I)Z",
-		garbageValue = "1203881795"
+		garbageValue = "-2103842157"
 	)
-	public boolean method6871() {
+	public boolean method7291() {
 		return this.type == 11 || this.type == 12;
 	}
 
-	@ObfuscatedName("al")
+	@ObfuscatedName("ai")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;Ljava/lang/String;Lea;J)V"
+		descriptor = "(Ljava/lang/String;Ljava/lang/String;Len;J)V"
 	)
-	public void method6872(String var1, String var2, UrlRequester var3, long var4) {
-		if (this.type == 11 && -1L != var4) {
+	public void method7338(String var1, String var2, UrlRequester var3, long var4) {
+		if (this.type == 11 && var4 != -1L) {
 			var1 = var1.replaceAll("%userid%", Long.toString(var4));
-			this.field3900 = new class213();
-			if (!this.field3900.method4121(var1, var2, var3)) {
-				this.field3900 = null;
+			this.field3921 = new class216();
+			if (!this.field3921.method4397(var1, var2, var3)) {
+				this.field3921 = null;
 			} else {
-				if (this.field3973 == null || this.field3925 == null) {
-					this.method6875();
+				if (this.field3939 == null || this.field3924 == null) {
+					this.method7253();
 				}
 
 			}
 		}
 	}
 
-	@ObfuscatedName("ay")
-	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lea;I)V",
-		garbageValue = "-2004899217"
-	)
-	public void method6869(String var1, String var2, String var3, String var4, String var5, UrlRequester var6) {
-		this.field3900 = new class213();
-		if (!this.field3900.method4121(var1, var3, var6)) {
-			this.field3900 = null;
-		} else {
-			if (this.field3973 == null || this.field3925 == null) {
-				this.method6875();
-			}
-
-			this.field3900.method4122(var2, var4, var5);
-		}
-	}
-
 	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;Lea;B)V",
-		garbageValue = "5"
+		descriptor = "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Len;B)V",
+		garbageValue = "4"
 	)
-	public void method6874(String var1, UrlRequester var2) {
-		if (this.type == 11 && var1 != null) {
-			this.field3900 = new class213();
-			this.field3900.method4136(var1, var2);
-		}
-	}
+	public void method7251(String var1, String var2, String var3, String var4, String var5, UrlRequester var6) {
+		this.field3921 = new class216();
+		if (!this.field3921.method4397(var1, var3, var6)) {
+			this.field3921 = null;
+		} else {
+			if (this.field3939 == null || this.field3924 == null) {
+				this.method7253();
+			}
 
-	@ObfuscatedName("aa")
-	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-1157881439"
-	)
-	void method6875() {
-		this.field3973 = new HashMap();
-		this.field3925 = new HashMap();
+			this.field3921.method4398(var2, var4, var5);
+		}
 	}
 
 	@ObfuscatedName("as")
 	@ObfuscatedSignature(
-		descriptor = "(III)V",
-		garbageValue = "-413435181"
+		descriptor = "(Ljava/lang/String;Len;I)V",
+		garbageValue = "1914549117"
 	)
-	public void method6876(int var1, int var2) {
+	public void method7252(String var1, UrlRequester var2) {
+		if (this.type == 11 && var1 != null) {
+			this.field3921 = new class216();
+			this.field3921.method4413(var1, var2);
+		}
+	}
+
+	@ObfuscatedName("ay")
+	@ObfuscatedSignature(
+		descriptor = "(I)V",
+		garbageValue = "41691608"
+	)
+	void method7253() {
+		this.field3939 = new HashMap();
+		this.field3924 = new HashMap();
+	}
+
+	@ObfuscatedName("aj")
+	@ObfuscatedSignature(
+		descriptor = "(IIB)V",
+		garbageValue = "-22"
+	)
+	public void method7254(int var1, int var2) {
 		if (this.type == 11) {
-			if (this.field3973 == null) {
-				this.method6875();
+			if (this.field3939 == null) {
+				this.method7253();
 			}
 
-			this.field3973.put(var1, var2);
+			this.field3939.put(var1, var2);
+		}
+	}
+
+	@ObfuscatedName("av")
+	@ObfuscatedSignature(
+		descriptor = "(Ljava/lang/String;II)V",
+		garbageValue = "2138218919"
+	)
+	public void method7255(String var1, int var2) {
+		if (this.type == 11) {
+			if (this.field3924 == null) {
+				this.method7253();
+			}
+
+			this.field3924.put(var1, var2);
 		}
 	}
 
 	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;II)V",
-		garbageValue = "-1751243979"
-	)
-	public void method6981(String var1, int var2) {
-		if (this.type == 11) {
-			if (this.field3925 == null) {
-				this.method6875();
-			}
-
-			this.field3925.put(var1, var2);
-		}
-	}
-
-	@ObfuscatedName("at")
-	@ObfuscatedSignature(
 		descriptor = "(IIIII)Z",
-		garbageValue = "1862989512"
+		garbageValue = "1832901773"
 	)
-	public boolean method6878(int var1, int var2, int var3, int var4) {
-		if (this.type == 11 && this.field3900 != null && this.method6949()) {
+	public boolean method7256(int var1, int var2, int var3, int var4) {
+		if (this.type == 11 && this.field3921 != null && this.method7257()) {
 			var1 -= var3;
 			var2 -= var4;
-			int var5 = (int)(this.field3900.method4131()[0] * (float)this.width);
-			int var6 = (int)(this.field3900.method4131()[1] * (float)this.height);
-			int var7 = var5 + (int)(this.field3900.method4131()[2] * (float)this.width);
-			int var8 = var6 + (int)(this.field3900.method4131()[3] * (float)this.height);
+			int var5 = (int)(this.field3921.method4408()[0] * (float)this.width);
+			int var6 = (int)(this.field3921.method4408()[1] * (float)this.height);
+			int var7 = var5 + (int)(this.field3921.method4408()[2] * (float)this.width);
+			int var8 = var6 + (int)(this.field3921.method4408()[3] * (float)this.height);
 			return var1 >= var5 && var2 >= var6 && var1 < var7 && var2 < var8;
 		} else {
 			return false;
 		}
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
 		descriptor = "(I)Z",
-		garbageValue = "1318138569"
+		garbageValue = "273813282"
 	)
-	public boolean method6949() {
-		return this.field3901 == 2;
+	public boolean method7257() {
+		return this.field3934 == 2;
 	}
 
-	@ObfuscatedName("am")
+	@ObfuscatedName("ak")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;I)I",
-		garbageValue = "-568135728"
+		descriptor = "(Ljava/lang/String;B)I",
+		garbageValue = "21"
 	)
-	public int method6879(String var1) {
-		return this.type == 11 && this.field3900 != null && this.method6949() ? this.field3900.method4125(var1) : -1;
+	public int method7258(String var1) {
+		return this.type == 11 && this.field3921 != null && this.method7257() ? this.field3921.method4430(var1) : -1;
 	}
 
-	@ObfuscatedName("ar")
+	@ObfuscatedName("bn")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;I)Ljava/lang/String;",
-		garbageValue = "-1352084425"
+		descriptor = "(Ljava/lang/String;B)Ljava/lang/String;",
+		garbageValue = "-115"
 	)
-	public String method6942(String var1) {
-		return this.type == 11 && this.field3900 != null && this.method6949() ? this.field3900.method4126(var1) : null;
+	public String method7275(String var1) {
+		return this.type == 11 && this.field3921 != null && this.method7257() ? this.field3921.method4403(var1) : null;
 	}
 
-	@ObfuscatedName("bt")
+	@ObfuscatedName("bh")
+	@ObfuscatedSignature(
+		descriptor = "(B)I",
+		garbageValue = "27"
+	)
+	public int method7250() {
+		return this.field3924 != null && this.field3924.size() > 0 ? 1 : 0;
+	}
+
+	@ObfuscatedName("bd")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",
-		garbageValue = "1889991427"
+		garbageValue = "-2137750575"
 	)
-	public int method6881() {
-		return this.field3925 != null && this.field3925.size() > 0 ? 1 : 0;
-	}
-
-	@ObfuscatedName("bj")
-	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "1941163667"
-	)
-	public int method6882() {
-		if (this.type == 11 && this.field3900 != null && this.field3925 != null && !this.field3925.isEmpty()) {
-			String var1 = this.field3900.method4130();
-			return var1 != null && this.field3925.containsKey(this.field3900.method4130()) ? (Integer)this.field3925.get(var1) : -1;
+	public int method7261() {
+		if (this.type == 11 && this.field3921 != null && this.field3924 != null && !this.field3924.isEmpty()) {
+			String var1 = this.field3921.method4399();
+			return var1 != null && this.field3924.containsKey(this.field3921.method4399()) ? (Integer)this.field3924.get(var1) : -1;
 		} else {
 			return -1;
 		}
 	}
 
-	@ObfuscatedName("be")
+	@ObfuscatedName("bx")
 	@ObfuscatedSignature(
-		descriptor = "(B)Ljava/lang/String;",
-		garbageValue = "55"
+		descriptor = "(I)Ljava/lang/String;",
+		garbageValue = "1808380903"
 	)
-	public String method6867() {
-		if (this.type == 11 && this.field3900 != null) {
-			String var1 = this.field3900.method4130();
-			Iterator var2 = this.field3900.method4129().iterator();
+	public String method7262() {
+		if (this.type == 11 && this.field3921 != null) {
+			String var1 = this.field3921.method4399();
+			Iterator var2 = this.field3921.method4406().iterator();
 
 			while (var2.hasNext()) {
-				class227 var3 = (class227)var2.next();
-				String var4 = String.format("%%%S%%", var3.method4322());
-				if (var3.vmethod4325() == 0) {
-					var1.replaceAll(var4, Integer.toString(var3.vmethod4324()));
+				class230 var3 = (class230)var2.next();
+				String var4 = String.format("%%%S%%", var3.method4617());
+				if (var3.vmethod4613() == 0) {
+					var1.replaceAll(var4, Integer.toString(var3.vmethod4621()));
 				} else {
-					var1.replaceAll(var4, var3.vmethod4323());
+					var1.replaceAll(var4, var3.vmethod4614());
 				}
 			}
 
@@ -1648,25 +1711,25 @@ public class Widget extends Node {
 		}
 	}
 
-	@ObfuscatedName("bm")
+	@ObfuscatedName("bf")
 	@ObfuscatedSignature(
 		descriptor = "(I)[I",
-		garbageValue = "-1838237565"
+		garbageValue = "-1612634558"
 	)
-	public int[] method6863() {
-		if (this.type == 11 && this.field3900 != null) {
+	public int[] method7343() {
+		if (this.type == 11 && this.field3921 != null) {
 			int[] var1 = new int[3];
 			int var2 = 0;
-			Iterator var3 = this.field3900.method4129().iterator();
+			Iterator var3 = this.field3921.method4406().iterator();
 
 			while (var3.hasNext()) {
-				class227 var4 = (class227)var3.next();
-				if (!var4.method4322().equals("user_id")) {
-					if (var4.vmethod4325() != 0) {
+				class230 var4 = (class230)var3.next();
+				if (!var4.method4617().equals("user_id")) {
+					if (var4.vmethod4613() != 0) {
 						return null;
 					}
 
-					var1[var2++] = var4.vmethod4324();
+					var1[var2++] = var4.vmethod4621();
 					if (var2 > 3) {
 						return null;
 					}
@@ -1679,31 +1742,31 @@ public class Widget extends Node {
 		}
 	}
 
-	@ObfuscatedName("bo")
+	@ObfuscatedName("bm")
 	@ObfuscatedSignature(
-		descriptor = "(I)Lis;",
-		garbageValue = "-86720175"
+		descriptor = "(I)Lip;",
+		garbageValue = "-1412090681"
 	)
-	public class213 method6920() {
-		return this.field3900;
+	public class216 method7299() {
+		return this.field3921;
 	}
 
-	@ObfuscatedName("bi")
+	@ObfuscatedName("bs")
 	@ObfuscatedSignature(
-		descriptor = "(Lnc;Lea;B)Z",
-		garbageValue = "-107"
+		descriptor = "(Lna;Len;I)Z",
+		garbageValue = "-1084120620"
 	)
-	public boolean method6995(WidgetDefinition var1, UrlRequester var2) {
-		if (this.type == 11 && this.field3900 != null) {
-			this.field3900.method4123(var2);
-			if (this.field3900.method4124() != this.field3901) {
-				this.field3901 = this.field3900.method4124();
-				if (this.field3901 >= 3) {
+	public boolean method7265(WidgetDefinition var1, UrlRequester var2) {
+		if (this.type == 11 && this.field3921 != null) {
+			this.field3921.method4431(var2);
+			if (this.field3921.method4402() != this.field3934) {
+				this.field3934 = this.field3921.method4402();
+				if (this.field3934 >= 3) {
 					return true;
 				}
 
-				if (this.field3901 == 2) {
-					this.method6988(var1);
+				if (this.field3934 == 2) {
+					this.method7266(var1);
 					return true;
 				}
 			}
@@ -1714,15 +1777,15 @@ public class Widget extends Node {
 		}
 	}
 
-	@ObfuscatedName("bg")
+	@ObfuscatedName("ba")
 	@ObfuscatedSignature(
-		descriptor = "(Lnc;B)V",
-		garbageValue = "-12"
+		descriptor = "(Lna;I)V",
+		garbageValue = "-136857140"
 	)
-	void method6988(WidgetDefinition var1) {
+	void method7266(WidgetDefinition var1) {
 		this.noClickThrough = true;
-		ArrayList var2 = this.field3900.method4127();
-		ArrayList var3 = this.field3900.method4128();
+		ArrayList var2 = this.field3921.method4404();
+		ArrayList var3 = this.field3921.method4405();
 		int var4 = var2.size() + var3.size();
 		this.children = new Widget[var4];
 		int var5 = 0;
@@ -1730,96 +1793,96 @@ public class Widget extends Node {
 		Iterator var6;
 		Widget var8;
 		for (var6 = var2.iterator(); var6.hasNext(); this.children[var5++] = var8) {
-			class214 var7 = (class214)var6.next();
-			var8 = EnumComposition.method3679(5, this, var5, 0, 0, 0, 0, var7.field2338);
-			var8.field3868 = var7.field2340.method2978();
-			class353 var9 = new class353(var7.field2340);
-			var1.field3747.method8419(var8.field3868, var9);
+			class217 var7 = (class217)var6.next();
+			var8 = FaceNormal.method5155(5, this, var5, 0, 0, 0, 0, var7.field2368);
+			var8.field3889 = var7.field2369.method3164();
+			class357 var9 = new class357(var7.field2369);
+			var1.field3767.method8755(var8.field3889, var9);
 		}
 
 		for (var6 = var3.iterator(); var6.hasNext(); this.children[var5++] = var8) {
-			class225 var10 = (class225)var6.next();
-			var8 = EnumComposition.method3679(4, this, var5, 0, 0, 0, 0, var10.field2415);
-			var8.text = var10.field2417;
-			var8.fontId = (Integer)this.field3973.get(var10.field2421);
-			var8.textXAlignment = var10.field2418;
-			var8.textYAlignment = var10.field2420;
+			class228 var10 = (class228)var6.next();
+			var8 = FaceNormal.method5155(4, this, var5, 0, 0, 0, 0, var10.field2448);
+			var8.text = var10.field2451;
+			var8.fontId = (Integer)this.field3939.get(var10.field2447);
+			var8.textXAlignment = var10.field2449;
+			var8.textYAlignment = var10.field2450;
 		}
 
 	}
 
-	@ObfuscatedName("bs")
+	@ObfuscatedName("bj")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-1624337550"
+		descriptor = "(B)V",
+		garbageValue = "77"
 	)
-	public void method6888() {
-		this.field3904 = new class354();
+	public void method7267() {
+		this.field3925 = new class358();
 
 		for (int var1 = 1; var1 <= 12; ++var1) {
-			this.field3904.field3765.method392(var1, 0);
+			this.field3925.field3789.method379(var1, 0);
 		}
 
 		for (char var2 = 0; var2 < ' '; ++var2) {
-			this.field3904.field3765.method393(var2, 0);
+			this.field3925.field3789.method380(var2, 0);
 		}
 
-		this.field3904.field3765.method393('\u0080', 0);
-		this.field3904.field3765.method392(82, 2);
-		this.field3904.field3765.method392(81, 2);
-		this.field3904.field3765.method392(86, 2);
+		this.field3925.field3789.method380('\u0080', 0);
+		this.field3925.field3789.method379(82, 2);
+		this.field3925.field3789.method379(81, 2);
+		this.field3925.field3789.method379(86, 2);
 	}
 
 	@ObfuscatedName("bp")
 	@ObfuscatedSignature(
-		descriptor = "(B)Lny;",
-		garbageValue = "-5"
+		descriptor = "(I)Lnn;",
+		garbageValue = "-694047179"
 	)
-	public class356 method6991() {
-		return this.field3904 != null ? this.field3904.field3767 : null;
-	}
-
-	@ObfuscatedName("bx")
-	@ObfuscatedSignature(
-		descriptor = "(I)Lnu;",
-		garbageValue = "-1337216813"
-	)
-	public class350 method6890() {
-		return this.field3904 != null ? this.field3904.field3764 : null;
-	}
-
-	@ObfuscatedName("bu")
-	@ObfuscatedSignature(
-		descriptor = "(I)Lbj;",
-		garbageValue = "-32445093"
-	)
-	public class27 method6940() {
-		return this.field3904 != null ? this.field3904.field3765 : null;
+	public class360 method7268() {
+		return this.field3925 != null ? this.field3925.field3785 : null;
 	}
 
 	@ObfuscatedName("by")
 	@ObfuscatedSignature(
-		descriptor = "(I)Lnd;",
-		garbageValue = "49982108"
+		descriptor = "(B)Lng;",
+		garbageValue = "127"
 	)
-	public class354 method6892() {
-		return this.field3904;
+	public class354 method7303() {
+		return this.field3925 != null ? this.field3925.field3783 : null;
 	}
 
-	@ObfuscatedName("bw")
+	@ObfuscatedName("bb")
 	@ObfuscatedSignature(
-		descriptor = "(Lny;I)Z",
-		garbageValue = "1964712087"
+		descriptor = "(I)Lbh;",
+		garbageValue = "-420983449"
 	)
-	boolean method6868(class356 var1) {
+	public class27 method7270() {
+		return this.field3925 != null ? this.field3925.field3789 : null;
+	}
+
+	@ObfuscatedName("bi")
+	@ObfuscatedSignature(
+		descriptor = "(I)Lnu;",
+		garbageValue = "1406523579"
+	)
+	public class358 method7271() {
+		return this.field3925;
+	}
+
+	@ObfuscatedName("bg")
+	@ObfuscatedSignature(
+		descriptor = "(Lnn;I)Z",
+		garbageValue = "-193730731"
+	)
+	boolean method7238(class360 var1) {
 		boolean var2 = false;
 		if (this.text != null && !this.text.isEmpty()) {
-			var2 |= var1.method6658(GrandExchangeOfferNameComparator.method7325(this.text));
+			var2 |= var1.method7231(Login.method2349(this.text));
 			this.text = "";
 		}
 
 		if (this.text2 != null && !this.text2.isEmpty()) {
-			var2 |= var1.method6587(GrandExchangeOfferNameComparator.method7325(this.text2));
+			var2 |= var1.method7133(Login.method2349(this.text2));
 			this.text2 = "";
 		}
 
@@ -1828,64 +1891,68 @@ public class Widget extends Node {
 
 	@ObfuscatedName("bl")
 	@ObfuscatedSignature(
-		descriptor = "(Lnc;I)Z",
-		garbageValue = "-2098200626"
+		descriptor = "(Lna;I)Z",
+		garbageValue = "747802038"
 	)
-	public boolean method6894(WidgetDefinition var1) {
-		class356 var2 = this.method6991();
+	public boolean method7273(WidgetDefinition var1) {
+		class360 var2 = this.method7268();
 		if (var2 == null) {
 			return false;
 		} else {
 			boolean var3 = false;
-			if (!var2.method6640() && this.fontId != -1) {
-				int var4 = var2.method6641();
-				int var5 = var2.method6642();
-				int var6 = var2.method6639();
-				int var7 = var2.method6779();
+			if (!var2.method7009() && this.fontId != -1) {
+				int var4 = var2.method7010();
+				int var5 = var2.method6956();
+				int var6 = var2.method7087();
+				int var7 = var2.method7007();
 				Font var8 = this.getFont(var1);
 				if (var8 != null) {
-					var3 |= var2.method6795(var8);
-					var3 |= this.method6868(var2);
-					var3 |= var2.method6730(var4, var5);
-					var3 |= var2.method6608(var6, var7);
+					var3 |= var2.method7092(var8);
+					var3 |= this.method7238(var2);
+					var3 |= var2.method6962(var4, var5);
+					var3 |= var2.method6977(var6, var7);
 				}
-			} else if (var2.method6640()) {
-				var3 |= this.method6868(var2);
+			} else if (var2.method7009()) {
+				var3 |= this.method7238(var2);
 			}
 
-			var2.method6832();
+			var2.method6952();
 			return var3;
 		}
 	}
 
-	@ObfuscatedName("mq")
+	@ObfuscatedName("bz")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;Lnx;B)Ljava/lang/String;",
-		garbageValue = "1"
+		descriptor = "(Lnr;ZB)V",
+		garbageValue = "47"
 	)
-	static String method7006(String var0, Widget var1) {
-		if (var0.indexOf("%") != -1) {
-			for (int var2 = 1; var2 <= 5; ++var2) {
-				while (true) {
-					int var3 = var0.indexOf("%" + var2);
-					if (var3 == -1) {
-						break;
-					}
-
-					String var4 = var0.substring(0, var3);
-					int var6 = Canvas.method325(var1, var2 - 1);
-					String var5;
-					if (var6 < 999999999) {
-						var5 = Integer.toString(var6);
-					} else {
-						var5 = "*";
-					}
-
-					var0 = var4 + var5 + var0.substring(var3 + 2);
-				}
-			}
+	public void method7274(PlayerComposition var1, boolean var2) {
+		this.modelType = 7;
+		this.field3910 = new PlayerComposition(var1);
+		if (!var2) {
+			this.field3910.equipment = Arrays.copyOf(this.field3910.field3804, this.field3910.field3804.length);
+			this.field3910.method6890();
 		}
 
-		return var0;
+	}
+
+	@ObfuscatedName("aa")
+	@ObfuscatedSignature(
+		descriptor = "(III)I",
+		garbageValue = "69840447"
+	)
+	static final int method7368(int var0, int var1) {
+		if (var0 == -1) {
+			return 12345678;
+		} else {
+			var1 = (var0 & 127) * var1 / 128;
+			if (var1 < 2) {
+				var1 = 2;
+			} else if (var1 > 126) {
+				var1 = 126;
+			}
+
+			return (var0 & 65408) + var1;
+		}
 	}
 }

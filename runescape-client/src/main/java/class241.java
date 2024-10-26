@@ -1,71 +1,106 @@
-import java.util.Comparator;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ji")
-public class class241 implements Comparator {
-	class241() {
+@ObfuscatedName("jp")
+public class class241 {
+	@ObfuscatedName("ae")
+	@ObfuscatedSignature(
+		descriptor = "[Lfb;"
+	)
+	class134[] field2609;
+	@ObfuscatedName("ag")
+	@ObfuscatedGetter(
+		intValue = 1006244985
+	)
+	int field2607;
+
+	@ObfuscatedSignature(
+		descriptor = "(Lvf;I)V"
+	)
+	class241(Buffer var1, int var2) {
+		this.field2609 = new class134[var2];
+		this.field2607 = var1.readUnsignedByte();
+
+		for (int var3 = 0; var3 < this.field2609.length; ++var3) {
+			class134 var4 = new class134(this.field2607, var1, false);
+			this.field2609[var3] = var4;
+		}
+
+		this.method4822();
+	}
+
+	@ObfuscatedName("ac")
+	@ObfuscatedSignature(
+		descriptor = "(I)V",
+		garbageValue = "444449256"
+	)
+	void method4822() {
+		class134[] var1 = this.field2609;
+
+		for (int var2 = 0; var2 < var1.length; ++var2) {
+			class134 var3 = var1[var2];
+			if (var3.field1581 >= 0) {
+				var3.field1569 = this.field2609[var3.field1581];
+			}
+		}
+
+	}
+
+	@ObfuscatedName("ae")
+	@ObfuscatedSignature(
+		descriptor = "(B)I",
+		garbageValue = "1"
+	)
+	public int method4823() {
+		return this.field2609.length;
+	}
+
+	@ObfuscatedName("ag")
+	@ObfuscatedSignature(
+		descriptor = "(II)Lfb;",
+		garbageValue = "-2112171220"
+	)
+	class134 method4824(int var1) {
+		return var1 >= this.method4823() ? null : this.field2609[var1];
+	}
+
+	@ObfuscatedName("am")
+	@ObfuscatedSignature(
+		descriptor = "(I)[Lfb;",
+		garbageValue = "-1750062588"
+	)
+	class134[] method4821() {
+		return this.field2609;
+	}
+
+	@ObfuscatedName("ax")
+	@ObfuscatedSignature(
+		descriptor = "(Lfo;II)V",
+		garbageValue = "-873617787"
+	)
+	void method4832(class145 var1, int var2) {
+		this.method4839(var1, var2, (boolean[])null, false);
 	}
 
 	@ObfuscatedName("aq")
 	@ObfuscatedSignature(
-		descriptor = "(Liz;Liz;I)I",
-		garbageValue = "-1784501046"
+		descriptor = "(Lfo;I[ZZI)V",
+		garbageValue = "2001180754"
 	)
-	int method4540(class233 var1, class233 var2) {
-		return var1.method4441() - var2.method4441();
-	}
+	void method4839(class145 var1, int var2, boolean[] var3, boolean var4) {
+		int var5 = var1.method3397();
+		int var6 = 0;
+		class134[] var7 = this.method4821();
 
-	public boolean equals(Object var1) {
-		return super.equals(var1);
-	}
-
-	public int compare(Object var1, Object var2) {
-		return this.method4540((class233)var1, (class233)var2);
-	}
-
-	@ObfuscatedName("mh")
-	@ObfuscatedSignature(
-		descriptor = "(IIIIIII)V",
-		garbageValue = "1536617207"
-	)
-	static final void method4542(int var0, int var1, int var2, int var3, int var4, int var5) {
-		int var6 = var2 - var0;
-		int var7 = var3 - var1;
-		int var8 = var6 >= 0 ? var6 : -var6;
-		int var9 = var7 >= 0 ? var7 : -var7;
-		int var10 = var8;
-		if (var8 < var9) {
-			var10 = var9;
-		}
-
-		if (var10 != 0) {
-			int var11 = (var6 << 16) / var10;
-			int var12 = (var7 << 16) / var10;
-			if (var12 <= var11) {
-				var11 = -var11;
-			} else {
-				var12 = -var12;
+		for (int var8 = 0; var8 < var7.length; ++var8) {
+			class134 var9 = var7[var8];
+			if (var3 == null || var4 == var3[var6]) {
+				var1.method3399(var2, var9, var6, var5);
 			}
 
-			int var13 = var5 * var12 >> 17;
-			int var14 = var5 * var12 + 1 >> 17;
-			int var15 = var5 * var11 >> 17;
-			int var16 = var5 * var11 + 1 >> 17;
-			var0 -= Rasterizer2D.Rasterizer2D_xClipStart;
-			var1 -= Rasterizer2D.Rasterizer2D_yClipStart;
-			int var17 = var0 + var13;
-			int var18 = var0 - var14;
-			int var19 = var0 + var6 - var14;
-			int var20 = var0 + var6 + var13;
-			int var21 = var15 + var1;
-			int var22 = var1 - var16;
-			int var23 = var7 + var1 - var16;
-			int var24 = var15 + var7 + var1;
-			Rasterizer3D.method5326(var17, var18, var19);
-			Rasterizer3D.rasterFlat(var21, var22, var23, var17, var18, var19, 0.0F, 0.0F, 0.0F, var4);
-			Rasterizer3D.method5326(var17, var19, var20);
-			Rasterizer3D.rasterFlat(var21, var23, var24, var17, var19, var20, 0.0F, 0.0F, 0.0F, var4);
+			++var6;
 		}
+
 	}
 }

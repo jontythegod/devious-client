@@ -3,21 +3,21 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("rn")
+@ObfuscatedName("sr")
 @Implements("Friend")
 public class Friend extends Buddy {
-	@ObfuscatedName("aq")
-	boolean field4932;
-	@ObfuscatedName("ad")
-	boolean field4933;
+	@ObfuscatedName("ac")
+	boolean field4973;
+	@ObfuscatedName("ae")
+	boolean field4972;
 
 	Friend() {
 	}
 
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(Lrn;B)I",
-		garbageValue = "28"
+		descriptor = "(Lsr;I)I",
+		garbageValue = "856756514"
 	)
 	@Export("compareToFriend")
 	int compareToFriend(Friend var1) {
@@ -29,23 +29,23 @@ public class Friend extends Buddy {
 			return -1;
 		} else if (var1.world != 0 && super.world == 0) {
 			return 1;
-		} else if (this.field4932 && !var1.field4932) {
+		} else if (this.field4973 && !var1.field4973) {
 			return -1;
-		} else if (!this.field4932 && var1.field4932) {
+		} else if (!this.field4973 && var1.field4973) {
 			return 1;
-		} else if (this.field4933 && !var1.field4933) {
+		} else if (this.field4972 && !var1.field4972) {
 			return -1;
-		} else if (!this.field4933 && var1.field4933) {
+		} else if (!this.field4972 && var1.field4972) {
 			return 1;
 		} else {
 			return super.world != 0 ? super.int2 - var1.int2 : var1.int2 - super.int2;
 		}
 	}
 
-	@ObfuscatedName("ad")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "(Lsk;B)I",
-		garbageValue = "-93"
+		descriptor = "(Lss;S)I",
+		garbageValue = "151"
 	)
 	@Export("compareTo_user")
 	public int compareTo_user(User var1) {

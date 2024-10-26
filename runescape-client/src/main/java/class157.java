@@ -1,76 +1,70 @@
-import java.util.ArrayList;
-import net.runelite.mapping.Export;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("gq")
-public class class157 extends class147 {
-	@ObfuscatedName("fv")
-	@ObfuscatedSignature(
-		descriptor = "Loz;"
-	)
-	@Export("archive9")
-	static Archive archive9;
-	@ObfuscatedName("aq")
-	@ObfuscatedGetter(
-		intValue = -1680782365
-	)
-	int field1754;
-	@ObfuscatedName("ad")
-	String field1752;
+@ObfuscatedName("gd")
+public class class157 extends class150 {
+	@ObfuscatedName("ac")
+	boolean field1744;
+	@ObfuscatedName("ae")
+	byte field1740;
+	@ObfuscatedName("ag")
+	byte field1741;
+	@ObfuscatedName("am")
+	byte field1747;
+	@ObfuscatedName("ax")
+	byte field1739;
 	// $FF: synthetic field
 	@ObfuscatedSignature(
-		descriptor = "Lfn;"
+		descriptor = "Lfz;"
 	)
-	final class150 this$0;
+	final class153 this$0;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lfn;)V"
+		descriptor = "(Lfz;)V"
 	)
-	class157(class150 var1) {
+	class157(class153 var1) {
 		this.this$0 = var1;
 	}
 
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(Lvp;B)V",
-		garbageValue = "118"
+		descriptor = "(Lvf;B)V",
+		garbageValue = "127"
 	)
-	void vmethod3528(Buffer var1) {
-		this.field1754 = var1.readInt();
-		this.field1752 = var1.readStringCp1252NullTerminated();
+	void vmethod3778(Buffer var1) {
+		this.field1744 = var1.readUnsignedByte() == 1;
+		this.field1740 = var1.readByte();
+		this.field1741 = var1.readByte();
+		this.field1747 = var1.readByte();
+		this.field1739 = var1.readByte();
 	}
 
-	@ObfuscatedName("ad")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "(Lgk;B)V",
-		garbageValue = "3"
+		descriptor = "(Lgo;B)V",
+		garbageValue = "32"
 	)
-	void vmethod3530(ClanSettings var1) {
-		var1.method3367(this.field1754, this.field1752);
+	void vmethod3771(ClanSettings var1) {
+		var1.allowGuests = this.field1744;
+		var1.field1769 = this.field1740;
+		var1.field1770 = this.field1741;
+		var1.field1771 = this.field1747;
+		var1.field1772 = this.field1739;
 	}
 
-	@ObfuscatedName("az")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/util/ArrayList;IIIIB)V",
-		garbageValue = "94"
+		descriptor = "(I)Lqd;",
+		garbageValue = "-782050681"
 	)
-	public static void method3343(ArrayList var0, int var1, int var2, int var3, int var4) {
-		class330.field3585.clear();
-		class330.field3585.addAll(var0);
-		class33.method476(var1, var2, var3, var4);
-	}
-
-	@ObfuscatedName("iu")
-	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "1254433407"
-	)
-	static final void method3347() {
-		if (Projectile.pcmPlayer1 != null) {
-			Projectile.pcmPlayer1.run();
+	public static class426 method3544() {
+		synchronized(class426.field4727) {
+			if (class426.field4725 == 0) {
+				return new class426();
+			} else {
+				class426.field4727[--class426.field4725].method8100();
+				return class426.field4727[class426.field4725];
+			}
 		}
-
 	}
 }

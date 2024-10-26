@@ -1,81 +1,83 @@
+import java.util.ArrayList;
+import java.util.Iterator;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("kh")
+@ObfuscatedName("ly")
 @Implements("AbstractWorldMapIcon")
 public abstract class AbstractWorldMapIcon {
-	@ObfuscatedName("aj")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "Lnl;"
+		descriptor = "Lnm;"
 	)
 	@Export("coord2")
 	public final Coord coord2;
-	@ObfuscatedName("av")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "Lnl;"
+		descriptor = "Lnm;"
 	)
 	@Export("coord1")
 	public final Coord coord1;
-	@ObfuscatedName("ab")
+	@ObfuscatedName("au")
 	@ObfuscatedGetter(
-		intValue = 1707677087
+		intValue = 546900797
 	)
 	@Export("screenX")
 	int screenX;
-	@ObfuscatedName("ai")
+	@ObfuscatedName("ar")
 	@ObfuscatedGetter(
-		intValue = 2107546585
+		intValue = -2045810419
 	)
 	@Export("screenY")
 	int screenY;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lnl;Lnl;)V"
+		descriptor = "(Lnm;Lnm;)V"
 	)
 	AbstractWorldMapIcon(Coord var1, Coord var2) {
 		this.coord1 = var1;
 		this.coord2 = var2;
 	}
 
-	@ObfuscatedName("ad")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "(B)I",
-		garbageValue = "45"
+		descriptor = "(I)I",
+		garbageValue = "-1570517373"
 	)
 	@Export("getElement")
 	public abstract int getElement();
 
 	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "(I)Lkm;",
-		garbageValue = "-1023557554"
+		descriptor = "(B)Lls;",
+		garbageValue = "43"
 	)
 	@Export("getLabel")
 	abstract WorldMapLabel getLabel();
 
-	@ObfuscatedName("ak")
+	@ObfuscatedName("am")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",
-		garbageValue = "-2127260294"
+		garbageValue = "-288166594"
 	)
 	@Export("getSubWidth")
 	abstract int getSubWidth();
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ax")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",
-		garbageValue = "-1490832213"
+		garbageValue = "1390628388"
 	)
 	@Export("getSubHeight")
 	abstract int getSubHeight();
 
-	@ObfuscatedName("at")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "(IIB)Z",
-		garbageValue = "0"
+		descriptor = "(III)Z",
+		garbageValue = "-576384506"
 	)
 	@Export("fitsScreen")
 	boolean fitsScreen(int var1, int var2) {
@@ -86,60 +88,63 @@ public abstract class AbstractWorldMapIcon {
 		}
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "(I)Z",
-		garbageValue = "-1652474517"
+		descriptor = "(B)Z",
+		garbageValue = "-48"
 	)
 	@Export("hasValidElement")
 	boolean hasValidElement() {
 		return this.getElement() >= 0;
 	}
 
-	@ObfuscatedName("am")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "(IIB)Z",
-		garbageValue = "21"
+		descriptor = "(III)Z",
+		garbageValue = "-2039535952"
 	)
 	@Export("elementFitsScreen")
 	boolean elementFitsScreen(int var1, int var2) {
 		if (!this.hasValidElement()) {
 			return false;
 		} else {
-			WorldMapElement var3 = class165.WorldMapElement_get(this.getElement());
+			WorldMapElement var3 = class142.WorldMapElement_get(this.getElement());
 			int var4 = this.getSubWidth();
 			int var5 = this.getSubHeight();
 			switch(var3.horizontalAlignment.value) {
 			case 0:
-				if (var1 < this.screenX - var4 / 2 || var1 > var4 / 2 + this.screenX) {
-					return false;
-				}
-				break;
-			case 1:
 				if (var1 >= this.screenX && var1 < var4 + this.screenX) {
 					break;
 				}
 
 				return false;
+			case 1:
+				if (var1 > this.screenX - var4 && var1 <= this.screenX) {
+					break;
+				}
+
+				return false;
 			case 2:
-				if (var1 <= this.screenX - var4 || var1 > this.screenX) {
+				if (var1 < this.screenX - var4 / 2 || var1 > var4 / 2 + this.screenX) {
 					return false;
 				}
 			}
 
 			switch(var3.verticalAlignment.value) {
 			case 0:
-				if (var2 <= this.screenY - var5 || var2 > this.screenY) {
-					return false;
+				if (var2 >= this.screenY - var5 / 2 && var2 <= var5 / 2 + this.screenY) {
+					break;
 				}
-				break;
+
+				return false;
 			case 1:
-				if (var2 < this.screenY || var2 >= var5 + this.screenY) {
-					return false;
+				if (var2 > this.screenY - var5 && var2 <= this.screenY) {
+					break;
 				}
-				break;
+
+				return false;
 			case 2:
-				if (var2 < this.screenY - var5 / 2 || var2 > var5 / 2 + this.screenY) {
+				if (var2 < this.screenY || var2 >= var5 + this.screenY) {
 					return false;
 				}
 			}
@@ -148,10 +153,10 @@ public abstract class AbstractWorldMapIcon {
 		}
 	}
 
-	@ObfuscatedName("ar")
+	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "(III)Z",
-		garbageValue = "-502571839"
+		descriptor = "(IIB)Z",
+		garbageValue = "-10"
 	)
 	@Export("labelFitsScreen")
 	boolean labelFitsScreen(int var1, int var2) {
@@ -159,36 +164,54 @@ public abstract class AbstractWorldMapIcon {
 		if (var3 == null) {
 			return false;
 		} else if (var1 >= this.screenX - var3.width / 2 && var1 <= var3.width / 2 + this.screenX) {
-			return var2 >= this.screenY && var2 <= this.screenY + var3.height;
+			return var2 >= this.screenY && var2 <= var3.height + this.screenY;
 		} else {
 			return false;
 		}
 	}
 
-	@ObfuscatedName("ad")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(IIIII)I",
-		garbageValue = "-1088550385"
+		descriptor = "(Lpo;I)V",
+		garbageValue = "1919190771"
 	)
-	static final int method5075(int var0, int var1, int var2, int var3) {
-		return var2 * var1 - var3 * var0 >> 16;
+	public static void method6255(AbstractArchive var0) {
+		ParamComposition.ParamDefinition_archive = var0;
 	}
 
-	@ObfuscatedName("ag")
+	@ObfuscatedName("ax")
 	@ObfuscatedSignature(
-		descriptor = "(I)[Lhx;",
-		garbageValue = "1201282360"
+		descriptor = "(IIB)V",
+		garbageValue = "64"
 	)
-	static VerticalAlignment[] method5050() {
-		return new VerticalAlignment[]{VerticalAlignment.field2044, VerticalAlignment.field2043, VerticalAlignment.VerticalAlignment_centered};
+	public static void method6257(int var0, int var1) {
+		class433.method8269(var0, var1, 0, 0);
+		class334.field3619.clear();
+		class334.field3620.clear();
+		if (class334.musicSongs.isEmpty() || var0 == 0 && var1 == 0) {
+			class60.method1192();
+		} else {
+			class334.field3620.add(new DelayFadeTask((SongTask)null, class334.musicPlayerStatus));
+			class334.field3620.add(new FadeOutTask((SongTask)null, 0, false, class334.field3614));
+			ArrayList var3 = new ArrayList();
+			Iterator var4 = class334.musicSongs.iterator();
+
+			while (var4.hasNext()) {
+				MusicSong var5 = (MusicSong)var4.next();
+				var3.add(var5);
+			}
+
+			class334.field3620.add(new class442((SongTask)null, var3));
+		}
+
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("jd")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;I)V",
-		garbageValue = "-1757074899"
+		descriptor = "(I)Z",
+		garbageValue = "-1172208687"
 	)
-	static final void method5076(String var0) {
-		VarbitComposition.addGameMessage(30, "", var0);
+	static boolean method6237() {
+		return (Client.drawPlayerNames & 8) != 0;
 	}
 }

@@ -1,89 +1,61 @@
-import net.runelite.mapping.Export;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("fh")
-public enum class133 implements Enum {
-	@ObfuscatedName("aq")
-	@ObfuscatedSignature(
-		descriptor = "Lfh;"
-	)
-	field1565(0, 0),
-	@ObfuscatedName("ad")
-	@ObfuscatedSignature(
-		descriptor = "Lfh;"
-	)
-	field1561(1, 1),
-	@ObfuscatedName("ag")
-	@ObfuscatedSignature(
-		descriptor = "Lfh;"
-	)
-	field1562(2, 2),
-	@ObfuscatedName("ak")
-	@ObfuscatedSignature(
-		descriptor = "Lfh;"
-	)
-	field1563(3, 3),
-	@ObfuscatedName("ap")
-	@ObfuscatedSignature(
-		descriptor = "Lfh;"
-	)
-	field1564(4, 4);
+@ObfuscatedName("ft")
+public class class133 {
+	@ObfuscatedName("am")
+	public static final float field1561;
+	@ObfuscatedName("ax")
+	public static final float field1565;
 
-	@ObfuscatedName("uq")
-	@ObfuscatedGetter(
-		intValue = -1524882693
-	)
-	static int field1560;
-	@ObfuscatedName("an")
-	@ObfuscatedGetter(
-		intValue = -997691535
-	)
-	final int field1568;
-	@ObfuscatedName("aj")
-	@ObfuscatedGetter(
-		intValue = 1133507491
-	)
-	final int field1566;
-
-	class133(int var3, int var4) {
-		this.field1568 = var3;
-		this.field1566 = var4;
+	static {
+		field1561 = Math.ulp(1.0F);
+		field1565 = 2.0F * field1561;
 	}
 
 	@ObfuscatedName("aq")
 	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "2071992588"
+		descriptor = "(IB)Lfu;",
+		garbageValue = "-109"
 	)
-	@Export("rsOrdinal")
-	public int rsOrdinal() {
-		return this.field1566;
-	}
-
-	@ObfuscatedName("ag")
-	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-507118558"
-	)
-	@Export("savePreferences")
-	static void savePreferences() {
-		AccessFile var0 = null;
-
-		try {
-			var0 = UserComparator10.getPreferencesFile("", class109.field1400.name, true);
-			Buffer var1 = class105.clientPreferences.toBuffer();
-			var0.write(var1.array, 0, var1.offset);
-		} catch (Exception var3) {
+	static class139 method3273(int var0) {
+		class139[] var1 = new class139[]{class139.field1638, class139.field1650, class139.field1639, class139.field1656, class139.field1646, class139.field1642, class139.field1637, class139.field1644, class139.field1641, class139.field1645, class139.field1643, class139.field1648, class139.field1649, class139.field1640, class139.field1647, class139.field1652, class139.field1653};
+		class139 var2 = (class139)ArchiveDiskAction.findEnumerated(var1, var0);
+		if (var2 == null) {
+			var2 = class139.field1638;
 		}
 
-		try {
-			if (var0 != null) {
-				var0.closeSync(true);
+		return var2;
+	}
+
+	@ObfuscatedName("cf")
+	@ObfuscatedSignature(
+		descriptor = "(ILdt;ZI)I",
+		garbageValue = "-1298079788"
+	)
+	static int method3274(int var0, Script var1, boolean var2) {
+		int var3;
+		int var4;
+		if (var0 == 8000) {
+			--class320.Interpreter_intStackSize;
+			var3 = Interpreter.Interpreter_intStack[class320.Interpreter_intStackSize];
+			var4 = Interpreter.Interpreter_arrayLengths[var3];
+			class132.method3256(Interpreter.Interpreter_arrays[var3], new int[var4], 0, var4 - 1);
+			return 1;
+		} else if (var0 == 8001) {
+			class320.Interpreter_intStackSize -= 3;
+			var3 = Interpreter.Interpreter_intStack[class320.Interpreter_intStackSize];
+			var4 = Interpreter.Interpreter_intStack[class320.Interpreter_intStackSize + 1];
+			int var5 = Interpreter.Interpreter_intStack[class320.Interpreter_intStackSize + 2];
+			int var6 = Interpreter.Interpreter_arrayLengths[var3];
+			if (var6 <= 1) {
+				return 1;
+			} else {
+				class450.method8628(Interpreter.Interpreter_arrays[var3], var6, var4, var5);
+				return 1;
 			}
-		} catch (Exception var2) {
+		} else {
+			return 2;
 		}
-
 	}
 }

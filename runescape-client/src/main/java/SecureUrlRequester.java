@@ -7,10 +7,10 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("en")
+@ObfuscatedName("eb")
 @Implements("SecureUrlRequester")
 public class SecureUrlRequester extends UrlRequester {
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ax")
 	@Export("secureHttps")
 	final boolean secureHttps;
 
@@ -19,40 +19,43 @@ public class SecureUrlRequester extends UrlRequester {
 		this.secureHttps = var1;
 	}
 
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(Lez;I)V",
-		garbageValue = "-1132577463"
+		descriptor = "(Lek;I)V",
+		garbageValue = "2145007281"
 	)
 	@Export("openConnection")
 	void openConnection(UrlRequest var1) throws IOException {
 		URLConnection var2 = null;
 		boolean var9 = false;
 
-		label129: {
-			HttpURLConnection var12;
-			label130: {
+		HttpURLConnection var12;
+		label136: {
+			label128: {
 				try {
-					var9 = true;
-					String var3 = var1.field1483.getProtocol();
-					if (var3.equals("http")) {
-						var2 = this.openHttpConnection(var1);
-					} else {
-						if (!var3.equals("https")) {
-							var1.field1482 = UrlRequest.field1485;
-							var9 = false;
-							break label129;
+					label131: {
+						var9 = true;
+						String var3 = var1.field1502.getProtocol();
+						if (var3.equals("http")) {
+							var2 = this.openHttpConnection(var1);
+						} else {
+							if (!var3.equals("https")) {
+								var1.field1504 = UrlRequest.field1503;
+								var9 = false;
+								break label131;
+							}
+
+							var2 = this.openHttpsConnection(var1);
 						}
 
-						var2 = this.openHttpsConnection(var1);
+						this.method3134(var2, var1);
+						var9 = false;
+						break label136;
 					}
-
-					this.method2943(var2, var1);
-					var9 = false;
-					break label130;
 				} catch (IOException var10) {
-					var1.field1482 = UrlRequest.field1485;
+					var1.field1504 = UrlRequest.field1503;
 					var9 = false;
+					break label128;
 				} finally {
 					if (var9) {
 						if (var2 != null && var2 instanceof HttpURLConnection) {
@@ -64,8 +67,8 @@ public class SecureUrlRequester extends UrlRequester {
 				}
 
 				if (var2 != null && var2 instanceof HttpURLConnection) {
-					var12 = (HttpURLConnection)var2;
-					var12.disconnect();
+					HttpURLConnection var4 = (HttpURLConnection)var2;
+					var4.disconnect();
 				}
 
 				return;
@@ -80,37 +83,51 @@ public class SecureUrlRequester extends UrlRequester {
 		}
 
 		if (var2 != null && var2 instanceof HttpURLConnection) {
-			HttpURLConnection var4 = (HttpURLConnection)var2;
-			var4.disconnect();
+			var12 = (HttpURLConnection)var2;
+			var12.disconnect();
 		}
 
 	}
 
-	@ObfuscatedName("aa")
+	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "(Lez;B)Ljava/net/URLConnection;",
-		garbageValue = "-64"
+		descriptor = "(Lek;I)Ljava/net/URLConnection;",
+		garbageValue = "373156715"
 	)
 	@Export("openHttpConnection")
 	URLConnection openHttpConnection(UrlRequest var1) throws IOException {
-		URLConnection var2 = var1.field1483.openConnection();
+		URLConnection var2 = var1.field1502.openConnection();
 		this.setDefaultRequestProperties(var2);
 		return var2;
 	}
 
-	@ObfuscatedName("as")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "(Lez;B)Ljava/net/URLConnection;",
-		garbageValue = "-122"
+		descriptor = "(Lek;I)Ljava/net/URLConnection;",
+		garbageValue = "-1357287561"
 	)
 	@Export("openHttpsConnection")
 	URLConnection openHttpsConnection(UrlRequest var1) throws IOException {
-		HttpsURLConnection var2 = (HttpsURLConnection)var1.field1483.openConnection();
+		HttpsURLConnection var2 = (HttpsURLConnection)var1.field1502.openConnection();
 		if (!this.secureHttps) {
-			var2.setSSLSocketFactory(SecureRandomSSLSocketFactory.method197());
+			if (SecureRandomSSLSocketFactory.INSTANCE == null) {
+				SecureRandomSSLSocketFactory.INSTANCE = new SecureRandomSSLSocketFactory();
+			}
+
+			SecureRandomSSLSocketFactory var4 = SecureRandomSSLSocketFactory.INSTANCE;
+			var2.setSSLSocketFactory(var4);
 		}
 
 		this.setDefaultRequestProperties(var2);
 		return var2;
+	}
+
+	@ObfuscatedName("ax")
+	@ObfuscatedSignature(
+		descriptor = "(IIIII)I",
+		garbageValue = "965500672"
+	)
+	static final int method3160(int var0, int var1, int var2, int var3) {
+		return var2 * var1 - var3 * var0 >> 16;
 	}
 }

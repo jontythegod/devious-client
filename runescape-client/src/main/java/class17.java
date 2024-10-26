@@ -7,7 +7,7 @@ import javax.security.cert.X509Certificate;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ay")
+@ObfuscatedName("ai")
 class class17 implements SSLSession {
 	// $FF: synthetic field
 	@ObfuscatedSignature(
@@ -22,23 +22,15 @@ class class17 implements SSLSession {
 		this.this$1 = var1;
 	}
 
-	public void putValue(String var1, Object var2) {
-		throw new UnsupportedOperationException();
+	public int getApplicationBufferSize() {
+		return 0;
 	}
 
 	public long getCreationTime() {
 		throw new UnsupportedOperationException();
 	}
 
-	public byte[] getId() {
-		throw new UnsupportedOperationException();
-	}
-
-	public long getLastAccessedTime() {
-		throw new UnsupportedOperationException();
-	}
-
-	public Principal getLocalPrincipal() {
+	public Certificate[] getLocalCertificates() {
 		throw new UnsupportedOperationException();
 	}
 
@@ -50,8 +42,12 @@ class class17 implements SSLSession {
 		return null;
 	}
 
-	public String getPeerHost() {
-		throw new UnsupportedOperationException();
+	public Certificate[] getPeerCertificates() throws SSLPeerUnverifiedException {
+		return this.this$1.field49;
+	}
+
+	public int getPeerPort() {
+		return 0;
 	}
 
 	public Principal getPeerPrincipal() throws SSLPeerUnverifiedException {
@@ -74,11 +70,15 @@ class class17 implements SSLSession {
 		throw new UnsupportedOperationException();
 	}
 
-	public Certificate[] getPeerCertificates() throws SSLPeerUnverifiedException {
-		return this.this$1.field62;
+	public long getLastAccessedTime() {
+		throw new UnsupportedOperationException();
 	}
 
 	public boolean isValid() {
+		throw new UnsupportedOperationException();
+	}
+
+	public void putValue(String var1, Object var2) {
 		throw new UnsupportedOperationException();
 	}
 
@@ -86,19 +86,19 @@ class class17 implements SSLSession {
 		throw new UnsupportedOperationException();
 	}
 
-	public int getApplicationBufferSize() {
-		return 0;
-	}
-
-	public int getPeerPort() {
-		return 0;
-	}
-
-	public String getCipherSuite() {
+	public String getPeerHost() {
 		throw new UnsupportedOperationException();
 	}
 
-	public Certificate[] getLocalCertificates() {
+	public Principal getLocalPrincipal() {
+		throw new UnsupportedOperationException();
+	}
+
+	public byte[] getId() {
+		throw new UnsupportedOperationException();
+	}
+
+	public String getCipherSuite() {
 		throw new UnsupportedOperationException();
 	}
 

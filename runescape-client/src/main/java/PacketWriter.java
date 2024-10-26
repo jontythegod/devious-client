@@ -6,85 +6,85 @@ import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 import net.runelite.rs.ScriptOpcodes;
 
-@ObfuscatedName("ev")
+@ObfuscatedName("el")
 @Implements("PacketWriter")
 public class PacketWriter {
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "Lsp;"
+		descriptor = "Lsk;"
 	)
 	@Export("socket")
 	AbstractSocket socket;
-	@ObfuscatedName("ad")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "Lpi;"
+		descriptor = "Lpr;"
 	)
 	@Export("packetBufferNodes")
 	IterableNodeDeque packetBufferNodes;
 	@ObfuscatedName("ag")
 	@ObfuscatedGetter(
-		intValue = -2122551751
+		intValue = 422496079
 	)
 	@Export("bufferSize")
 	int bufferSize;
-	@ObfuscatedName("ak")
+	@ObfuscatedName("am")
 	@ObfuscatedSignature(
-		descriptor = "Lvp;"
+		descriptor = "Lvf;"
 	)
 	@Export("buffer")
 	Buffer buffer;
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ax")
 	@ObfuscatedSignature(
-		descriptor = "Lvs;"
+		descriptor = "Lvd;"
 	)
 	@Export("isaacCipher")
 	public IsaacCipher isaacCipher;
-	@ObfuscatedName("an")
+	@ObfuscatedName("aq")
 	@ObfuscatedSignature(
-		descriptor = "Lug;"
+		descriptor = "Lva;"
 	)
 	@Export("packetBuffer")
 	PacketBuffer packetBuffer;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "Lmp;"
+		descriptor = "Lmj;"
 	)
 	@Export("serverPacket")
 	ServerPacket serverPacket;
-	@ObfuscatedName("av")
+	@ObfuscatedName("at")
 	@ObfuscatedGetter(
-		intValue = -870602463
+		intValue = -735417501
 	)
 	@Export("serverPacketLength")
 	int serverPacketLength;
-	@ObfuscatedName("ab")
-	boolean field1461;
-	@ObfuscatedName("ai")
+	@ObfuscatedName("au")
+	boolean field1484;
+	@ObfuscatedName("ar")
 	@ObfuscatedGetter(
-		intValue = -1278220435
+		intValue = 888815997
 	)
-	int field1457;
-	@ObfuscatedName("ae")
+	int field1489;
+	@ObfuscatedName("al")
 	@ObfuscatedGetter(
-		intValue = 1102504087
+		intValue = 749185065
 	)
 	@Export("pendingWrites")
 	int pendingWrites;
-	@ObfuscatedName("au")
+	@ObfuscatedName("ad")
 	@ObfuscatedSignature(
-		descriptor = "Lmp;"
+		descriptor = "Lmj;"
 	)
-	ServerPacket field1462;
+	ServerPacket field1492;
 	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "Lmp;"
+		descriptor = "Lmj;"
 	)
-	ServerPacket field1459;
-	@ObfuscatedName("az")
+	ServerPacket field1488;
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "Lmp;"
+		descriptor = "Lmj;"
 	)
-	ServerPacket field1464;
+	ServerPacket field1493;
 
 	PacketWriter() {
 		this.packetBufferNodes = new IterableNodeDeque();
@@ -93,15 +93,15 @@ public class PacketWriter {
 		this.packetBuffer = new PacketBuffer(40000);
 		this.serverPacket = null;
 		this.serverPacketLength = 0;
-		this.field1461 = true;
-		this.field1457 = 0;
+		this.field1484 = true;
+		this.field1489 = 0;
 		this.pendingWrites = 0;
 	}
 
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "122"
+		descriptor = "(I)V",
+		garbageValue = "364411903"
 	)
 	@Export("clearBuffer")
 	final void clearBuffer() {
@@ -109,10 +109,10 @@ public class PacketWriter {
 		this.bufferSize = 0;
 	}
 
-	@ObfuscatedName("ad")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "981239932"
+		garbageValue = "799617295"
 	)
 	@Export("flush")
 	final void flush() throws IOException {
@@ -139,8 +139,8 @@ public class PacketWriter {
 
 	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "(Lmb;B)V",
-		garbageValue = "36"
+		descriptor = "(Lmq;I)V",
+		garbageValue = "1810676977"
 	)
 	@Export("addNode")
 	public final void addNode(PacketBufferNode var1) {
@@ -150,20 +150,20 @@ public class PacketWriter {
 		this.bufferSize += var1.index;
 	}
 
-	@ObfuscatedName("ak")
+	@ObfuscatedName("am")
 	@ObfuscatedSignature(
-		descriptor = "(Lsp;S)V",
-		garbageValue = "-10366"
+		descriptor = "(Lsk;I)V",
+		garbageValue = "702526911"
 	)
 	@Export("setSocket")
 	void setSocket(AbstractSocket var1) {
 		this.socket = var1;
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ax")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "1942660628"
+		garbageValue = "455731516"
 	)
 	@Export("close")
 	void close() {
@@ -174,141 +174,192 @@ public class PacketWriter {
 
 	}
 
-	@ObfuscatedName("an")
+	@ObfuscatedName("aq")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "505606497"
+		garbageValue = "-1804750267"
 	)
 	@Export("removeSocket")
 	void removeSocket() {
 		this.socket = null;
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "(I)Lsp;",
-		garbageValue = "1302914773"
+		descriptor = "(I)Lsk;",
+		garbageValue = "1302537932"
 	)
 	@Export("getSocket")
 	AbstractSocket getSocket() {
 		return this.socket;
 	}
 
-	@ObfuscatedName("aq")
-	public static int method2920(long var0) {
-		return (int)(var0 >>> 0 & 127L);
-	}
-
-	@ObfuscatedName("by")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "(ILdg;ZI)I",
-		garbageValue = "2066687441"
+		descriptor = "(ILsl;Lof;B)V",
+		garbageValue = "1"
 	)
-	static int method2940(int var0, Script var1, boolean var2) {
-		int var3;
-		if (var0 == ScriptOpcodes.CAM_FORCEANGLE) {
-			class130.Interpreter_intStackSize -= 2;
-			var3 = Interpreter.Interpreter_intStack[class130.Interpreter_intStackSize];
-			int var4 = Interpreter.Interpreter_intStack[class130.Interpreter_intStackSize + 1];
-			if (!Client.isCameraLocked) {
-				Client.camAngleX = var3;
-				Client.camAngleY = var4;
+	static void method3121(int var0, ArchiveDisk var1, Archive var2) {
+		ArchiveDiskAction var3 = new ArchiveDiskAction();
+		var3.type = 1;
+		var3.key = (long)var0;
+		var3.archiveDisk = var1;
+		var3.archive = var2;
+		synchronized(ArchiveDiskActionHandler.ArchiveDiskActionHandler_requestQueue) {
+			ArchiveDiskActionHandler.ArchiveDiskActionHandler_requestQueue.addFirst(var3);
+		}
+
+		synchronized(ArchiveDiskActionHandler.field4494) {
+			if (ArchiveDiskActionHandler.field4496 == 0) {
+				ArchiveDiskActionHandler.ArchiveDiskActionHandler_thread = new Thread(new ArchiveDiskActionHandler());
+				ArchiveDiskActionHandler.ArchiveDiskActionHandler_thread.setDaemon(true);
+				ArchiveDiskActionHandler.ArchiveDiskActionHandler_thread.start();
+				ArchiveDiskActionHandler.ArchiveDiskActionHandler_thread.setPriority(5);
 			}
 
-			return 1;
-		} else if (var0 == ScriptOpcodes.CAM_GETANGLE_XA) {
-			Interpreter.Interpreter_intStack[++class130.Interpreter_intStackSize - 1] = Client.camAngleX;
-			return 1;
-		} else if (var0 == ScriptOpcodes.CAM_GETANGLE_YA) {
-			Interpreter.Interpreter_intStack[++class130.Interpreter_intStackSize - 1] = Client.camAngleY;
-			return 1;
-		} else if (var0 == ScriptOpcodes.CAM_SETFOLLOWHEIGHT) {
-			var3 = Interpreter.Interpreter_intStack[--class130.Interpreter_intStackSize];
-			if (var3 < 0) {
-				var3 = 0;
-			}
-
-			Client.camFollowHeight = var3;
-			return 1;
-		} else if (var0 == ScriptOpcodes.CAM_GETFOLLOWHEIGHT) {
-			Interpreter.Interpreter_intStack[++class130.Interpreter_intStackSize - 1] = Client.camFollowHeight;
-			return 1;
-		} else {
-			return 2;
+			ArchiveDiskActionHandler.field4496 = 600;
 		}
 	}
 
-	@ObfuscatedName("jm")
+	@ObfuscatedName("ax")
 	@ObfuscatedSignature(
-		descriptor = "(IIIIZI)V",
-		garbageValue = "-1529308622"
+		descriptor = "(ILdt;ZB)I",
+		garbageValue = "-55"
 	)
-	@Export("setViewportShape")
-	static final void setViewportShape(int var0, int var1, int var2, int var3, boolean var4) {
-		if (var2 < 1) {
-			var2 = 1;
-		}
-
-		if (var3 < 1) {
-			var3 = 1;
-		}
-
-		int var5 = var3 - 334;
-		int var6;
-		if (var5 < 0) {
-			var6 = Client.field776;
-		} else if (var5 >= 100) {
-			var6 = Client.field777;
-		} else {
-			var6 = (Client.field777 - Client.field776) * var5 / 100 + Client.field776;
-		}
-
-		int var7 = var3 * var6 * 512 / (var2 * 334);
-		int var8;
+	static int method3110(int var0, Script var1, boolean var2) {
+		int var4;
 		int var9;
-		short var10;
-		if (var7 < Client.field782) {
-			var10 = Client.field782;
-			var6 = var10 * var2 * 334 / (var3 * 512);
-			if (var6 > Client.field781) {
-				var6 = Client.field781;
-				var8 = var3 * var6 * 512 / (var10 * 334);
-				var9 = (var2 - var8) / 2;
-				if (var4) {
-					Rasterizer2D.Rasterizer2D_resetClip();
-					Rasterizer2D.Rasterizer2D_fillRectangle(var0, var1, var9, var3, -16777216);
-					Rasterizer2D.Rasterizer2D_fillRectangle(var0 + var2 - var9, var1, var9, var3, -16777216);
+		if (var0 == ScriptOpcodes.CC_CREATE) {
+			class320.Interpreter_intStackSize -= 3;
+			var9 = Interpreter.Interpreter_intStack[class320.Interpreter_intStackSize];
+			var4 = Interpreter.Interpreter_intStack[class320.Interpreter_intStackSize + 1];
+			int var11 = Interpreter.Interpreter_intStack[class320.Interpreter_intStackSize + 2];
+			if (var4 == 0) {
+				throw new RuntimeException();
+			} else {
+				Widget var6 = TaskHandler.widgetDefinition.method6841(var9);
+				if (var6.children == null) {
+					var6.children = new Widget[var11 + 1];
 				}
 
-				var0 += var9;
-				var2 -= var9 * 2;
-			}
-		} else if (var7 > Client.field783) {
-			var10 = Client.field783;
-			var6 = var10 * var2 * 334 / (var3 * 512);
-			if (var6 < Client.field751) {
-				var6 = Client.field751;
-				var8 = var10 * var2 * 334 / (var6 * 512);
-				var9 = (var3 - var8) / 2;
-				if (var4) {
-					Rasterizer2D.Rasterizer2D_resetClip();
-					Rasterizer2D.Rasterizer2D_fillRectangle(var0, var1, var2, var9, -16777216);
-					Rasterizer2D.Rasterizer2D_fillRectangle(var0, var3 + var1 - var9, var2, var9, -16777216);
+				if (var6.children.length <= var11) {
+					Widget[] var7 = new Widget[var11 + 1];
+
+					for (int var8 = 0; var8 < var6.children.length; ++var8) {
+						var7[var8] = var6.children[var8];
+					}
+
+					var6.children = var7;
 				}
 
-				var1 += var9;
-				var3 -= var9 * 2;
+				if (var11 > 0 && var6.children[var11 - 1] == null) {
+					throw new RuntimeException("" + (var11 - 1));
+				} else {
+					Widget var12 = new Widget();
+					var12.type = var4;
+					var12.parentId = var12.id = var6.id;
+					var12.childIndex = var11;
+					var12.isIf3 = true;
+					if (var4 == 12) {
+						var12.method7267();
+						var12.method7268().method7189(new class110(var12));
+						var12.method7268().method7000(new class111(var12));
+					}
+
+					var6.children[var11] = var12;
+					if (var2) {
+						Interpreter.scriptDotWidget = var12;
+					} else {
+						class464.scriptActiveWidget = var12;
+					}
+
+					SecureRandomCallable.invalidateWidget(var6);
+					return 1;
+				}
+			}
+		} else {
+			Widget var3;
+			if (var0 == ScriptOpcodes.CC_DELETE) {
+				var3 = var2 ? Interpreter.scriptDotWidget : class464.scriptActiveWidget;
+				Widget var10 = TaskHandler.widgetDefinition.method6841(var3.id);
+				var10.children[var3.childIndex] = null;
+				SecureRandomCallable.invalidateWidget(var10);
+				return 1;
+			} else if (var0 == ScriptOpcodes.CC_DELETEALL) {
+				var3 = TaskHandler.widgetDefinition.method6841(Interpreter.Interpreter_intStack[--class320.Interpreter_intStackSize]);
+				var3.children = null;
+				SecureRandomCallable.invalidateWidget(var3);
+				return 1;
+			} else if (var0 != ScriptOpcodes.CC_FIND) {
+				if (var0 == ScriptOpcodes.IF_FIND) {
+					var3 = TaskHandler.widgetDefinition.method6841(Interpreter.Interpreter_intStack[--class320.Interpreter_intStackSize]);
+					if (var3 != null) {
+						Interpreter.Interpreter_intStack[++class320.Interpreter_intStackSize - 1] = 1;
+						if (var2) {
+							Interpreter.scriptDotWidget = var3;
+						} else {
+							class464.scriptActiveWidget = var3;
+						}
+					} else {
+						Interpreter.Interpreter_intStack[++class320.Interpreter_intStackSize - 1] = 0;
+					}
+
+					return 1;
+				} else {
+					return 2;
+				}
+			} else {
+				class320.Interpreter_intStackSize -= 2;
+				var9 = Interpreter.Interpreter_intStack[class320.Interpreter_intStackSize];
+				var4 = Interpreter.Interpreter_intStack[class320.Interpreter_intStackSize + 1];
+				Widget var5 = TaskHandler.widgetDefinition.getWidgetChild(var9, var4);
+				if (var5 != null && var4 != -1) {
+					Interpreter.Interpreter_intStack[++class320.Interpreter_intStackSize - 1] = 1;
+					if (var2) {
+						Interpreter.scriptDotWidget = var5;
+					} else {
+						class464.scriptActiveWidget = var5;
+					}
+				} else {
+					Interpreter.Interpreter_intStack[++class320.Interpreter_intStackSize - 1] = 0;
+				}
+
+				return 1;
 			}
 		}
+	}
 
-		Client.viewportZoom = var3 * var6 / 334;
-		if (var2 != Client.viewportWidth || var3 != Client.viewportHeight) {
-			class193.method3758(var2, var3);
+	@ObfuscatedName("ne")
+	@ObfuscatedSignature(
+		descriptor = "(Lny;I)Z",
+		garbageValue = "-72720997"
+	)
+	@Export("runCs1")
+	static final boolean runCs1(Widget var0) {
+		if (var0.cs1Comparisons == null) {
+			return false;
+		} else {
+			for (int var1 = 0; var1 < var0.cs1Comparisons.length; ++var1) {
+				int var2 = ClientPreferences.method2777(var0, var1);
+				int var3 = var0.cs1ComparisonValues[var1];
+				if (var0.cs1Comparisons[var1] == 2) {
+					if (var2 >= var3) {
+						return false;
+					}
+				} else if (var0.cs1Comparisons[var1] == 3) {
+					if (var2 <= var3) {
+						return false;
+					}
+				} else if (var0.cs1Comparisons[var1] == 4) {
+					if (var3 == var2) {
+						return false;
+					}
+				} else if (var3 != var2) {
+					return false;
+				}
+			}
+
+			return true;
 		}
-
-		Client.viewportOffsetX = var0;
-		Client.viewportOffsetY = var1;
-		Client.viewportWidth = var2;
-		Client.viewportHeight = var3;
 	}
 }

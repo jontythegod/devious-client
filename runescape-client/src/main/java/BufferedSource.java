@@ -7,37 +7,37 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("sz")
+@ObfuscatedName("sg")
 @Implements("BufferedSource")
 public class BufferedSource implements Runnable {
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ac")
 	@Export("thread")
 	Thread thread;
-	@ObfuscatedName("ad")
+	@ObfuscatedName("ae")
 	@Export("inputStream")
 	InputStream inputStream;
 	@ObfuscatedName("ag")
 	@ObfuscatedGetter(
-		intValue = 512687671
+		intValue = -729898229
 	)
 	@Export("capacity")
 	int capacity;
-	@ObfuscatedName("ak")
+	@ObfuscatedName("am")
 	@Export("buffer")
 	byte[] buffer;
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ax")
 	@ObfuscatedGetter(
-		intValue = 725690807
+		intValue = -1722159009
 	)
 	@Export("position")
 	int position;
-	@ObfuscatedName("an")
+	@ObfuscatedName("aq")
 	@ObfuscatedGetter(
-		intValue = -1931419243
+		intValue = -1223770531
 	)
 	@Export("limit")
 	int limit;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("af")
 	@Export("exception")
 	IOException exception;
 
@@ -52,10 +52,10 @@ public class BufferedSource implements Runnable {
 		this.thread.start();
 	}
 
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
 		descriptor = "(II)Z",
-		garbageValue = "436261401"
+		garbageValue = "1218348313"
 	)
 	@Export("isAvailable")
 	boolean isAvailable(int var1) throws IOException {
@@ -86,10 +86,10 @@ public class BufferedSource implements Runnable {
 		}
 	}
 
-	@ObfuscatedName("ad")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "(B)I",
-		garbageValue = "0"
+		descriptor = "(I)I",
+		garbageValue = "78129653"
 	)
 	@Export("available")
 	int available() throws IOException {
@@ -113,12 +113,12 @@ public class BufferedSource implements Runnable {
 	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",
-		garbageValue = "1875502007"
+		garbageValue = "526151610"
 	)
 	@Export("readUnsignedByte")
 	int readUnsignedByte() throws IOException {
 		synchronized(this) {
-			if (this.position == this.limit) {
+			if (this.limit == this.position) {
 				if (this.exception != null) {
 					throw new IOException(this.exception.toString());
 				} else {
@@ -133,10 +133,10 @@ public class BufferedSource implements Runnable {
 		}
 	}
 
-	@ObfuscatedName("ak")
+	@ObfuscatedName("am")
 	@ObfuscatedSignature(
 		descriptor = "([BIII)I",
-		garbageValue = "-316841250"
+		garbageValue = "-2018351623"
 	)
 	@Export("read")
 	int read(byte[] var1, int var2, int var3) throws IOException {
@@ -174,10 +174,10 @@ public class BufferedSource implements Runnable {
 		}
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ax")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "-748039453"
+		garbageValue = "-1761422191"
 	)
 	@Export("close")
 	void close() {
@@ -244,33 +244,21 @@ public class BufferedSource implements Runnable {
 		}
 	}
 
-	@ObfuscatedName("bh")
+	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "(ILdg;ZI)I",
-		garbageValue = "-1252528992"
+		descriptor = "(IIII)I",
+		garbageValue = "1457199540"
 	)
-	static int method8745(int var0, Script var1, boolean var2) {
-		if (var0 == 6754) {
-			int var5 = Interpreter.Interpreter_intStack[--class130.Interpreter_intStackSize];
-			NPCComposition var6 = class76.getNpcDefinition(var5);
-			Interpreter.Interpreter_stringStack[++class337.Interpreter_stringStackSize - 1] = var6 != null ? var6.name : "";
-			return 1;
-		} else {
-			NPCComposition var3;
-			if (var0 == 6764) {
-				class130.Interpreter_intStackSize -= 2;
-				var3 = class76.getNpcDefinition(Interpreter.Interpreter_intStack[class130.Interpreter_intStackSize]);
-				int var4 = Interpreter.Interpreter_intStack[class130.Interpreter_intStackSize + 1];
-				Interpreter.Interpreter_intStack[++class130.Interpreter_intStackSize - 1] = var3.method3702(var4);
-				Interpreter.Interpreter_intStack[++class130.Interpreter_intStackSize - 1] = var3.method3716(var4);
-				return 1;
-			} else if (var0 == 6765) {
-				var3 = class76.getNpcDefinition(Interpreter.Interpreter_intStack[--class130.Interpreter_intStackSize]);
-				Interpreter.Interpreter_intStack[++class130.Interpreter_intStackSize - 1] = var3 != null ? var3.combatLevel : 0;
-				return 1;
-			} else {
-				return 2;
-			}
-		}
+	static int method9109(int var0, int var1, int var2) {
+		int var3 = var0 >> 16 & 255;
+		int var4 = var0 >> 8 & 255;
+		int var5 = var0 & 255;
+		int var6 = var1 >> 16 & 255;
+		int var7 = var1 >> 8 & 255;
+		int var8 = var1 & 255;
+		int var9 = var3 + (var6 - var3 + 1) * var2 / 64 & 255;
+		int var10 = var4 + (var7 - var4 + 1) * var2 / 64 & 255;
+		int var11 = var5 + (var8 - var5 + 1) * var2 / 64 & 255;
+		return var9 << 16 | var10 << 8 | var11;
 	}
 }

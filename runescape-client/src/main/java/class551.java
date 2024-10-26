@@ -1,81 +1,68 @@
-import net.runelite.mapping.Export;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("vj")
-public class class551 implements Enum {
-	@ObfuscatedName("aq")
-	@ObfuscatedSignature(
-		descriptor = "Lvj;"
-	)
-	public static final class551 field5419;
-	@ObfuscatedName("ad")
-	@ObfuscatedSignature(
-		descriptor = "Lvj;"
-	)
-	public static final class551 field5417;
-	@ObfuscatedName("ag")
-	@ObfuscatedSignature(
-		descriptor = "Lvj;"
-	)
-	static final class551 field5422;
-	@ObfuscatedName("ak")
-	@ObfuscatedSignature(
-		descriptor = "Lvj;"
-	)
-	static final class551 field5421;
-	@ObfuscatedName("ap")
-	@ObfuscatedSignature(
-		descriptor = "Lvj;"
-	)
-	static final class551 field5420;
-	@ObfuscatedName("an")
-	@ObfuscatedSignature(
-		descriptor = "Lvj;"
-	)
-	static final class551 field5418;
-	@ObfuscatedName("aj")
-	@ObfuscatedGetter(
-		intValue = -270693175
-	)
-	final int field5423;
-	@ObfuscatedName("av")
-	@ObfuscatedGetter(
-		intValue = -1804310925
-	)
-	final int field5416;
+@ObfuscatedName("vh")
+public class class551 {
+	@ObfuscatedName("ac")
+	int[] field5419;
+	@ObfuscatedName("ae")
+	short[] field5418;
 
-	static {
-		field5419 = new class551(5, 0);
-		field5417 = new class551(4, 2);
-		field5422 = new class551(0, 5);
-		field5421 = new class551(1, 6);
-		field5420 = new class551(2, 7);
-		field5418 = new class551(3, 8);
+	@ObfuscatedSignature(
+		descriptor = "(Lhn;)V"
+	)
+	public class551(NPCComposition var1) {
+		this.field5419 = new int[8];
+		this.field5418 = new short[8];
+		int var2 = 0;
+		if (var1.method3961()) {
+			var2 = var1.method3973().length;
+			System.arraycopy(var1.method3973(), 0, this.field5419, 0, var2);
+			System.arraycopy(var1.method3975(), 0, this.field5418, 0, var2);
+		}
+
+		for (int var3 = var2; var3 < 8; ++var3) {
+			this.field5419[var3] = -1;
+			this.field5418[var3] = -1;
+		}
+
 	}
 
-	class551(int var1, int var2) {
-		this.field5423 = var1;
-		this.field5416 = var2;
+	@ObfuscatedName("ac")
+	@ObfuscatedSignature(
+		descriptor = "(I)[I",
+		garbageValue = "-2019124091"
+	)
+	public int[] method10174() {
+		return this.field5419;
 	}
 
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "2071992588"
+		descriptor = "(B)[S",
+		garbageValue = "121"
 	)
-	@Export("rsOrdinal")
-	public int rsOrdinal() {
-		return this.field5416;
+	public short[] method10181() {
+		return this.field5418;
 	}
 
 	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "(S)Z",
-		garbageValue = "-7636"
+		descriptor = "(IISI)V",
+		garbageValue = "-342488937"
 	)
-	public boolean method9855() {
-		return this == field5417;
+	public void method10176(int var1, int var2, short var3) {
+		this.field5419[var1] = var2;
+		this.field5418[var1] = var3;
+	}
+
+	@ObfuscatedName("am")
+	@ObfuscatedSignature(
+		descriptor = "([I[SI)V",
+		garbageValue = "2099996310"
+	)
+	public void method10177(int[] var1, short[] var2) {
+		this.field5419 = var1;
+		this.field5418 = var2;
 	}
 }

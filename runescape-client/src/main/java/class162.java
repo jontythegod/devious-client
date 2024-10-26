@@ -3,81 +3,123 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("gc")
-public class class162 extends class147 {
-	@ObfuscatedName("aq")
-	@ObfuscatedGetter(
-		longValue = 90337108135687261L
+@ObfuscatedName("gs")
+public class class162 extends class166 {
+	@ObfuscatedName("ay")
+	@ObfuscatedSignature(
+		descriptor = "Lli;"
 	)
-	long field1800;
-	@ObfuscatedName("ad")
-	String field1799;
+	@Export("worldMapEvent")
+	static WorldMapEvent worldMapEvent;
+	@ObfuscatedName("jj")
+	@ObfuscatedSignature(
+		descriptor = "Ldd;"
+	)
+	@Export("worldView")
+	static WorldView worldView;
+	@ObfuscatedName("ac")
+	String field1795;
+	@ObfuscatedName("ae")
+	@ObfuscatedGetter(
+		intValue = 904218063
+	)
+	int field1794;
 	@ObfuscatedName("ag")
-	@ObfuscatedGetter(
-		intValue = 1253382525
-	)
-	int field1801;
+	byte field1793;
 	// $FF: synthetic field
 	@ObfuscatedSignature(
-		descriptor = "Lfn;"
+		descriptor = "Lgj;"
 	)
-	final class150 this$0;
+	final class167 this$0;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lfn;)V"
+		descriptor = "(Lgj;)V"
 	)
-	class162(class150 var1) {
+	class162(class167 var1) {
 		this.this$0 = var1;
-		this.field1800 = -1L;
-		this.field1799 = null;
-		this.field1801 = 0;
+		this.field1795 = null;
 	}
 
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(Lvp;B)V",
-		garbageValue = "118"
+		descriptor = "(Lvf;B)V",
+		garbageValue = "0"
 	)
-	void vmethod3528(Buffer var1) {
+	void vmethod3761(Buffer var1) {
 		if (var1.readUnsignedByte() != 255) {
 			--var1.offset;
-			this.field1800 = var1.readLong();
+			var1.readLong();
 		}
 
-		this.field1799 = var1.readStringCp1252NullTerminatedOrNull();
-		this.field1801 = var1.readUnsignedShort();
+		this.field1795 = var1.readStringCp1252NullTerminatedOrNull();
+		this.field1794 = var1.readUnsignedShort();
+		this.field1793 = var1.readByte();
+		var1.readLong();
+	}
+
+	@ObfuscatedName("ae")
+	@ObfuscatedSignature(
+		descriptor = "(Lgm;I)V",
+		garbageValue = "-1593238865"
+	)
+	void vmethod3762(ClanChannel var1) {
+		ClanChannelMember var2 = new ClanChannelMember();
+		var2.username = new Username(this.field1795);
+		var2.world = this.field1794;
+		var2.rank = this.field1793;
+		var1.addMember(var2);
 	}
 
 	@ObfuscatedName("ad")
 	@ObfuscatedSignature(
-		descriptor = "(Lgk;B)V",
-		garbageValue = "3"
+		descriptor = "(Ljava/lang/String;I)Ljava/lang/String;",
+		garbageValue = "2058281313"
 	)
-	void vmethod3530(ClanSettings var1) {
-		var1.method3378(this.field1800, this.field1799, this.field1801);
+	public static String method3641(String var0) {
+		int var1 = var0.length();
+		char[] var2 = new char[var1];
+		byte var3 = 2;
+
+		for (int var4 = 0; var4 < var1; ++var4) {
+			char var5 = var0.charAt(var4);
+			if (var3 == 0) {
+				var5 = Character.toLowerCase(var5);
+			} else if (var3 == 2 || Character.isUpperCase(var5)) {
+				var5 = ModelData0.method5515(var5);
+			}
+
+			if (Character.isLetter(var5)) {
+				var3 = 0;
+			} else if (var5 != '.' && var5 != '?' && var5 != '!') {
+				if (Character.isSpaceChar(var5)) {
+					if (var3 != 2) {
+						var3 = 1;
+					}
+				} else {
+					var3 = 1;
+				}
+			} else {
+				var3 = 2;
+			}
+
+			var2[var4] = var5;
+		}
+
+		return new String(var2);
 	}
 
-	@ObfuscatedName("aq")
+	@ObfuscatedName("iz")
 	@ObfuscatedSignature(
-		descriptor = "(IB)I",
-		garbageValue = "96"
+		descriptor = "(ZB)V",
+		garbageValue = "1"
 	)
-	@Export("getVarbit")
-	public static int getVarbit(int var0) {
-		VarbitComposition var1 = ItemContainer.method2361(var0);
-		int var2 = var1.baseVar;
-		int var3 = var1.startBit;
-		int var4 = var1.endBit;
-		int var5 = Varps.Varps_masks[var4 - var3];
-		return Varps.Varps_main[var2] >> var3 & var5;
-	}
+	@Export("setAuthenticationScheme")
+	static final void setAuthenticationScheme(boolean var0) {
+		if (var0) {
+			Client.authenticationScheme = Login.rememberUsername ? AuthenticationScheme.TOKEN_REMEMBER : AuthenticationScheme.TOKEN;
+		} else {
+			Client.authenticationScheme = class461.clientPreferences.containsKey(Login.Login_username) ? AuthenticationScheme.USERNAME_PASSWORD_REMEMBER : AuthenticationScheme.USERNAME_PASSWORD;
+		}
 
-	@ObfuscatedName("aq")
-	@ObfuscatedSignature(
-		descriptor = "(II)I",
-		garbageValue = "-586745974"
-	)
-	public static int method3436(int var0) {
-		return var0 >>> 12;
 	}
 }

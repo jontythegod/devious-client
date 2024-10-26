@@ -1,154 +1,119 @@
-import java.awt.Component;
-import java.util.ArrayList;
 import java.util.concurrent.locks.ReentrantLock;
 import net.runelite.mapping.Export;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("bd")
+@ObfuscatedName("bt")
 public class class47 {
-	@ObfuscatedName("kn")
-	@ObfuscatedGetter(
-		intValue = -1951368845
-	)
-	@Export("cameraX")
-	static int cameraX;
-	@ObfuscatedName("me")
-	@ObfuscatedGetter(
-		intValue = 1043320483
-	)
-	static int field314;
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "Lcl;"
+		descriptor = "Lcf;"
 	)
-	VorbisSample field310;
-	@ObfuscatedName("ad")
-	@ObfuscatedSignature(
-		descriptor = "Lbl;"
-	)
-	RawSound field311;
-	@ObfuscatedName("ag")
-	ReentrantLock field313;
-
-	@ObfuscatedSignature(
-		descriptor = "(Lcl;Lbl;)V"
-	)
-	class47(VorbisSample var1, RawSound var2) {
-		this.field310 = var1;
-		this.field311 = var2;
-		this.field313 = new ReentrantLock();
-	}
-
-	@ObfuscatedName("ad")
-	@ObfuscatedSignature(
-		descriptor = "(Ljava/awt/Component;B)V",
-		garbageValue = "0"
-	)
-	static void method899(Component var0) {
-		var0.removeMouseListener(MouseHandler.MouseHandler_instance);
-		var0.removeMouseMotionListener(MouseHandler.MouseHandler_instance);
-		var0.removeFocusListener(MouseHandler.MouseHandler_instance);
-		MouseHandler.MouseHandler_currentButtonVolatile = 0;
-	}
-
+	VorbisSample field317;
 	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "(IIIIIIII)Z",
-		garbageValue = "690538178"
+		descriptor = "Lbg;"
 	)
-	static final boolean method902(int var0, int var1, int var2, int var3, int var4, int var5, int var6) {
-		int var7 = ViewportMouse.ViewportMouse_y + var6;
-		if (var7 < var0 && var7 < var1 && var7 < var2) {
-			return false;
-		} else {
-			var7 = ViewportMouse.ViewportMouse_y - var6;
-			if (var7 > var0 && var7 > var1 && var7 > var2) {
-				return false;
+	RawSound field318;
+	@ObfuscatedName("ag")
+	ReentrantLock field316;
+
+	@ObfuscatedSignature(
+		descriptor = "(Lcf;Lbg;)V"
+	)
+	class47(VorbisSample var1, RawSound var2) {
+		this.field317 = var1;
+		this.field318 = var2;
+		this.field316 = new ReentrantLock();
+	}
+
+	@ObfuscatedName("ac")
+	public static final int method896(double var0, double var2, double var4) {
+		double var6 = var4;
+		double var8 = var4;
+		double var10 = var4;
+		if (var2 != 0.0D) {
+			double var12;
+			if (var4 < 0.5D) {
+				var12 = var4 * (var2 + 1.0D);
 			} else {
-				var7 = ViewportMouse.ViewportMouse_x + var6;
-				if (var7 < var3 && var7 < var4 && var7 < var5) {
-					return false;
-				} else {
-					var7 = ViewportMouse.ViewportMouse_x - var6;
-					return var7 <= var3 || var7 <= var4 || var7 <= var5;
-				}
+				var12 = var4 + var2 - var4 * var2;
+			}
+
+			double var14 = var4 * 2.0D - var12;
+			double var16 = 0.3333333333333333D + var0;
+			if (var16 > 1.0D) {
+				--var16;
+			}
+
+			double var20 = var0 - 0.3333333333333333D;
+			if (var20 < 0.0D) {
+				++var20;
+			}
+
+			if (var16 * 6.0D < 1.0D) {
+				var6 = var16 * (var12 - var14) * 6.0D + var14;
+			} else if (var16 * 2.0D < 1.0D) {
+				var6 = var12;
+			} else if (var16 * 3.0D < 2.0D) {
+				var6 = var14 + (0.6666666666666666D - var16) * (var12 - var14) * 6.0D;
+			} else {
+				var6 = var14;
+			}
+
+			if (var0 * 6.0D < 1.0D) {
+				var8 = var0 * 6.0D * (var12 - var14) + var14;
+			} else if (var0 * 2.0D < 1.0D) {
+				var8 = var12;
+			} else if (var0 * 3.0D < 2.0D) {
+				var8 = var14 + (0.6666666666666666D - var0) * (var12 - var14) * 6.0D;
+			} else {
+				var8 = var14;
+			}
+
+			if (var20 * 6.0D < 1.0D) {
+				var10 = var14 + var20 * 6.0D * (var12 - var14);
+			} else if (2.0D * var20 < 1.0D) {
+				var10 = var12;
+			} else if (var20 * 3.0D < 2.0D) {
+				var10 = (var12 - var14) * (0.6666666666666666D - var20) * 6.0D + var14;
+			} else {
+				var10 = var14;
 			}
 		}
+
+		int var22 = (int)(var6 * 256.0D);
+		int var13 = (int)(256.0D * var8);
+		int var23 = (int)(var10 * 256.0D);
+		int var15 = var23 + (var13 << 8) + (var22 << 16);
+		return var15;
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "-62"
+		descriptor = "(I)[Lkx;",
+		garbageValue = "331616578"
 	)
-	static void method901() {
-		class163.updateLoginIndex(24);
-		VerticalAlignment.setLoginResponseString("", "You were disconnected from the server.", "");
+	static class271[] method895() {
+		return new class271[]{class271.field3005, class271.field3010, class271.field3007, class271.field3011, class271.field3009, class271.field3008, class271.field3006};
 	}
 
-	@ObfuscatedName("aw")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "-1935757196"
+		garbageValue = "1128579249"
 	)
-	static void method900() {
-		if (!class105.clientPreferences.isTitleMusicDisabled()) {
-			ArrayList var0 = new ArrayList();
-			var0.add(new MusicSong(class199.archive6, "scape main", "", 255, false));
-			FontName.method9220(var0, 0, 0, 0, 100, false);
-		} else {
-			class137.method3187(0, 0);
-		}
-
+	public static void method894() {
+		class197.field2022.clear();
 	}
 
-	@ObfuscatedName("lx")
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "(ILjava/lang/String;I)V",
-		garbageValue = "1933764384"
+		descriptor = "(I)Lcr;",
+		garbageValue = "-1090907831"
 	)
-	static void method903(int var0, String var1) {
-		int var2 = SoundCache.localPlayer.worldView.playerUpdateManager.playerCount;
-		int[] var3 = SoundCache.localPlayer.worldView.playerUpdateManager.playerIndices;
-		boolean var4 = false;
-		Username var5 = new Username(var1, Projectile.loginType);
-
-		for (int var6 = 0; var6 < var2; ++var6) {
-			Player var7 = SoundCache.localPlayer.worldView.players[var3[var6]];
-			if (var7 != null && var7 != SoundCache.localPlayer && var7.username != null && var7.username.equals(var5)) {
-				PacketBufferNode var8;
-				if (var0 == 1) {
-					var8 = class170.getPacketBufferNode(ClientPacket.OPPLAYER1, Client.packetWriter.isaacCipher);
-					var8.packetBuffer.writeByteSub(0);
-					var8.packetBuffer.writeShortAdd(var3[var6]);
-					Client.packetWriter.addNode(var8);
-				} else if (var0 == 4) {
-					var8 = class170.getPacketBufferNode(ClientPacket.OPPLAYER4, Client.packetWriter.isaacCipher);
-					var8.packetBuffer.writeByteSub(0);
-					var8.packetBuffer.writeShort(var3[var6]);
-					Client.packetWriter.addNode(var8);
-				} else if (var0 == 6) {
-					var8 = class170.getPacketBufferNode(ClientPacket.OPPLAYER6, Client.packetWriter.isaacCipher);
-					var8.packetBuffer.writeShortAddLE(var3[var6]);
-					var8.packetBuffer.writeByteAdd(0);
-					Client.packetWriter.addNode(var8);
-				} else if (var0 == 7) {
-					var8 = class170.getPacketBufferNode(ClientPacket.OPPLAYER7, Client.packetWriter.isaacCipher);
-					var8.packetBuffer.writeShortAddLE(var3[var6]);
-					var8.packetBuffer.writeByteAdd(0);
-					Client.packetWriter.addNode(var8);
-				}
-
-				var4 = true;
-				break;
-			}
-		}
-
-		if (!var4) {
-			VarbitComposition.addGameMessage(4, "", "Unable to find " + var1);
-		}
-
+	@Export("getNextWorldListWorld")
+	static World getNextWorldListWorld() {
+		return World.World_listCount < World.World_count ? SoundSystem.World_worlds[++World.World_listCount - 1] : null;
 	}
 }

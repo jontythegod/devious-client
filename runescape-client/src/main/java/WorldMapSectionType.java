@@ -3,52 +3,51 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
-@ObfuscatedName("jt")
+@ObfuscatedName("le")
 @Implements("WorldMapSectionType")
 public enum WorldMapSectionType implements Enum {
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "Ljt;"
+		descriptor = "Lle;"
 	)
 	@Export("WORLDMAPSECTIONTYPE0")
-	WORLDMAPSECTIONTYPE0(2, (byte)0),
-	@ObfuscatedName("ad")
+	WORLDMAPSECTIONTYPE0(3, (byte)0),
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "Ljt;"
+		descriptor = "Lle;"
 	)
 	@Export("WORLDMAPSECTIONTYPE1")
-	WORLDMAPSECTIONTYPE1(1, (byte)1),
+	WORLDMAPSECTIONTYPE1(0, (byte)1),
 	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "Ljt;"
+		descriptor = "Lle;"
 	)
 	@Export("WORLDMAPSECTIONTYPE2")
-	WORLDMAPSECTIONTYPE2(3, (byte)2),
-	@ObfuscatedName("ak")
+	WORLDMAPSECTIONTYPE2(2, (byte)2),
+	@ObfuscatedName("am")
 	@ObfuscatedSignature(
-		descriptor = "Ljt;"
+		descriptor = "Lle;"
 	)
 	@Export("WORLDMAPSECTIONTYPE3")
-	WORLDMAPSECTIONTYPE3(0, (byte)3);
+	WORLDMAPSECTIONTYPE3(1, (byte)3);
 
-	@ObfuscatedName("fg")
+	@ObfuscatedName("so")
 	@ObfuscatedSignature(
-		descriptor = "Loz;"
+		descriptor = "Lgo;"
 	)
-	static Archive field2665;
-	@ObfuscatedName("uy")
+	@Export("guestClanSettings")
+	static ClanSettings guestClanSettings;
+	@ObfuscatedName("ax")
 	@ObfuscatedGetter(
-		intValue = 561283007
-	)
-	static int field2666;
-	@ObfuscatedName("ap")
-	@ObfuscatedGetter(
-		intValue = 754386531
+		intValue = -152018307
 	)
 	@Export("type")
 	final int type;
-	@ObfuscatedName("an")
+	@ObfuscatedName("aq")
 	@Export("id")
 	final byte id;
 
@@ -57,73 +56,63 @@ public enum WorldMapSectionType implements Enum {
 		this.id = var4;
 	}
 
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",
-		garbageValue = "2071992588"
+		garbageValue = "-350930589"
 	)
 	@Export("rsOrdinal")
 	public int rsOrdinal() {
 		return this.id;
 	}
 
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ax")
 	@ObfuscatedSignature(
-		descriptor = "(II)Lut;",
-		garbageValue = "-408274121"
+		descriptor = "(I)[Lle;",
+		garbageValue = "633074481"
 	)
-	@Export("getDbRowType")
-	public static DbRowType getDbRowType(int var0) {
-		DbRowType var1 = (DbRowType)DbRowType.DBRowType_cache.get((long)var0);
-		if (var1 != null) {
-			return var1;
-		} else {
-			byte[] var2 = DbRowType.field5305.takeFile(38, var0);
-			var1 = new DbRowType();
-			if (var2 != null) {
-				var1.method9460(new Buffer(var2));
-			}
-
-			var1.method9459();
-			DbRowType.DBRowType_cache.put(var1, (long)var0);
-			return var1;
-		}
+	static WorldMapSectionType[] method6141() {
+		return new WorldMapSectionType[]{WORLDMAPSECTIONTYPE3, WORLDMAPSECTIONTYPE1, WORLDMAPSECTIONTYPE0, WORLDMAPSECTIONTYPE2};
 	}
 
-	@ObfuscatedName("ad")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "(II)Lha;",
-		garbageValue = "1966297166"
+		descriptor = "(Lorg/json/JSONObject;Ljava/lang/String;B)[F",
+		garbageValue = "-24"
 	)
-	public static HitSplatDefinition method4961(int var0) {
-		HitSplatDefinition var1 = (HitSplatDefinition)HitSplatDefinition.HitSplatDefinition_cached.get((long)var0);
-		if (var1 != null) {
-			return var1;
-		} else {
-			byte[] var2 = HitSplatDefinition.HitSplatDefinition_archive.takeFile(32, var0);
-			var1 = new HitSplatDefinition();
-			if (var2 != null) {
-				var1.decode(new Buffer(var2));
-			}
+	static float[] method6140(JSONObject var0, String var1) throws JSONException {
+		float[] var2 = new float[4];
 
-			HitSplatDefinition.HitSplatDefinition_cached.put(var1, (long)var0);
-			return var1;
+		try {
+			JSONArray var3 = var0.getJSONArray(var1);
+			var2[0] = (float)var3.optDouble(0, 0.0D);
+			var2[1] = (float)var3.optDouble(1, 0.0D);
+			var2[2] = (float)var3.optDouble(2, 1.0D);
+			var2[3] = (float)var3.optDouble(3, 1.0D);
+		} catch (JSONException var4) {
+			var2[0] = 0.0F;
+			var2[1] = 0.0F;
+			var2[2] = 1.0F;
+			var2[3] = 1.0F;
 		}
+
+		return var2;
 	}
 
-	@ObfuscatedName("ia")
+	@ObfuscatedName("bh")
 	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "2"
+		descriptor = "(Lbk;I)V",
+		garbageValue = "-1935308761"
 	)
-	static final void method4962() {
-		if (GrandExchangeEvents.field4576) {
-			for (int var0 = 0; var0 < class511.topLevelWorldView.playerUpdateManager.playerCount; ++var0) {
-				Player var1 = class511.topLevelWorldView.players[class511.topLevelWorldView.playerUpdateManager.playerIndices[var0]];
-				var1.method2412();
-			}
+	@Export("PcmStream_disable")
+	static final void PcmStream_disable(PcmStream var0) {
+		var0.active = false;
+		if (var0.sound != null) {
+			var0.sound.position = 0;
+		}
 
-			GrandExchangeEvents.field4576 = false;
+		for (PcmStream var1 = var0.firstSubStream(); var1 != null; var1 = var0.nextSubStream()) {
+			PcmStream_disable(var1);
 		}
 
 	}

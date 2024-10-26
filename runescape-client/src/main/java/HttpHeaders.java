@@ -11,16 +11,16 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("rw")
+@ObfuscatedName("rf")
 @Implements("HttpHeaders")
 public class HttpHeaders {
-	@ObfuscatedName("ak")
+	@ObfuscatedName("am")
 	@Export("headers")
 	final Map headers;
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ax")
 	@Export("acceptHeaderValues")
 	final Map acceptHeaderValues;
-	@ObfuscatedName("an")
+	@ObfuscatedName("aq")
 	@Export("decimalFormat")
 	final DecimalFormat decimalFormat;
 
@@ -31,10 +31,10 @@ public class HttpHeaders {
 		this.decimalFormat.setMaximumFractionDigits(2);
 	}
 
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(Ljavax/net/ssl/HttpsURLConnection;I)V",
-		garbageValue = "-408274121"
+		descriptor = "(Ljavax/net/ssl/HttpsURLConnection;B)V",
+		garbageValue = "-66"
 	)
 	@Export("setRequestProperties")
 	public void setRequestProperties(HttpsURLConnection var1) {
@@ -47,10 +47,10 @@ public class HttpHeaders {
 
 	}
 
-	@ObfuscatedName("ad")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
 		descriptor = "(I)Ljava/util/Map;",
-		garbageValue = "553620104"
+		garbageValue = "-1001854607"
 	)
 	@Export("getHeaders")
 	public Map getHeaders() {
@@ -60,7 +60,7 @@ public class HttpHeaders {
 	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
 		descriptor = "(Ljava/lang/String;Ljava/lang/String;I)V",
-		garbageValue = "1560630979"
+		garbageValue = "-778981261"
 	)
 	@Export("header")
 	public void header(String var1, String var2) {
@@ -70,10 +70,10 @@ public class HttpHeaders {
 
 	}
 
-	@ObfuscatedName("ak")
+	@ObfuscatedName("am")
 	@ObfuscatedSignature(
 		descriptor = "(Ljava/lang/String;I)V",
-		garbageValue = "2011341456"
+		garbageValue = "-1347557672"
 	)
 	@Export("removeHeader")
 	public void removeHeader(String var1) {
@@ -83,10 +83,10 @@ public class HttpHeaders {
 
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ax")
 	@ObfuscatedSignature(
-		descriptor = "(Lrr;Ljava/lang/String;I)V",
-		garbageValue = "-1981766213"
+		descriptor = "(Lrg;Ljava/lang/String;I)V",
+		garbageValue = "-1392249127"
 	)
 	@Export("authenticationHeader")
 	void authenticationHeader(HttpAuthenticationHeader var1, String var2) {
@@ -94,60 +94,60 @@ public class HttpHeaders {
 		this.header("Authorization", var3);
 	}
 
-	@ObfuscatedName("an")
+	@ObfuscatedName("aq")
 	@ObfuscatedSignature(
 		descriptor = "(Ljava/lang/String;I)V",
-		garbageValue = "395295339"
+		garbageValue = "-613077539"
 	)
 	@Export("basicAuthentication")
 	public void basicAuthentication(String var1) {
 		this.authenticationHeader(HttpAuthenticationHeader.BASIC, var1);
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;I)V",
-		garbageValue = "921281263"
+		descriptor = "(Ljava/lang/String;B)V",
+		garbageValue = "-26"
 	)
 	@Export("bearerToken")
 	public void bearerToken(String var1) {
 		this.authenticationHeader(HttpAuthenticationHeader.BEARER, var1);
 	}
 
-	@ObfuscatedName("av")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(Lsb;B)V",
-		garbageValue = "-106"
+		descriptor = "(Lte;S)V",
+		garbageValue = "3905"
 	)
 	@Export("contentType")
 	public void contentType(HttpContentType var1) {
 		this.headers.put("Content-Type", var1.getValue());
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "1971575789"
+		descriptor = "(B)V",
+		garbageValue = "-90"
 	)
 	@Export("removeContentType")
 	public void removeContentType() {
 		this.headers.remove("Content-Type");
 	}
 
-	@ObfuscatedName("ai")
+	@ObfuscatedName("ar")
 	@ObfuscatedSignature(
-		descriptor = "(Lsb;I)V",
-		garbageValue = "2139215001"
+		descriptor = "(Lte;I)V",
+		garbageValue = "1145651114"
 	)
 	@Export("accept")
 	public void accept(HttpContentType var1) {
 		this.acceptWithFactor(var1, 1.0F);
 	}
 
-	@ObfuscatedName("ae")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "(Lsb;FI)V",
-		garbageValue = "608660319"
+		descriptor = "(Lte;FB)V",
+		garbageValue = "-21"
 	)
 	@Export("acceptWithFactor")
 	void acceptWithFactor(HttpContentType var1, float var2) {
@@ -155,10 +155,10 @@ public class HttpHeaders {
 		this.updateAcceptHeader();
 	}
 
-	@ObfuscatedName("au")
+	@ObfuscatedName("ad")
 	@ObfuscatedSignature(
-		descriptor = "(S)V",
-		garbageValue = "7823"
+		descriptor = "(I)V",
+		garbageValue = "1851215838"
 	)
 	@Export("updateAcceptHeader")
 	void updateAcceptHeader() {
@@ -171,13 +171,13 @@ public class HttpHeaders {
 
 	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "(B)Ljava/lang/String;",
-		garbageValue = "-1"
+		descriptor = "(I)Ljava/lang/String;",
+		garbageValue = "1645946200"
 	)
 	@Export("getAcceptHeaderValue")
 	String getAcceptHeaderValue() {
 		ArrayList var1 = new ArrayList(this.acceptHeaderValues.entrySet());
-		Collections.sort(var1, new class458(this));
+		Collections.sort(var1, new class461(this));
 		StringBuilder var2 = new StringBuilder();
 		Iterator var3 = var1.iterator();
 
@@ -196,100 +196,5 @@ public class HttpHeaders {
 		}
 
 		return var2.toString();
-	}
-
-	@ObfuscatedName("au")
-	@ObfuscatedSignature(
-		descriptor = "(IIIB)D",
-		garbageValue = "-92"
-	)
-	static double method8363(int var0, int var1, int var2) {
-		double var3 = var1 > 0 ? (double)Math.max(0.0F, Math.min(1.0F, (float)var0 / (float)var1)) : 1.0D;
-		if (var3 > 0.0D && var3 < 1.0D) {
-			double var5;
-			double var7;
-			switch(var2) {
-			case 0:
-				return var3;
-			case 1:
-				return 1.0D - Math.cos(var3 * 3.141592653589793D / 2.0D);
-			case 2:
-				return Math.sin(var3 * 3.141592653589793D / 2.0D);
-			case 3:
-				return -(Math.cos(3.141592653589793D * var3) - 1.0D) / 2.0D;
-			case 4:
-				return var3 * var3;
-			case 5:
-				return 1.0D - (1.0D - var3) * (1.0D - var3);
-			case 6:
-				return var3 < 0.5D ? var3 * 2.0D * var3 : 1.0D - Math.pow(2.0D + -2.0D * var3, 2.0D) / 2.0D;
-			case 7:
-				return var3 * var3 * var3;
-			case 8:
-				return 1.0D - Math.pow(1.0D - var3, 3.0D);
-			case 9:
-				return var3 < 0.5D ? var3 * 4.0D * var3 * var3 : 1.0D - Math.pow(-2.0D * var3 + 2.0D, 3.0D) / 2.0D;
-			case 10:
-				return var3 * var3 * var3 * var3;
-			case 11:
-				return 1.0D - Math.pow(1.0D - var3, 4.0D);
-			case 12:
-				return var3 < 0.5D ? var3 * var3 * var3 * 8.0D * var3 : 1.0D - Math.pow(2.0D + var3 * -2.0D, 4.0D) / 2.0D;
-			case 13:
-				return var3 * var3 * var3 * var3 * var3;
-			case 14:
-				return 1.0D - Math.pow(1.0D - var3, 5.0D);
-			case 15:
-				return var3 < 0.5D ? var3 * var3 * var3 * var3 * 8.0D * var3 : 1.0D - Math.pow(-2.0D * var3 + 2.0D, 5.0D) / 2.0D;
-			case 16:
-				return Math.pow(2.0D, var3 * 10.0D - 10.0D);
-			case 17:
-				return 1.0D - Math.pow(2.0D, -10.0D * var3);
-			case 18:
-				return var3 < 0.5D ? Math.pow(2.0D, var3 * 20.0D + 10.0D) / 2.0D : (2.0D - Math.pow(2.0D, -20.0D * var3 + 10.0D)) / 2.0D;
-			case 19:
-				return 1.0D - Math.sqrt(1.0D - Math.pow(var3, 2.0D));
-			case 20:
-				return Math.sqrt(1.0D - Math.pow(var3 - 1.0D, 2.0D));
-			case 21:
-				return var3 < 0.5D ? (1.0D - Math.sqrt(1.0D - Math.pow(2.0D * var3, 2.0D))) / 2.0D : (Math.sqrt(1.0D - Math.pow(2.0D + -2.0D * var3, 2.0D)) + 1.0D) / 2.0D;
-			case 22:
-				var5 = 1.70158D;
-				var7 = 2.70158D;
-				return var3 * var3 * 2.70158D * var3 - var3 * 1.70158D * var3;
-			case 23:
-				var5 = 1.70158D;
-				var7 = 2.70158D;
-				return 1.0D + 2.70158D * Math.pow(var3 - 1.0D, 3.0D) + 1.70158D * Math.pow(var3 - 1.0D, 2.0D);
-			case 24:
-				var5 = 1.70158D;
-				var7 = 2.5949095D;
-				return var3 < 0.5D ? Math.pow(2.0D * var3, 2.0D) * (7.189819D * var3 - 2.5949095D) / 2.0D : (Math.pow(2.0D * var3 - 2.0D, 2.0D) * (3.5949095D * (var3 * 2.0D - 2.0D) + 2.5949095D) + 2.0D) / 2.0D;
-			case 25:
-				var5 = 2.0943951023931953D;
-				return -Math.pow(2.0D, var3 * 10.0D - 10.0D) * Math.sin((10.0D * var3 - 10.75D) * 2.0943951023931953D);
-			case 26:
-				var5 = 2.0943951023931953D;
-				return Math.pow(2.0D, -10.0D * var3) * Math.sin(2.0943951023931953D * (var3 * 10.0D - 0.75D)) + 1.0D;
-			case 27:
-				var5 = 1.3962634015954636D;
-				var7 = Math.sin((var3 * 20.0D - 11.125D) * 1.3962634015954636D);
-				return var3 < 0.5D ? -(Math.pow(2.0D, var3 * 20.0D - 10.0D) * var7) / 2.0D : Math.pow(2.0D, 10.0D + -20.0D * var3) * var7 / 2.0D + 1.0D;
-			default:
-				return var3;
-			}
-		} else {
-			return var3 <= 0.0D ? 0.0D : 1.0D;
-		}
-	}
-
-	@ObfuscatedName("of")
-	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-752827931"
-	)
-	static final void method8401() {
-		Client.field803 = Client.cycleCntr;
-		class171.ClanChat_inClanChat = true;
 	}
 }

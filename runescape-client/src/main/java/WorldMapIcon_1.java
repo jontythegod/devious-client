@@ -1,51 +1,52 @@
+import java.util.ArrayList;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("jh")
+@ObfuscatedName("kw")
 @Implements("WorldMapIcon_1")
 public class WorldMapIcon_1 extends AbstractWorldMapIcon {
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = -1450931479
+		intValue = 1446721503
 	)
 	@Export("objectDefId")
 	final int objectDefId;
-	@ObfuscatedName("ad")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "Ljc;"
+		descriptor = "Lld;"
 	)
 	@Export("region")
 	final WorldMapRegion region;
 	@ObfuscatedName("ag")
 	@ObfuscatedGetter(
-		intValue = -448614677
+		intValue = 1684838669
 	)
 	@Export("element")
 	int element;
-	@ObfuscatedName("ak")
+	@ObfuscatedName("am")
 	@ObfuscatedSignature(
-		descriptor = "Lkm;"
+		descriptor = "Lls;"
 	)
 	@Export("label")
 	WorldMapLabel label;
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ax")
 	@ObfuscatedGetter(
-		intValue = -229828633
+		intValue = -472541591
 	)
 	@Export("subWidth")
 	int subWidth;
-	@ObfuscatedName("an")
+	@ObfuscatedName("aq")
 	@ObfuscatedGetter(
-		intValue = 1283382419
+		intValue = 1073787659
 	)
 	@Export("subHeight")
 	int subHeight;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lnl;Lnl;ILjc;)V"
+		descriptor = "(Lnm;Lnm;ILld;)V"
 	)
 	WorldMapIcon_1(Coord var1, Coord var2, int var3, WorldMapRegion var4) {
 		super(var1, var2);
@@ -54,16 +55,16 @@ public class WorldMapIcon_1 extends AbstractWorldMapIcon {
 		this.init();
 	}
 
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "-232242674"
+		garbageValue = "902953011"
 	)
 	@Export("init")
 	void init() {
-		this.element = HttpRequest.getObjectDefinition(this.objectDefId).transform().mapIconId;
-		this.label = this.region.createMapLabel(class165.WorldMapElement_get(this.element));
-		WorldMapElement var1 = class165.WorldMapElement_get(this.getElement());
+		this.element = class273.getObjectDefinition(this.objectDefId).transform().mapIconId;
+		this.label = this.region.createMapLabel(class142.WorldMapElement_get(this.element));
+		WorldMapElement var1 = class142.WorldMapElement_get(this.getElement());
 		SpritePixels var2 = var1.getSpriteBool(false);
 		if (var2 != null) {
 			this.subWidth = var2.subWidth;
@@ -75,10 +76,10 @@ public class WorldMapIcon_1 extends AbstractWorldMapIcon {
 
 	}
 
-	@ObfuscatedName("ad")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "(B)I",
-		garbageValue = "45"
+		descriptor = "(I)I",
+		garbageValue = "-1570517373"
 	)
 	@Export("getElement")
 	public int getElement() {
@@ -87,53 +88,42 @@ public class WorldMapIcon_1 extends AbstractWorldMapIcon {
 
 	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "(I)Lkm;",
-		garbageValue = "-1023557554"
+		descriptor = "(B)Lls;",
+		garbageValue = "43"
 	)
 	@Export("getLabel")
 	WorldMapLabel getLabel() {
 		return this.label;
 	}
 
-	@ObfuscatedName("ak")
+	@ObfuscatedName("am")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",
-		garbageValue = "-2127260294"
+		garbageValue = "-288166594"
 	)
 	@Export("getSubWidth")
 	int getSubWidth() {
 		return this.subWidth;
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ax")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",
-		garbageValue = "-1490832213"
+		garbageValue = "1390628388"
 	)
 	@Export("getSubHeight")
 	int getSubHeight() {
 		return this.subHeight;
 	}
 
-	@ObfuscatedName("ai")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "403847596"
+		descriptor = "(Ljava/util/ArrayList;IIIIB)V",
+		garbageValue = "-120"
 	)
-	public static void method4578() {
-		class330.field3585.clear();
-	}
-
-	@ObfuscatedName("ms")
-	@ObfuscatedSignature(
-		descriptor = "(II)Ljava/lang/String;",
-		garbageValue = "1183965945"
-	)
-	static String method4580(int var0) {
-		if (var0 < 0) {
-			return "";
-		} else {
-			return Client.menuTargets[var0].length() > 0 ? Client.menuActions[var0] + " " + Client.menuTargets[var0] : Client.menuActions[var0];
-		}
+	public static void method5778(ArrayList var0, int var1, int var2, int var3, int var4) {
+		class334.field3619.clear();
+		class334.field3619.addAll(var0);
+		class433.method8269(var1, var2, var3, var4);
 	}
 }

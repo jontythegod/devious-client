@@ -1,362 +1,142 @@
-import java.awt.datatransfer.Clipboard;
-import java.io.File;
-import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Map.Entry;
 import net.runelite.mapping.Export;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
-@ObfuscatedName("it")
-public class class229 implements class29 {
-	@ObfuscatedName("aq")
+@ObfuscatedName("iu")
+public class class229 {
+	@ObfuscatedName("am")
 	@ObfuscatedSignature(
-		descriptor = "Lnx;"
+		descriptor = "Liu;"
 	)
-	Widget field2437;
-	@ObfuscatedName("ad")
-	boolean field2435;
+	static final class229 field2456;
+	@ObfuscatedName("qz")
+	@ObfuscatedSignature(
+		descriptor = "Lei;"
+	)
+	@Export("varcs")
+	static Varcs varcs;
+	@ObfuscatedName("ae")
+	Map field2454;
 	@ObfuscatedName("ag")
-	boolean field2436;
+	@ObfuscatedGetter(
+		intValue = -1291370009
+	)
+	int field2453;
 
-	public class229() {
-		this.field2437 = null;
-		this.field2435 = false;
-		this.field2436 = false;
+	static {
+		field2456 = new class229();
 	}
 
-	@ObfuscatedName("aq")
+	class229() {
+		this.field2454 = new HashMap();
+		this.field2453 = 0;
+	}
+
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "(II)Z",
-		garbageValue = "-1607404438"
+		descriptor = "(Lorg/json/JSONObject;ILen;B)V",
+		garbageValue = "117"
 	)
-	public boolean vmethod4396(int var1) {
-		if (this.field2437 == null) {
-			return false;
-		} else {
-			class27 var2 = this.field2437.method6940();
-			if (var2 == null) {
-				return false;
-			} else {
-				if (var2.method398(var1)) {
-					switch(var1) {
-					case 81:
-						this.field2436 = true;
-						break;
-					case 82:
-						this.field2435 = true;
-						break;
-					default:
-						if (this.method4354(var1)) {
-							TriBool.invalidateWidget(this.field2437);
+	void method4596(JSONObject var1, int var2, UrlRequester var3) {
+		this.field2454.clear();
+
+		JSONObject var4;
+		try {
+			var4 = var1;
+			this.field2453 = var2;
+			var1.getLong("lastfullsyncat");
+			var1.getLong("lastcardupdatedat");
+		} catch (Exception var7) {
+			return;
+		}
+
+		try {
+			this.method4598(var4.getJSONArray("crmcomponents"), this.field2453, var3);
+		} catch (Exception var6) {
+		}
+	}
+
+	@ObfuscatedName("ag")
+	@ObfuscatedSignature(
+		descriptor = "(Lorg/json/JSONArray;ILen;I)V",
+		garbageValue = "-1465360902"
+	)
+	void method4598(JSONArray var1, int var2, UrlRequester var3) throws JSONException {
+		if (var1 != null) {
+			for (int var4 = 0; var4 < var1.length(); ++var4) {
+				JSONObject var5 = var1.getJSONObject(var4);
+				if (var5.getString("game").equals("osrs") && !var5.getBoolean("removed")) {
+					String var6 = var5.getString("platform");
+					if (!var6.equals("mobile") && !var6.equals("android") && !var6.equals("ios")) {
+						class227 var7 = new class227();
+
+						try {
+							var7.method4556(var5, var2, var3);
+						} catch (Exception var9) {
+						}
+
+						if (!var7.field2437.isEmpty()) {
+							String var8 = var5.getString("location");
+							this.field2454.put(var8, var7);
 						}
 					}
 				}
-
-				return var2.method396(var1);
 			}
+
+			this.field2454 = this.method4606();
+			WorldMapElement.method3843();
 		}
 	}
 
-	@ObfuscatedName("ad")
+	@ObfuscatedName("am")
 	@ObfuscatedSignature(
-		descriptor = "(IB)Z",
-		garbageValue = "20"
+		descriptor = "(I)Ljava/util/Map;",
+		garbageValue = "2095021776"
 	)
-	public boolean vmethod4375(int var1) {
-		switch(var1) {
-		case 81:
-			this.field2436 = false;
-			return false;
-		case 82:
-			this.field2435 = false;
-			return false;
-		default:
-			return false;
-		}
-	}
+	Map method4606() {
+		HashMap var1 = new HashMap();
+		ArrayList var2 = new ArrayList();
+		var2.addAll(this.field2454.entrySet());
+		boolean var3 = false;
 
-	@ObfuscatedName("ag")
-	@ObfuscatedSignature(
-		descriptor = "(CI)Z",
-		garbageValue = "-502375958"
-	)
-	public boolean vmethod4378(char var1) {
-		if (this.field2437 == null) {
-			return false;
-		} else if (!class212.method4116(var1)) {
-			return false;
-		} else {
-			class356 var2 = this.field2437.method6991();
-			if (var2 != null && var2.method6640()) {
-				class27 var3 = this.field2437.method6940();
-				if (var3 == null) {
-					return false;
-				} else {
-					if (var3.method399(var1) && var2.method6601(var1)) {
-						TriBool.invalidateWidget(this.field2437);
-					}
+		while (!var3) {
+			var3 = true;
 
-					return var3.method397(var1);
+			for (int var7 = 0; var7 < var2.size() - 1; ++var7) {
+				if (((class227)((Entry)var2.get(var7)).getValue()).method4554() > ((class227)((Entry)var2.get(var7 + 1)).getValue()).method4554()) {
+					Entry var4 = (Entry)var2.get(var7);
+					var2.set(var7, var2.get(var7 + 1));
+					var2.set(var7 + 1, var4);
+					var3 = false;
 				}
-			} else {
-				return false;
 			}
 		}
-	}
 
-	@ObfuscatedName("ak")
-	@ObfuscatedSignature(
-		descriptor = "(ZS)Z",
-		garbageValue = "13173"
-	)
-	public boolean vmethod4380(boolean var1) {
-		return false;
-	}
+		Iterator var5 = var2.iterator();
 
-	@ObfuscatedName("au")
-	@ObfuscatedSignature(
-		descriptor = "(Lnx;I)V",
-		garbageValue = "-1386535715"
-	)
-	public void method4347(Widget var1) {
-		if (var1 != null) {
-			if (var1 != this.field2437) {
-				this.method4349();
-				this.field2437 = var1;
-			}
-
-			class354 var2 = var1.method6892();
-			if (var2 != null) {
-				if (!var2.field3767.method6635() && var2.field3768 != null) {
-					ScriptEvent var3 = new ScriptEvent();
-					var3.method2378(var1);
-					var3.setArgs(var2.field3768);
-					Varps.method6447().addFirst(var3);
-				}
-
-				var2.field3767.method6763(true);
-			}
-		} else {
-			this.method4349();
+		while (var5.hasNext()) {
+			Entry var6 = (Entry)var5.next();
+			var1.put(var6.getKey(), var6.getValue());
 		}
 
-	}
-
-	@ObfuscatedName("ah")
-	@ObfuscatedSignature(
-		descriptor = "(B)Lnx;",
-		garbageValue = "-124"
-	)
-	public Widget method4348() {
-		return this.field2437;
-	}
-
-	@ObfuscatedName("az")
-	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "721760752"
-	)
-	public void method4349() {
-		if (this.field2437 != null) {
-			class354 var1 = this.field2437.method6892();
-			Widget var2 = this.field2437;
-			this.field2437 = null;
-			if (var1 != null) {
-				if (var1.field3767.method6635() && var1.field3768 != null) {
-					ScriptEvent var3 = new ScriptEvent();
-					var3.method2378(var2);
-					var3.setArgs(var1.field3768);
-					Varps.method6447().addFirst(var3);
-				}
-
-				var1.field3767.method6763(false);
-			}
-		}
+		return var1;
 	}
 
 	@ObfuscatedName("ax")
 	@ObfuscatedSignature(
-		descriptor = "(IB)Z",
-		garbageValue = "6"
+		descriptor = "(Ljava/lang/String;B)Liy;",
+		garbageValue = "-41"
 	)
-	boolean method4354(int var1) {
-		if (this.field2437 == null) {
-			return false;
-		} else {
-			class356 var2 = this.field2437.method6991();
-			if (var2 != null && var2.method6640()) {
-				Clipboard var5;
-				switch(var1) {
-				case 13:
-					this.method4349();
-					return true;
-				case 48:
-					if (this.field2435) {
-						var2.method6654();
-					}
-
-					return true;
-				case 65:
-					if (this.field2435) {
-						var5 = class415.client.method490();
-						var2.method6626(var5);
-					}
-
-					return true;
-				case 66:
-					if (this.field2435) {
-						var5 = class415.client.method490();
-						var2.method6625(var5);
-					}
-
-					return true;
-				case 67:
-					if (this.field2435) {
-						var5 = class415.client.method490();
-						var2.method6748(var5);
-					}
-
-					return true;
-				case 84:
-					if (var2.method6784() == 0) {
-						var2.method6601(10);
-					} else if (this.field2436 && var2.method6650()) {
-						var2.method6601(10);
-					} else {
-						class354 var3 = this.field2437.method6892();
-						ScriptEvent var4 = new ScriptEvent();
-						var4.method2378(this.field2437);
-						var4.setArgs(var3.field3769);
-						Varps.method6447().addFirst(var4);
-						this.method4349();
-					}
-
-					return true;
-				case 85:
-					if (this.field2435) {
-						var2.method6604();
-					} else {
-						var2.method6786();
-					}
-
-					return true;
-				case 96:
-					if (this.field2435) {
-						var2.method6615(this.field2436);
-					} else {
-						var2.method6765(this.field2436);
-					}
-
-					return true;
-				case 97:
-					if (this.field2435) {
-						var2.method6602(this.field2436);
-					} else {
-						var2.method6614(this.field2436);
-					}
-
-					return true;
-				case 98:
-					if (this.field2435) {
-						var2.method6634();
-					} else {
-						var2.method6794(this.field2436);
-					}
-
-					return true;
-				case 99:
-					if (this.field2435) {
-						var2.method6629();
-					} else {
-						var2.method6618(this.field2436);
-					}
-
-					return true;
-				case 101:
-					if (this.field2435) {
-						var2.method6582();
-					} else {
-						var2.method6603();
-					}
-
-					return true;
-				case 102:
-					if (this.field2435) {
-						var2.method6793(this.field2436);
-					} else {
-						var2.method6609(this.field2436);
-					}
-
-					return true;
-				case 103:
-					if (this.field2435) {
-						var2.method6612(this.field2436);
-					} else {
-						var2.method6610(this.field2436);
-					}
-
-					return true;
-				case 104:
-					if (this.field2435) {
-						var2.method6607(this.field2436);
-					} else {
-						var2.method6619(this.field2436);
-					}
-
-					return true;
-				case 105:
-					if (this.field2435) {
-						var2.method6622(this.field2436);
-					} else {
-						var2.method6742(this.field2436);
-					}
-
-					return true;
-				default:
-					return false;
-				}
-			} else {
-				return false;
-			}
-		}
-	}
-
-	@ObfuscatedName("ag")
-	@ObfuscatedSignature(
-		descriptor = "(Ljava/io/File;Ljava/io/File;I)V",
-		garbageValue = "11316396"
-	)
-	static void method4371(File var0, File var1) {
-		try {
-			AccessFile var2 = new AccessFile(JagexCache.field2357, "rw", 10000L);
-			Buffer var3 = new Buffer(500);
-			var3.writeByte(3);
-			var3.writeByte(var1 != null ? 1 : 0);
-			var3.writeCESU8(var0.getPath());
-			if (var1 != null) {
-				var3.writeCESU8("");
-			}
-
-			var2.write(var3.array, 0, var3.offset);
-			var2.close();
-		} catch (IOException var4) {
-			var4.printStackTrace();
-		}
-
-	}
-
-	@ObfuscatedName("ap")
-	@Export("Entity_unpackID")
-	public static int Entity_unpackID(long var0) {
-		return (int)(var0 >>> 17 & 4294967295L);
-	}
-
-	@ObfuscatedName("ie")
-	@ObfuscatedSignature(
-		descriptor = "(I)J",
-		garbageValue = "1394811142"
-	)
-	@Export("getUserHash")
-	static long getUserHash() {
-		return Client.userHash;
+	class227 method4599(String var1) {
+		return (class227)this.field2454.get(var1);
 	}
 }

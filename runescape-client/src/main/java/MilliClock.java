@@ -4,139 +4,167 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ib")
+@ObfuscatedName("io")
 @Implements("MilliClock")
 public class MilliClock extends Clock {
-	@ObfuscatedName("aq")
-	long[] field2370;
-	@ObfuscatedName("ad")
+	@ObfuscatedName("ac")
+	long[] field2407;
+	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
-		intValue = 77467019
+		intValue = 1085613311
 	)
-	int field2371;
+	int field2401;
 	@ObfuscatedName("ag")
 	@ObfuscatedGetter(
-		intValue = 691435497
+		intValue = -942864311
 	)
-	int field2372;
-	@ObfuscatedName("ak")
+	int field2403;
+	@ObfuscatedName("am")
 	@ObfuscatedGetter(
-		longValue = -4725112427391503235L
+		longValue = 2021572333076501213L
 	)
-	long field2374;
-	@ObfuscatedName("ap")
+	long field2402;
+	@ObfuscatedName("ax")
 	@ObfuscatedGetter(
-		intValue = 1561619897
+		intValue = -76961179
 	)
-	int field2373;
-	@ObfuscatedName("an")
+	int field2404;
+	@ObfuscatedName("aq")
 	@ObfuscatedGetter(
-		intValue = -2128144825
+		intValue = -1838318811
 	)
-	int field2375;
+	int field2400;
 
-	MilliClock() {
-		this.field2370 = new long[10];
-		this.field2371 = 256;
-		this.field2372 = 1;
-		this.field2373 = 0;
-		this.field2374 = WorldMapData_1.method4861();
+	public MilliClock() {
+		this.field2407 = new long[10];
+		this.field2401 = 256;
+		this.field2403 = 1;
+		this.field2404 = 0;
+		this.field2402 = WorldMapElement.method3843();
 
 		for (int var1 = 0; var1 < 10; ++var1) {
-			this.field2370[var1] = this.field2374;
+			this.field2407[var1] = this.field2402;
 		}
 
 	}
 
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-246153511"
+		descriptor = "(B)V",
+		garbageValue = "10"
 	)
 	@Export("mark")
 	public void mark() {
 		for (int var1 = 0; var1 < 10; ++var1) {
-			this.field2370[var1] = 0L;
+			this.field2407[var1] = 0L;
 		}
 
 	}
 
-	@ObfuscatedName("ad")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
 		descriptor = "(III)I",
-		garbageValue = "-1597628099"
+		garbageValue = "497587420"
 	)
 	@Export("wait")
 	public int wait(int var1, int var2) {
-		int var3 = this.field2371;
-		int var4 = this.field2372;
-		this.field2371 = 300;
-		this.field2372 = 1;
-		this.field2374 = WorldMapData_1.method4861();
-		if (this.field2370[this.field2375] == 0L) {
-			this.field2371 = var3;
-			this.field2372 = var4;
-		} else if (this.field2374 > this.field2370[this.field2375]) {
-			this.field2371 = (int)((long)(var1 * 2560) / (this.field2374 - this.field2370[this.field2375]));
+		int var3 = this.field2401;
+		int var4 = this.field2403;
+		this.field2401 = 300;
+		this.field2403 = 1;
+		this.field2402 = WorldMapElement.method3843();
+		if (0L == this.field2407[this.field2400]) {
+			this.field2401 = var3;
+			this.field2403 = var4;
+		} else if (this.field2402 > this.field2407[this.field2400]) {
+			this.field2401 = (int)((long)(var1 * 2560) / (this.field2402 - this.field2407[this.field2400]));
 		}
 
-		if (this.field2371 < 25) {
-			this.field2371 = 25;
+		if (this.field2401 < 25) {
+			this.field2401 = 25;
 		}
 
-		if (this.field2371 > 256) {
-			this.field2371 = 256;
-			this.field2372 = (int)((long)var1 - (this.field2374 - this.field2370[this.field2375]) / 10L);
+		if (this.field2401 > 256) {
+			this.field2401 = 256;
+			this.field2403 = (int)((long)var1 - (this.field2402 - this.field2407[this.field2400]) / 10L);
 		}
 
-		if (this.field2372 > var1) {
-			this.field2372 = var1;
+		if (this.field2403 > var1) {
+			this.field2403 = var1;
 		}
 
-		this.field2370[this.field2375] = this.field2374;
-		this.field2375 = (this.field2375 + 1) % 10;
+		this.field2407[this.field2400] = this.field2402;
+		this.field2400 = (this.field2400 + 1) % 10;
 		int var5;
-		if (this.field2372 > 1) {
+		if (this.field2403 > 1) {
 			for (var5 = 0; var5 < 10; ++var5) {
-				if (this.field2370[var5] != 0L) {
-					this.field2370[var5] += (long)this.field2372;
+				if (0L != this.field2407[var5]) {
+					this.field2407[var5] += (long)this.field2403;
 				}
 			}
 		}
 
-		if (this.field2372 < var2) {
-			this.field2372 = var2;
+		if (this.field2403 < var2) {
+			this.field2403 = var2;
 		}
 
-		class188.method3688((long)this.field2372);
+		FileSystem.method4499((long)this.field2403);
 
-		for (var5 = 0; this.field2373 < 256; this.field2373 += this.field2371) {
+		for (var5 = 0; this.field2404 < 256; this.field2404 += this.field2401) {
 			++var5;
 		}
 
-		this.field2373 &= 255;
+		this.field2404 &= 255;
 		return var5;
 	}
 
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ib")
 	@ObfuscatedSignature(
-		descriptor = "(IB)Lgt;",
-		garbageValue = "1"
+		descriptor = "(Lny;IIB)V",
+		garbageValue = "-108"
 	)
-	@Export("VarpDefinition_get")
-	public static VarpDefinition VarpDefinition_get(int var0) {
-		VarpDefinition var1 = (VarpDefinition)VarpDefinition.VarpDefinition_cached.get((long)var0);
-		if (var1 != null) {
-			return var1;
-		} else {
-			byte[] var2 = VarpDefinition.VarpDefinition_archive.takeFile(16, var0);
-			var1 = new VarpDefinition();
-			if (var2 != null) {
-				var1.decode(new Buffer(var2));
+	@Export("checkIfMinimapClicked")
+	static final void checkIfMinimapClicked(Widget var0, int var1, int var2) {
+		if (Client.minimapState == 0 || Client.minimapState == 3) {
+			if (!Client.isMenuOpen && (MouseHandler.MouseHandler_lastButton == 1 || !Varcs.mouseCam && MouseHandler.MouseHandler_lastButton == 4)) {
+				SpriteMask var3 = var0.method7244(TaskHandler.widgetDefinition, true);
+				if (var3 == null) {
+					return;
+				}
+
+				int var4 = MouseHandler.MouseHandler_lastPressedX - var1;
+				int var5 = MouseHandler.MouseHandler_lastPressedY - var2;
+				if (var3.contains(var4, var5)) {
+					var4 -= var3.width / 2;
+					var5 -= var3.height / 2;
+					int var6 = Client.camAngleY & 2047;
+					int var7 = Rasterizer3D.Rasterizer3D_sine[var6];
+					int var8 = Rasterizer3D.Rasterizer3D_cosine[var6];
+					int var9 = var5 * var7 + var4 * var8 >> 11;
+					int var10 = var5 * var8 - var7 * var4 >> 11;
+					int var11 = ClanSettings.entity.getX() + var9 >> 7;
+					int var12 = ClanSettings.entity.getY() - var10 >> 7;
+					PacketBufferNode var13 = class141.getPacketBufferNode(ClientPacket.MINIMAP_CLICK, Client.packetWriter.isaacCipher);
+					var13.packetBuffer.writeByte(18);
+					var13.packetBuffer.writeShort(var12 + ClientPreferences.topLevelWorldView.baseY);
+					var13.packetBuffer.writeByteSub(Client.indexCheck.isValidIndexInRange(82) ? (Client.indexCheck.isValidIndexInRange(81) ? 2 : 1) : 0);
+					var13.packetBuffer.writeShortAdd(var11 + ClientPreferences.topLevelWorldView.baseX);
+					var13.packetBuffer.writeByte(var4);
+					var13.packetBuffer.writeByte(var5);
+					var13.packetBuffer.writeShort(Client.camAngleY);
+					var13.packetBuffer.writeByte(57);
+					var13.packetBuffer.writeByte(0);
+					var13.packetBuffer.writeByte(0);
+					var13.packetBuffer.writeByte(89);
+					var13.packetBuffer.writeShort(AddRequestTask.localPlayer.x);
+					var13.packetBuffer.writeShort(AddRequestTask.localPlayer.y);
+					var13.packetBuffer.writeByte(63);
+					Client.packetWriter.addNode(var13);
+					Client.destinationX = var11;
+					Client.destinationY = var12;
+				}
 			}
 
-			VarpDefinition.VarpDefinition_cached.put(var1, (long)var0);
-			return var1;
 		}
 	}
 }

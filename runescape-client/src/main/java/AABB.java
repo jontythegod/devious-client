@@ -2,45 +2,45 @@ import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
+import net.runelite.mapping.ObfuscatedSignature;
+import net.runelite.rs.ScriptOpcodes;
 
-@ObfuscatedName("ka")
+@ObfuscatedName("jn")
 @Implements("AABB")
 public class AABB {
-	@ObfuscatedName("ji")
-	static int[] field3014;
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = 2047755405
+		intValue = 1368567893
 	)
 	@Export("xMid")
 	int xMid;
-	@ObfuscatedName("ad")
+	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
-		intValue = 1256249609
+		intValue = -1461851909
 	)
 	@Export("yMid")
 	int yMid;
 	@ObfuscatedName("ag")
 	@ObfuscatedGetter(
-		intValue = -738662181
+		intValue = -2145173519
 	)
 	@Export("zMid")
 	int zMid;
-	@ObfuscatedName("ak")
+	@ObfuscatedName("am")
 	@ObfuscatedGetter(
-		intValue = -462676723
+		intValue = 1947043695
 	)
 	@Export("xMidOffset")
 	int xMidOffset;
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ax")
 	@ObfuscatedGetter(
-		intValue = 942113713
+		intValue = 247717375
 	)
 	@Export("yMidOffset")
 	int yMidOffset;
-	@ObfuscatedName("an")
+	@ObfuscatedName("aq")
 	@ObfuscatedGetter(
-		intValue = -1574879219
+		intValue = 931924417
 	)
 	@Export("zMidOffset")
 	int zMidOffset;
@@ -52,5 +52,40 @@ public class AABB {
 		this.xMidOffset = var4;
 		this.yMidOffset = var5;
 		this.zMidOffset = var6;
+	}
+
+	@ObfuscatedName("ao")
+	@ObfuscatedSignature(
+		descriptor = "(ILdt;ZI)I",
+		garbageValue = "-1789708720"
+	)
+	static int method5140(int var0, Script var1, boolean var2) {
+		Widget var3 = var2 ? Interpreter.scriptDotWidget : class464.scriptActiveWidget;
+		if (var0 == ScriptOpcodes.CC_GETTARGETMASK) {
+			Interpreter.Interpreter_intStack[++class320.Interpreter_intStackSize - 1] = FontName.Widget_unpackTargetMask(class310.getWidgetFlags(var3));
+			return 1;
+		} else if (var0 != ScriptOpcodes.CC_GETOP) {
+			if (var0 == ScriptOpcodes.CC_GETOPBASE) {
+				if (var3.dataText == null) {
+					Interpreter.Interpreter_stringStack[++class465.Interpreter_stringStackSize - 1] = "";
+				} else {
+					Interpreter.Interpreter_stringStack[++class465.Interpreter_stringStackSize - 1] = var3.dataText;
+				}
+
+				return 1;
+			} else {
+				return 2;
+			}
+		} else {
+			int var4 = Interpreter.Interpreter_intStack[--class320.Interpreter_intStackSize];
+			--var4;
+			if (var3.actions != null && var4 < var3.actions.length && var3.actions[var4] != null) {
+				Interpreter.Interpreter_stringStack[++class465.Interpreter_stringStackSize - 1] = var3.actions[var4];
+			} else {
+				Interpreter.Interpreter_stringStack[++class465.Interpreter_stringStackSize - 1] = "";
+			}
+
+			return 1;
+		}
 	}
 }

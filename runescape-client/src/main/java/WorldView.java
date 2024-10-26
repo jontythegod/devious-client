@@ -4,137 +4,138 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("de")
+@ObfuscatedName("dd")
 @Implements("WorldView")
-public class WorldView {
-	@ObfuscatedName("aq")
+public class WorldView extends Node {
+	@ObfuscatedName("nt")
 	@ObfuscatedGetter(
-		intValue = 2142034745
+		intValue = 2042950949
+	)
+	static int field1360;
+	@ObfuscatedName("ac")
+	@ObfuscatedGetter(
+		intValue = 1011931441
 	)
 	@Export("id")
 	int id;
-	@ObfuscatedName("ad")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "Lkq;"
+		descriptor = "Ljh;"
 	)
 	@Export("scene")
 	public Scene scene;
 	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "[Lip;"
+		descriptor = "[Lkd;"
 	)
 	@Export("collisionMaps")
 	CollisionMap[] collisionMaps;
-	@ObfuscatedName("ak")
+	@ObfuscatedName("am")
 	@ObfuscatedGetter(
-		intValue = -1735177445
+		intValue = 97097587
 	)
 	@Export("plane")
 	public int plane;
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ax")
 	@ObfuscatedGetter(
-		intValue = 1019381583
+		intValue = 754660757
 	)
 	@Export("sizeX")
 	int sizeX;
-	@ObfuscatedName("an")
+	@ObfuscatedName("aq")
 	@ObfuscatedGetter(
-		intValue = 1628317125
+		intValue = -1090907831
 	)
 	@Export("sizeY")
 	int sizeY;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("af")
 	@ObfuscatedGetter(
-		intValue = 998139683
+		intValue = 2072219689
 	)
 	@Export("baseX")
 	int baseX;
-	@ObfuscatedName("av")
+	@ObfuscatedName("at")
 	@ObfuscatedGetter(
-		intValue = -1484949025
+		intValue = 1001606641
 	)
 	@Export("baseY")
 	int baseY;
-	@ObfuscatedName("ab")
+	@ObfuscatedName("au")
 	@Export("tileLastDrawnActor")
 	int[][] tileLastDrawnActor;
-	@ObfuscatedName("ai")
+	@ObfuscatedName("ar")
 	@Export("tileHeights")
 	int[][][] tileHeights;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("al")
 	@Export("tileSettings")
 	byte[][][] tileSettings;
-	@ObfuscatedName("au")
+	@ObfuscatedName("ad")
 	@ObfuscatedSignature(
-		descriptor = "[Ldb;"
+		descriptor = "[Ldi;"
 	)
 	@Export("players")
 	Player[] players;
 	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "Leh;"
-	)
-	@Export("playerUpdateManager")
-	PlayerUpdateManager playerUpdateManager;
-	@ObfuscatedName("az")
-	@ObfuscatedSignature(
-		descriptor = "[Ldx;"
+		descriptor = "[Lea;"
 	)
 	@Export("npcs")
 	NPC[] npcs;
-	@ObfuscatedName("ax")
+	@ObfuscatedName("ap")
 	@ObfuscatedGetter(
-		intValue = -959579827
+		intValue = -514517369
 	)
 	@Export("npcCount")
 	int npcCount;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("ab")
 	@Export("npcIndices")
 	int[] npcIndices;
-	@ObfuscatedName("al")
+	@ObfuscatedName("az")
 	@ObfuscatedSignature(
-		descriptor = "[Lso;"
+		descriptor = "[Lsu;"
 	)
 	@Export("worldEntities")
 	WorldEntity[] worldEntities;
-	@ObfuscatedName("ay")
+	@ObfuscatedName("aa")
 	@ObfuscatedGetter(
-		intValue = 1124408595
+		intValue = -557899353
 	)
 	@Export("worldEntityCount")
 	int worldEntityCount;
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ai")
 	@Export("worldEntityIndices")
 	int[] worldEntityIndices;
-	@ObfuscatedName("aa")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "[[[Lpr;"
+		descriptor = "[[[Lpk;"
 	)
 	@Export("groundItems")
 	NodeDeque[][][] groundItems;
 	@ObfuscatedName("as")
 	@ObfuscatedSignature(
-		descriptor = "Lpr;"
+		descriptor = "Lpk;"
 	)
 	@Export("pendingSpawns")
 	NodeDeque pendingSpawns;
-	@ObfuscatedName("aw")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "Lpr;"
+		descriptor = "Lpk;"
 	)
 	@Export("projectiles")
 	NodeDeque projectiles;
-	@ObfuscatedName("at")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "Lpr;"
+		descriptor = "Lpk;"
 	)
 	@Export("graphicsObjects")
 	NodeDeque graphicsObjects;
 
-	public WorldView(int var1, int var2, int var3, int var4) {
+	@ObfuscatedSignature(
+		descriptor = "(IIIILin;)V"
+	)
+	WorldView(int var1, int var2, int var3, int var4, class232 var5) {
 		this.collisionMaps = new CollisionMap[4];
 		this.players = new Player[2048];
-		this.playerUpdateManager = new PlayerUpdateManager(this);
 		this.npcs = new NPC[65536];
 		this.npcIndices = new int[65536];
 		this.worldEntities = new WorldEntity[2048];
@@ -150,29 +151,19 @@ public class WorldView {
 		this.tileSettings = new byte[4][var2][var3];
 		this.tileLastDrawnActor = new int[var2][var3];
 
-		for (int var5 = 0; var5 < 4; ++var5) {
-			this.collisionMaps[var5] = new CollisionMap(var2, var3);
+		for (int var6 = 0; var6 < 4; ++var6) {
+			this.collisionMaps[var6] = new CollisionMap(var2, var3);
 		}
 
-		this.scene = new Scene(var1, 4, var2, var3, var4, this.tileHeights);
+		this.scene = new Scene(var1, 4, var2, var3, var4, var5, this.tileHeights);
 	}
 
-	@ObfuscatedName("aq")
-	@ObfuscatedSignature(
-		descriptor = "(B)Z",
-		garbageValue = "74"
-	)
-	boolean method2676() {
-		return this.id == -1;
-	}
-
-	@ObfuscatedName("ad")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "-843666588"
+		garbageValue = "2087936340"
 	)
-	@Export("clear")
-	void clear() {
+	void method2860() {
 		this.npcCount = 0;
 		this.worldEntityCount = 0;
 
@@ -209,12 +200,12 @@ public class WorldView {
 
 	}
 
-	@ObfuscatedName("ag")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "-370890653"
+		garbageValue = "1939275323"
 	)
-	void method2680() {
+	void method2856() {
 		int var1;
 		for (var1 = 0; var1 < 2048; ++var1) {
 			this.players[var1] = null;
@@ -230,17 +221,21 @@ public class WorldView {
 
 	}
 
-	@ObfuscatedName("lh")
+	@ObfuscatedName("ad")
 	@ObfuscatedSignature(
-		descriptor = "(IIIII)V",
-		garbageValue = "-1942851204"
+		descriptor = "(Lny;IB)V",
+		garbageValue = "0"
 	)
-	static final void method2684(int var0, int var1, int var2, int var3) {
-		for (int var4 = 0; var4 < Client.rootWidgetCount; ++var4) {
-			if (Client.rootWidgetWidths[var4] + Client.rootWidgetXs[var4] > var0 && Client.rootWidgetXs[var4] < var0 + var2 && Client.rootWidgetHeights[var4] + Client.rootWidgetYs[var4] > var1 && Client.rootWidgetYs[var4] < var3 + var1) {
-				Client.field722[var4] = true;
+	@Export("Widget_setKeyIgnoreHeld")
+	static final void Widget_setKeyIgnoreHeld(Widget var0, int var1) {
+		if (var0.field3928 == null) {
+			throw new RuntimeException();
+		} else {
+			if (var0.field4000 == null) {
+				var0.field4000 = new int[var0.field3928.length];
 			}
-		}
 
+			var0.field4000[var1] = Integer.MAX_VALUE;
+		}
 	}
 }

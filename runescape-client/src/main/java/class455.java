@@ -1,85 +1,101 @@
-import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
+import net.runelite.rs.ScriptOpcodes;
 
-@ObfuscatedName("rg")
+@ObfuscatedName("ro")
 public class class455 {
-	@ObfuscatedName("nd")
+	@ObfuscatedName("bz")
 	@ObfuscatedSignature(
-		descriptor = "([Lnx;II)V",
-		garbageValue = "-1883916637"
+		descriptor = "(ILdt;ZI)I",
+		garbageValue = "1298032495"
 	)
-	@Export("drawModelComponents")
-	static final void drawModelComponents(Widget[] var0, int var1) {
-		for (int var2 = 0; var2 < var0.length; ++var2) {
-			Widget var3 = var0[var2];
-			if (var3 != null && var3.parentId == var1 && (!var3.isIf3 || !class175.isComponentHidden(var3))) {
-				if (var3.type == 0) {
-					if (!var3.isIf3 && class175.isComponentHidden(var3) && var3 != class180.mousedOverWidgetIf1) {
-						continue;
-					}
-
-					drawModelComponents(var0, var3.id);
-					if (var3.children != null) {
-						drawModelComponents(var3.children, var3.id);
-					}
-
-					InterfaceParent var4 = (InterfaceParent)Client.interfaceParents.get((long)var3.id);
-					if (var4 != null) {
-						class212.method4108(var4.group);
-					}
-				}
-
-				if (var3.type == 6) {
-					int var5;
-					if (var3.sequenceId != -1 || var3.sequenceId2 != -1) {
-						boolean var8 = class534.runCs1(var3);
-						if (var8) {
-							var5 = var3.sequenceId2;
-						} else {
-							var5 = var3.sequenceId;
-						}
-
-						if (var5 != -1) {
-							SequenceDefinition var6 = class353.SequenceDefinition_get(var5);
-							if (!var6.isCachedModelIdSet()) {
-								for (var3.modelFrameCycle += Client.graphicsCycle; var3.modelFrameCycle > var6.frameLengths[var3.modelFrame]; TriBool.invalidateWidget(var3)) {
-									var3.modelFrameCycle -= var6.frameLengths[var3.modelFrame];
-									++var3.modelFrame;
-									if (var3.modelFrame >= var6.frameIds.length) {
-										var3.modelFrame -= var6.frameCount;
-										if (var3.modelFrame < 0 || var3.modelFrame >= var6.frameIds.length) {
-											var3.modelFrame = 0;
-										}
-									}
-								}
-							} else {
-								var3.modelFrame += Client.graphicsCycle;
-								int var7 = var6.method4059();
-								if (var3.modelFrame >= var7) {
-									var3.modelFrame -= var6.frameCount;
-									if (var3.modelFrame < 0 || var3.modelFrame >= var7) {
-										var3.modelFrame = 0;
-									}
-								}
-
-								TriBool.invalidateWidget(var3);
-							}
-						}
-					}
-
-					if (var3.field3943 != 0 && !var3.isIf3) {
-						int var9 = var3.field3943 >> 16;
-						var5 = var3.field3943 << 16 >> 16;
-						var9 *= Client.graphicsCycle;
-						var5 *= Client.graphicsCycle;
-						var3.modelAngleX = var9 + var3.modelAngleX & 2047;
-						var3.modelAngleY = var5 + var3.modelAngleY & 2047;
-						TriBool.invalidateWidget(var3);
-					}
-				}
+	static int method8693(int var0, Script var1, boolean var2) {
+		if (var0 == ScriptOpcodes.VIEWPORT_SETFOV) {
+			class320.Interpreter_intStackSize -= 2;
+			Client.field785 = (short)class190.method3944(Interpreter.Interpreter_intStack[class320.Interpreter_intStackSize]);
+			if (Client.field785 <= 0) {
+				Client.field785 = 256;
 			}
-		}
 
+			Client.field786 = (short)class190.method3944(Interpreter.Interpreter_intStack[class320.Interpreter_intStackSize + 1]);
+			if (Client.field786 <= 0) {
+				Client.field786 = 256;
+			}
+
+			return 1;
+		} else if (var0 == ScriptOpcodes.VIEWPORT_SETZOOM) {
+			class320.Interpreter_intStackSize -= 2;
+			Client.zoomHeight = (short)Interpreter.Interpreter_intStack[class320.Interpreter_intStackSize];
+			if (Client.zoomHeight <= 0) {
+				Client.zoomHeight = 256;
+			}
+
+			Client.zoomWidth = (short)Interpreter.Interpreter_intStack[class320.Interpreter_intStackSize + 1];
+			if (Client.zoomWidth <= 0) {
+				Client.zoomWidth = 320;
+			}
+
+			return 1;
+		} else if (var0 == ScriptOpcodes.VIEWPORT_CLAMPFOV) {
+			class320.Interpreter_intStackSize -= 4;
+			Client.field727 = (short)Interpreter.Interpreter_intStack[class320.Interpreter_intStackSize];
+			if (Client.field727 <= 0) {
+				Client.field727 = 1;
+			}
+
+			Client.field790 = (short)Interpreter.Interpreter_intStack[class320.Interpreter_intStackSize + 1];
+			if (Client.field790 <= 0) {
+				Client.field790 = 32767;
+			} else if (Client.field790 < Client.field727) {
+				Client.field790 = Client.field727;
+			}
+
+			Client.field791 = (short)Interpreter.Interpreter_intStack[class320.Interpreter_intStackSize + 2];
+			if (Client.field791 <= 0) {
+				Client.field791 = 1;
+			}
+
+			Client.field792 = (short)Interpreter.Interpreter_intStack[class320.Interpreter_intStackSize + 3];
+			if (Client.field792 <= 0) {
+				Client.field792 = 32767;
+			} else if (Client.field792 < Client.field791) {
+				Client.field792 = Client.field791;
+			}
+
+			return 1;
+		} else if (var0 == ScriptOpcodes.VIEWPORT_GETEFFECTIVESIZE) {
+			if (Client.viewportWidget != null) {
+				class191.setViewportShape(0, 0, Client.viewportWidget.width, Client.viewportWidget.height, false);
+				Interpreter.Interpreter_intStack[++class320.Interpreter_intStackSize - 1] = Client.viewportWidth;
+				Interpreter.Interpreter_intStack[++class320.Interpreter_intStackSize - 1] = Client.viewportHeight;
+			} else {
+				Interpreter.Interpreter_intStack[++class320.Interpreter_intStackSize - 1] = -1;
+				Interpreter.Interpreter_intStack[++class320.Interpreter_intStackSize - 1] = -1;
+			}
+
+			return 1;
+		} else if (var0 == ScriptOpcodes.VIEWPORT_GETZOOM) {
+			Interpreter.Interpreter_intStack[++class320.Interpreter_intStackSize - 1] = Client.zoomHeight;
+			Interpreter.Interpreter_intStack[++class320.Interpreter_intStackSize - 1] = Client.zoomWidth;
+			return 1;
+		} else if (var0 == ScriptOpcodes.VIEWPORT_GETFOV) {
+			Interpreter.Interpreter_intStack[++class320.Interpreter_intStackSize - 1] = Tiles.method2458(Client.field785);
+			Interpreter.Interpreter_intStack[++class320.Interpreter_intStackSize - 1] = Tiles.method2458(Client.field786);
+			return 1;
+		} else if (var0 == 6220) {
+			Interpreter.Interpreter_intStack[++class320.Interpreter_intStackSize - 1] = 0;
+			return 1;
+		} else if (var0 == 6221) {
+			Interpreter.Interpreter_intStack[++class320.Interpreter_intStackSize - 1] = 0;
+			return 1;
+		} else if (var0 == 6222) {
+			Interpreter.Interpreter_intStack[++class320.Interpreter_intStackSize - 1] = class154.canvasWidth;
+			return 1;
+		} else if (var0 == 6223) {
+			Interpreter.Interpreter_intStack[++class320.Interpreter_intStackSize - 1] = UrlRequester.canvasHeight;
+			return 1;
+		} else {
+			return 2;
+		}
 	}
 }

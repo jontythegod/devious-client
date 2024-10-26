@@ -2,77 +2,60 @@ import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("hm")
+@ObfuscatedName("hy")
 public class class188 extends DualNode {
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "Lmo;"
+		descriptor = "Lml;"
 	)
-	@Export("field2023")
-	static EvictingDualNodeHashTable field2023;
-	@ObfuscatedName("oo")
-	@ObfuscatedSignature(
-		descriptor = "Lcj;"
-	)
-	@Export("tempMenuAction")
-	static MenuAction tempMenuAction;
+	@Export("field2007")
+	static EvictingDualNodeHashTable field2007;
 
 	static {
-		field2023 = new EvictingDualNodeHashTable(64);
+		field2007 = new EvictingDualNodeHashTable(64);
 	}
 
-	@ObfuscatedName("aq")
-	public static final void method3688(long var0) {
-		if (var0 > 0L) {
-			if (var0 % 10L == 0L) {
-				long var2 = var0 - 1L;
-
-				try {
-					Thread.sleep(var2);
-				} catch (InterruptedException var8) {
-				}
-
-				try {
-					Thread.sleep(1L);
-				} catch (InterruptedException var7) {
-				}
-			} else {
-				try {
-					Thread.sleep(var0);
-				} catch (InterruptedException var6) {
-				}
-			}
-
-		}
-	}
-
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ax")
 	@ObfuscatedSignature(
-		descriptor = "(IIB)I",
-		garbageValue = "-2"
+		descriptor = "(I)[Loq;",
+		garbageValue = "-2137673667"
 	)
-	static int method3687(int var0, int var1) {
-		ItemContainer var2 = (ItemContainer)ItemContainer.itemContainers.get((long)var0);
-		if (var2 == null) {
-			return -1;
+	@Export("PlayerType_values")
+	public static PlayerType[] PlayerType_values() {
+		return new PlayerType[]{PlayerType.field4489, PlayerType.PlayerType_ultimateIronman, PlayerType.PlayerType_hardcoreIronman, PlayerType.field4486, PlayerType.field4485, PlayerType.field4469, PlayerType.field4481, PlayerType.field4484, PlayerType.field4478, PlayerType.field4483, PlayerType.PlayerType_normal, PlayerType.field4482, PlayerType.PlayerType_jagexModerator, PlayerType.PlayerType_ironman, PlayerType.field4480, PlayerType.field4477, PlayerType.PlayerType_playerModerator};
+	}
+
+	@ObfuscatedName("lr")
+	@ObfuscatedSignature(
+		descriptor = "(Ldd;ZLva;B)V",
+		garbageValue = "-105"
+	)
+	@Export("updateNpcs")
+	static final void updateNpcs(WorldView var0, boolean var1, PacketBuffer var2) {
+		Client.field525 = 0;
+		Client.npcCount = 0;
+		GrandExchangeOffer.method7697(var0, var2);
+		CollisionMap.method5614(var0, var1, var2);
+		VertexNormal.method5412(var0, var2);
+
+		int var3;
+		for (var3 = 0; var3 < Client.field525; ++var3) {
+			int var4 = Client.field526[var3];
+			if (var0.npcs[var4].npcCycle != Client.cycle) {
+				var0.npcs[var4].definition = null;
+				var0.npcs[var4] = null;
+			}
+		}
+
+		if (var2.offset != Client.packetWriter.serverPacketLength) {
+			throw new RuntimeException(var2.offset + "," + Client.packetWriter.serverPacketLength);
 		} else {
-			return var1 >= 0 && var1 < var2.ids.length ? var2.ids[var1] : -1;
-		}
-	}
-
-	@ObfuscatedName("iw")
-	@ObfuscatedSignature(
-		descriptor = "(Lii;IIIZI)V",
-		garbageValue = "-210290307"
-	)
-	static void method3684(SequenceDefinition var0, int var1, int var2, int var3, boolean var4) {
-		if (Client.soundEffectCount < 50) {
-			if (var0.soundEffects != null && var1 < var0.soundEffects.length && var0.soundEffects[var1] != null) {
-				int var5 = var0.soundEffects[var1].field2148 & 31;
-				if ((var5 <= 0 || class105.clientPreferences.getAreaSoundEffectsVolume() != 0) && (var5 != 0 || class105.clientPreferences.getSoundEffectsVolume() != 0)) {
-					class452.method8354(var0.soundEffects[var1], var2, var3, var4);
+			for (var3 = 0; var3 < var0.npcCount; ++var3) {
+				if (var0.npcs[var0.npcIndices[var3]] == null) {
+					throw new RuntimeException(var3 + "," + var0.npcCount);
 				}
 			}
+
 		}
 	}
 }

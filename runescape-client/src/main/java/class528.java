@@ -1,39 +1,42 @@
-import java.util.Iterator;
-import net.runelite.mapping.ObfuscatedGetter;
+import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("un")
-class class528 implements Iterator {
-	@ObfuscatedName("aq")
-	@ObfuscatedGetter(
-		intValue = -1486813323
-	)
-	int field5277;
-	// $FF: synthetic field
+@ObfuscatedName("uq")
+public class class528 {
+	@ObfuscatedName("ag")
+	static final char[] field5299;
+	@ObfuscatedName("am")
+	static final char[] field5300;
+	@ObfuscatedName("jr")
+	@Export("regionLandArchiveIds")
+	static int[] regionLandArchiveIds;
+
+	static {
+		field5299 = new char[]{' ', ' ', '_', '-', 'à', 'á', 'â', 'ä', 'ã', 'À', 'Á', 'Â', 'Ä', 'Ã', 'è', 'é', 'ê', 'ë', 'È', 'É', 'Ê', 'Ë', 'í', 'î', 'ï', 'Í', 'Î', 'Ï', 'ò', 'ó', 'ô', 'ö', 'õ', 'Ò', 'Ó', 'Ô', 'Ö', 'Õ', 'ù', 'ú', 'û', 'ü', 'Ù', 'Ú', 'Û', 'Ü', 'ç', 'Ç', 'ÿ', 'Ÿ', 'ñ', 'Ñ', 'ß'};
+		field5300 = new char[]{'[', ']', '#'};
+	}
+
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "Lur;"
+		descriptor = "(II)Lun;",
+		garbageValue = "1552811841"
 	)
-	final class529 this$0;
+	@Export("getDbTableType")
+	public static DbTableType getDbTableType(int var0) {
+		DbTableType var1 = (DbTableType)DbTableType.DBTableType_cache.get((long)var0);
+		if (var1 != null) {
+			return var1;
+		} else {
+			byte[] var2 = DbTableType.field5348.takeFile(39, var0);
+			var1 = new DbTableType();
+			if (var2 != null) {
+				var1.method9794(new Buffer(var2));
+			}
 
-	@ObfuscatedSignature(
-		descriptor = "(Lur;)V"
-	)
-	class528(class529 var1) {
-		this.this$0 = var1;
-	}
-
-	public boolean hasNext() {
-		return this.field5277 < this.this$0.method8799();
-	}
-
-	public void remove() {
-		throw new UnsupportedOperationException();
-	}
-
-	public Object next() {
-		int var1 = ++this.field5277 - 1;
-		class488 var2 = (class488)this.this$0.field5278.get((long)var1);
-		return var2 != null ? var2 : this.this$0.method9368(var1);
+			var1.method9796();
+			DbTableType.DBTableType_cache.put(var1, (long)var0);
+			return var1;
+		}
 	}
 }

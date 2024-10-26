@@ -1,16 +1,20 @@
 import java.util.Comparator;
+import java.util.List;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("py")
+@ObfuscatedName("pd")
 @Implements("GrandExchangeOfferWorldComparator")
 final class GrandExchangeOfferWorldComparator implements Comparator {
-	@ObfuscatedName("aq")
+	@ObfuscatedName("wf")
+	static List field4611;
+
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(Lpm;Lpm;I)I",
-		garbageValue = "1229514425"
+		descriptor = "(Lpv;Lpv;B)I",
+		garbageValue = "54"
 	)
 	@Export("compare_bridged")
 	int compare_bridged(GrandExchangeEvent var1, GrandExchangeEvent var2) {
@@ -23,5 +27,14 @@ final class GrandExchangeOfferWorldComparator implements Comparator {
 
 	public boolean equals(Object var1) {
 		return super.equals(var1);
+	}
+
+	@ObfuscatedName("ae")
+	@ObfuscatedSignature(
+		descriptor = "(II)[B",
+		garbageValue = "-2129547212"
+	)
+	public static byte[] method7690(int var0) {
+		return ClanChannel.ByteArrayPool_getArrayBool(var0, false);
 	}
 }

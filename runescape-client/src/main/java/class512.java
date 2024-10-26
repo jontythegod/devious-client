@@ -2,70 +2,84 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("tq")
-public abstract class class512 {
-	@ObfuscatedName("av")
+@ObfuscatedName("td")
+public class class512 extends class514 {
+	@ObfuscatedName("af")
+	static int[][] field5171;
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = -1131756953
+		intValue = 1711043277
 	)
-	int field5138;
-	@ObfuscatedName("ab")
-	@ObfuscatedGetter(
-		intValue = -932997329
-	)
-	int field5140;
-	@ObfuscatedName("ai")
-	double field5139;
+	int field5174;
 	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
-		intValue = -386333095
+		intValue = -991811559
 	)
-	int field5141;
+	int field5173;
+	@ObfuscatedName("ag")
+	@ObfuscatedGetter(
+		intValue = -123236479
+	)
+	int field5170;
+	@ObfuscatedName("am")
+	@ObfuscatedGetter(
+		intValue = -1697348155
+	)
+	int field5169;
+	@ObfuscatedName("ax")
+	@ObfuscatedGetter(
+		intValue = -1286258365
+	)
+	int field5172;
+	@ObfuscatedName("aq")
+	@ObfuscatedGetter(
+		intValue = 1833082827
+	)
+	int field5168;
 
-	class512(int var1, int var2) {
-		this.field5138 = 0;
-		this.field5140 = 0;
-		this.field5139 = 0.0D;
-		this.field5141 = 0;
-		this.field5138 = var1;
-		this.field5140 = 0;
-		this.field5141 = var2 >= 0 && var2 <= 27 ? var2 : 0;
-		this.field5139 = HttpHeaders.method8363(this.field5140, this.field5138, this.field5141);
+	public class512(int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8) {
+		super(var7, var8);
+		this.field5174 = 0;
+		this.field5173 = 0;
+		this.field5170 = 0;
+		this.field5169 = 0;
+		this.field5172 = 0;
+		this.field5168 = 0;
+		this.field5174 = var1;
+		this.field5173 = var2;
+		this.field5170 = var3;
+		this.field5169 = var4;
+		this.field5172 = var5;
+		this.field5168 = var6;
 	}
 
-	@ObfuscatedName("ai")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "2145790593"
+		descriptor = "(I)I",
+		garbageValue = "220008079"
 	)
-	public void method8974() {
-		if (this.field5140 < this.field5138) {
-			++this.field5140;
-			this.field5139 = HttpHeaders.method8363(this.field5140, this.field5138, this.field5141);
-		}
-
+	public int vmethod9311() {
+		double var1 = this.method9323();
+		return (int)Math.round(var1 * (double)(this.field5169 - this.field5174) + (double)this.field5174);
 	}
 
 	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "(I)D",
-		garbageValue = "1207550874"
+		descriptor = "(B)I",
+		garbageValue = "77"
 	)
-	double method8971() {
-		return this.field5139;
+	public int vmethod9314() {
+		double var1 = this.method9323();
+		return (int)Math.round((double)(this.field5172 - this.field5173) * var1 + (double)this.field5173);
 	}
 
-	@ObfuscatedName("ow")
+	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "(IB)V",
-		garbageValue = "1"
+		descriptor = "(B)I",
+		garbageValue = "33"
 	)
-	static void method8981(int var0) {
-		for (IntegerNode var1 = (IntegerNode)Client.widgetFlags.first(); var1 != null; var1 = (IntegerNode)Client.widgetFlags.next()) {
-			if ((var1.key >> 48 & 65535L) == (long)var0) {
-				var1.remove();
-			}
-		}
-
+	public int vmethod9313() {
+		double var1 = this.method9323();
+		return (int)Math.round((double)this.field5170 + (double)(this.field5168 - this.field5170) * var1);
 	}
 }

@@ -2,10 +2,10 @@ import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 
-@ObfuscatedName("op")
+@ObfuscatedName("oa")
 @Implements("Skills")
 public class Skills {
-	@ObfuscatedName("ad")
+	@ObfuscatedName("ae")
 	@Export("Skills_enabled")
 	public static final boolean[] Skills_enabled;
 	@ObfuscatedName("ag")

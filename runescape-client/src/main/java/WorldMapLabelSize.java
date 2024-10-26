@@ -4,61 +4,42 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("jx")
+@ObfuscatedName("ko")
 @Implements("WorldMapLabelSize")
 public class WorldMapLabelSize {
-	@ObfuscatedName("wv")
-	@Export("foundItemIds")
-	static short[] foundItemIds;
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "Ljx;"
+		descriptor = "Lko;"
 	)
 	@Export("WorldMapLabelSize_small")
 	public static final WorldMapLabelSize WorldMapLabelSize_small;
-	@ObfuscatedName("ad")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "Ljx;"
+		descriptor = "Lko;"
 	)
 	@Export("WorldMapLabelSize_medium")
 	public static final WorldMapLabelSize WorldMapLabelSize_medium;
 	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "Ljx;"
+		descriptor = "Lko;"
 	)
 	@Export("WorldMapLabelSize_large")
 	public static final WorldMapLabelSize WorldMapLabelSize_large;
-	@ObfuscatedName("aj")
-	@ObfuscatedSignature(
-		descriptor = "Lok;"
-	)
-	@Export("SequenceDefinition_skeletonsArchive")
-	static AbstractArchive SequenceDefinition_skeletonsArchive;
-	@ObfuscatedName("uw")
+	@ObfuscatedName("am")
 	@ObfuscatedGetter(
-		intValue = 967349357
+		intValue = 252766191
 	)
-	static int field2541;
-	@ObfuscatedName("ug")
+	final int field3075;
+	@ObfuscatedName("ax")
 	@ObfuscatedGetter(
-		intValue = -407252155
+		intValue = -1237526349
 	)
-	static int field2551;
-	@ObfuscatedName("ak")
+	final int field3079;
+	@ObfuscatedName("aq")
 	@ObfuscatedGetter(
-		intValue = 577264531
+		intValue = 360339709
 	)
-	final int field2544;
-	@ObfuscatedName("ap")
-	@ObfuscatedGetter(
-		intValue = -1296221673
-	)
-	final int field2545;
-	@ObfuscatedName("an")
-	@ObfuscatedGetter(
-		intValue = 159073667
-	)
-	final int field2546;
+	final int field3076;
 
 	static {
 		WorldMapLabelSize_small = new WorldMapLabelSize(1, 0, 4);
@@ -67,63 +48,47 @@ public class WorldMapLabelSize {
 	}
 
 	WorldMapLabelSize(int var1, int var2, int var3) {
-		this.field2544 = var1;
-		this.field2545 = var2;
-		this.field2546 = var3;
+		this.field3075 = var1;
+		this.field3079 = var2;
+		this.field3076 = var3;
 	}
 
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
 		descriptor = "(FI)Z",
-		garbageValue = "-848100068"
+		garbageValue = "-1425298382"
 	)
-	boolean method4566(float var1) {
-		return var1 >= (float)this.field2546;
+	boolean method5750(float var1) {
+		return var1 >= (float)this.field3076;
 	}
 
-	@ObfuscatedName("an")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "151913896"
+		descriptor = "(I)[Lko;",
+		garbageValue = "1682309618"
 	)
-	static void method4567() {
-		class146.otp.trim();
-		if (class146.otp.length() != 6) {
-			VerticalAlignment.setLoginResponseString("", "Please enter a 6-digit PIN.", "");
-		} else {
-			class6.otpMedium = Integer.parseInt(class146.otp);
-			class146.otp = "";
-			class213.setAuthenticationScheme(true);
-			VerticalAlignment.setLoginResponseString("", "Connecting to server...", "");
-			ClanChannelMember.updateGameState(20);
-		}
+	static WorldMapLabelSize[] method5755() {
+		return new WorldMapLabelSize[]{WorldMapLabelSize_small, WorldMapLabelSize_large, WorldMapLabelSize_medium};
 	}
 
-	@ObfuscatedName("ic")
+	@ObfuscatedName("ok")
 	@ObfuscatedSignature(
-		descriptor = "(Lii;IIIZI)V",
-		garbageValue = "-617654818"
+		descriptor = "(IIB)V",
+		garbageValue = "1"
 	)
-	static void method4571(SequenceDefinition var0, int var1, int var2, int var3, boolean var4) {
-		if (Client.soundEffectCount < 50) {
-			if (var0.field2287 != null && var0.field2287.containsKey(var1)) {
-				Sound var5 = (Sound)var0.field2287.get(var1);
-				if (var5 != null) {
-					int var6 = var5.field2148 & 31;
-					if ((var6 <= 0 || class105.clientPreferences.getAreaSoundEffectsVolume() != 0) && (var6 != 0 || class105.clientPreferences.getSoundEffectsVolume() != 0)) {
-						class452.method8354(var5, var2, var3, var4);
-					}
-				}
+	static final void method5757(int var0, int var1) {
+		ClanChannel var2 = var0 >= 0 ? Client.currentClanChannels[var0] : class166.guestClanChannel;
+		if (var2 != null && var1 >= 0 && var1 < var2.method3726()) {
+			ClanChannelMember var3 = (ClanChannelMember)var2.members.get(var1);
+			if (var3.rank == -1) {
+				String var4 = var3.username.getName();
+				PacketBufferNode var5 = class141.getPacketBufferNode(ClientPacket.field3320, Client.packetWriter.isaacCipher);
+				var5.packetBuffer.writeByte(3 + class536.stringCp1252NullTerminatedByteSize(var4));
+				var5.packetBuffer.writeByte(var0);
+				var5.packetBuffer.writeShort(var1);
+				var5.packetBuffer.writeStringCp1252NullTerminated(var4);
+				Client.packetWriter.addNode(var5);
 			}
 		}
-	}
-
-	@ObfuscatedName("ir")
-	@ObfuscatedSignature(
-		descriptor = "(IB)I",
-		garbageValue = "75"
-	)
-	static final int method4572(int var0) {
-		return Math.abs(var0 - class337.cameraYaw) > 1024 ? var0 + 2048 * (var0 < class337.cameraYaw ? 1 : -1) : var0;
 	}
 }

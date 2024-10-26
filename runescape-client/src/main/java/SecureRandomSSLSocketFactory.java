@@ -14,17 +14,17 @@ import net.runelite.mapping.ObfuscatedSignature;
 import org.bouncycastle.crypto.tls.TlsClientProtocol;
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
 
-@ObfuscatedName("ac")
+@ObfuscatedName("az")
 @Implements("SecureRandomSSLSocketFactory")
 public class SecureRandomSSLSocketFactory extends SSLSocketFactory {
-	@ObfuscatedName("ad")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "Lac;"
+		descriptor = "Laz;"
 	)
 	@Export("INSTANCE")
-	static SecureRandomSSLSocketFactory INSTANCE;
-	@ObfuscatedName("aq")
-	SecureRandom field69;
+	public static SecureRandomSSLSocketFactory INSTANCE;
+	@ObfuscatedName("ac")
+	SecureRandom field59;
 
 	static {
 		if (Security.getProvider("BC") == null) {
@@ -33,22 +33,18 @@ public class SecureRandomSSLSocketFactory extends SSLSocketFactory {
 
 	}
 
-	SecureRandomSSLSocketFactory() {
-		this.field69 = new SecureRandom();
+	public SecureRandomSSLSocketFactory() {
+		this.field59 = new SecureRandom();
 	}
 
-	@ObfuscatedName("ad")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
 		descriptor = "(Ljava/lang/String;Lorg/bouncycastle/crypto/tls/TlsClientProtocol;I)Ljavax/net/ssl/SSLSocket;",
-		garbageValue = "1661367691"
+		garbageValue = "-832765734"
 	)
 	@Export("createSocket")
 	SSLSocket createSocket(String var1, TlsClientProtocol var2) {
 		return new SecureRandomSSLSocket(this, var2, var1);
-	}
-
-	public Socket createSocket(String var1, int var2) throws IOException, UnknownHostException {
-		return null;
 	}
 
 	public Socket createSocket(Socket var1, String var2, int var3, boolean var4) throws IOException {
@@ -60,15 +56,15 @@ public class SecureRandomSSLSocketFactory extends SSLSocketFactory {
 			var1.connect(new InetSocketAddress(var2, var3));
 		}
 
-		TlsClientProtocol var5 = new TlsClientProtocol(var1.getInputStream(), var1.getOutputStream(), this.field69);
+		TlsClientProtocol var5 = new TlsClientProtocol(var1.getInputStream(), var1.getOutputStream(), this.field59);
 		return this.createSocket(var2, var5);
 	}
 
-	public String[] getDefaultCipherSuites() {
+	public String[] getSupportedCipherSuites() {
 		return null;
 	}
 
-	public String[] getSupportedCipherSuites() {
+	public Socket createSocket(InetAddress var1, int var2) throws IOException {
 		return null;
 	}
 
@@ -80,16 +76,20 @@ public class SecureRandomSSLSocketFactory extends SSLSocketFactory {
 		return null;
 	}
 
-	public Socket createSocket(InetAddress var1, int var2) throws IOException {
+	public String[] getDefaultCipherSuites() {
 		return null;
 	}
 
-	@ObfuscatedName("aq")
+	public Socket createSocket(String var1, int var2) throws IOException, UnknownHostException {
+		return null;
+	}
+
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(B)Lac;",
-		garbageValue = "2"
+		descriptor = "(S)Laz;",
+		garbageValue = "16360"
 	)
-	public static SecureRandomSSLSocketFactory method197() {
+	static SecureRandomSSLSocketFactory method188() {
 		if (INSTANCE == null) {
 			INSTANCE = new SecureRandomSSLSocketFactory();
 		}

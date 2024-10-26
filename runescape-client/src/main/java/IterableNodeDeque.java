@@ -5,20 +5,20 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("pi")
+@ObfuscatedName("pr")
 @Implements("IterableNodeDeque")
 public class IterableNodeDeque implements Iterable, Collection {
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "Ltz;"
+		descriptor = "Lto;"
 	)
 	@Export("sentinel")
 	Node sentinel;
-	@ObfuscatedName("ad")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "Ltz;"
+		descriptor = "Lto;"
 	)
-	Node field4658;
+	Node field4681;
 
 	public IterableNodeDeque() {
 		this.sentinel = new Node();
@@ -26,7 +26,7 @@ public class IterableNodeDeque implements Iterable, Collection {
 		this.sentinel.next = this.sentinel;
 	}
 
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ac")
 	@Export("rsClear")
 	public void rsClear() {
 		while (this.sentinel.previous != this.sentinel) {
@@ -35,9 +35,9 @@ public class IterableNodeDeque implements Iterable, Collection {
 
 	}
 
-	@ObfuscatedName("ad")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "(Ltz;)V"
+		descriptor = "(Lto;)V"
 	)
 	@Export("addFirst")
 	public void addFirst(Node var1) {
@@ -53,7 +53,7 @@ public class IterableNodeDeque implements Iterable, Collection {
 
 	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "(Ltz;)V"
+		descriptor = "(Lto;)V"
 	)
 	@Export("addLast")
 	public void addLast(Node var1) {
@@ -67,20 +67,20 @@ public class IterableNodeDeque implements Iterable, Collection {
 		var1.previous.next = var1;
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ax")
 	@ObfuscatedSignature(
-		descriptor = "()Ltz;"
+		descriptor = "()Lto;"
 	)
 	@Export("last")
 	public Node last() {
-		return this.method7512((Node)null);
+		return this.method7840((Node)null);
 	}
 
-	@ObfuscatedName("an")
+	@ObfuscatedName("aq")
 	@ObfuscatedSignature(
-		descriptor = "(Ltz;)Ltz;"
+		descriptor = "(Lto;)Lto;"
 	)
-	Node method7512(Node var1) {
+	Node method7840(Node var1) {
 		Node var2;
 		if (var1 == null) {
 			var2 = this.sentinel.previous;
@@ -89,32 +89,32 @@ public class IterableNodeDeque implements Iterable, Collection {
 		}
 
 		if (var2 == this.sentinel) {
-			this.field4658 = null;
+			this.field4681 = null;
 			return null;
 		} else {
-			this.field4658 = var2.previous;
+			this.field4681 = var2.previous;
 			return var2;
 		}
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "()Ltz;"
+		descriptor = "()Lto;"
 	)
 	@Export("previous")
 	public Node previous() {
-		Node var1 = this.field4658;
+		Node var1 = this.field4681;
 		if (var1 == this.sentinel) {
-			this.field4658 = null;
+			this.field4681 = null;
 			return null;
 		} else {
-			this.field4658 = var1.previous;
+			this.field4681 = var1.previous;
 			return var1;
 		}
 	}
 
-	@ObfuscatedName("av")
-	int method7539() {
+	@ObfuscatedName("at")
+	int method7835() {
 		int var1 = 0;
 
 		for (Node var2 = this.sentinel.previous; var2 != this.sentinel; var2 = var2.previous) {
@@ -124,17 +124,17 @@ public class IterableNodeDeque implements Iterable, Collection {
 		return var1;
 	}
 
-	@ObfuscatedName("ab")
-	public boolean method7494() {
+	@ObfuscatedName("au")
+	public boolean method7843() {
 		return this.sentinel.previous == this.sentinel;
 	}
 
-	@ObfuscatedName("ai")
+	@ObfuscatedName("ar")
 	@ObfuscatedSignature(
-		descriptor = "()[Ltz;"
+		descriptor = "()[Lto;"
 	)
-	Node[] method7498() {
-		Node[] var1 = new Node[this.method7539()];
+	Node[] method7844() {
+		Node[] var1 = new Node[this.method7835()];
 		int var2 = 0;
 
 		for (Node var3 = this.sentinel.previous; var3 != this.sentinel; var3 = var3.previous) {
@@ -144,29 +144,21 @@ public class IterableNodeDeque implements Iterable, Collection {
 		return var1;
 	}
 
-	@ObfuscatedName("ae")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "(Ltz;)Z"
+		descriptor = "(Lto;)Z"
 	)
-	boolean method7526(Node var1) {
+	boolean method7837(Node var1) {
 		this.addFirst(var1);
 		return true;
 	}
 
-	public Iterator iterator() {
-		return new IterableNodeDequeDescendingIterator(this);
-	}
-
 	public boolean isEmpty() {
-		return this.method7494();
+		return this.method7843();
 	}
 
 	public boolean contains(Object var1) {
 		throw new RuntimeException();
-	}
-
-	public Object[] toArray() {
-		return this.method7498();
 	}
 
 	public Object[] toArray(Object[] var1) {
@@ -187,8 +179,12 @@ public class IterableNodeDeque implements Iterable, Collection {
 		throw new RuntimeException();
 	}
 
-	public boolean removeAll(Collection var1) {
+	public boolean addAll(Collection var1) {
 		throw new RuntimeException();
+	}
+
+	public int size() {
+		return this.method7835();
 	}
 
 	public boolean retainAll(Collection var1) {
@@ -200,28 +196,32 @@ public class IterableNodeDeque implements Iterable, Collection {
 	}
 
 	public boolean add(Object var1) {
-		return this.method7526((Node)var1);
+		return this.method7837((Node)var1);
 	}
 
 	public boolean equals(Object var1) {
 		return super.equals(var1);
 	}
 
-	public boolean addAll(Collection var1) {
-		throw new RuntimeException();
-	}
-
-	public int size() {
-		return this.method7539();
+	public Iterator iterator() {
+		return new IterableNodeDequeDescendingIterator(this);
 	}
 
 	public int hashCode() {
 		return super.hashCode();
 	}
 
-	@ObfuscatedName("ak")
+	public boolean removeAll(Collection var1) {
+		throw new RuntimeException();
+	}
+
+	public Object[] toArray() {
+		return this.method7844();
+	}
+
+	@ObfuscatedName("am")
 	@ObfuscatedSignature(
-		descriptor = "(Ltz;Ltz;)V"
+		descriptor = "(Lto;Lto;)V"
 	)
 	@Export("IterableNodeDeque_addBefore")
 	public static void IterableNodeDeque_addBefore(Node var0, Node var1) {

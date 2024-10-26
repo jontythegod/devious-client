@@ -3,57 +3,103 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("lb")
+@ObfuscatedName("kj")
 @Implements("ModelData0")
 public class ModelData0 {
+	@ObfuscatedName("af")
+	@Export("SpriteBuffer_spriteHeights")
+	public static int[] SpriteBuffer_spriteHeights;
+	@ObfuscatedName("au")
+	static int[] field2920;
+
 	ModelData0() {
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("am")
 	@ObfuscatedSignature(
-		descriptor = "(Lcw;Lcw;IZI)I",
-		garbageValue = "-254289583"
+		descriptor = "(CI)C",
+		garbageValue = "-1995944079"
 	)
-	@Export("compareWorlds")
-	static int compareWorlds(World var0, World var1, int var2, boolean var3) {
-		if (var2 == 1) {
-			int var4 = var0.population;
-			int var5 = var1.population;
-			if (!var3) {
-				if (var4 == -1) {
-					var4 = 2001;
-				}
-
-				if (var5 == -1) {
-					var5 = 2001;
-				}
-			}
-
-			return var4 - var5;
-		} else if (var2 == 2) {
-			return var0.location - var1.location;
-		} else if (var2 == 3) {
-			if (var0.activity.equals("-")) {
-				if (var1.activity.equals("-")) {
-					return 0;
-				} else {
-					return var3 ? -1 : 1;
-				}
-			} else if (var1.activity.equals("-")) {
-				return var3 ? 1 : -1;
-			} else {
-				return var0.activity.compareTo(var1.activity);
-			}
-		} else if (var2 == 4) {
-			return var0.method1875() ? (var1.method1875() ? 0 : 1) : (var1.method1875() ? -1 : 0);
-		} else if (var2 == 5) {
-			return var0.method1847() ? (var1.method1847() ? 0 : 1) : (var1.method1847() ? -1 : 0);
-		} else if (var2 == 6) {
-			return var0.isPvp() ? (var1.isPvp() ? 0 : 1) : (var1.isPvp() ? -1 : 0);
-		} else if (var2 == 7) {
-			return var0.isMembersOnly() ? (var1.isMembersOnly() ? 0 : 1) : (var1.isMembersOnly() ? -1 : 0);
-		} else {
-			return var0.id - var1.id;
+	public static char method5516(char var0) {
+		switch(var0) {
+		case ' ':
+		case '-':
+		case '_':
+		case ' ':
+			return '_';
+		case '#':
+		case '[':
+		case ']':
+			return var0;
+		case 'À':
+		case 'Á':
+		case 'Â':
+		case 'Ã':
+		case 'Ä':
+		case 'à':
+		case 'á':
+		case 'â':
+		case 'ã':
+		case 'ä':
+			return 'a';
+		case 'Ç':
+		case 'ç':
+			return 'c';
+		case 'È':
+		case 'É':
+		case 'Ê':
+		case 'Ë':
+		case 'è':
+		case 'é':
+		case 'ê':
+		case 'ë':
+			return 'e';
+		case 'Í':
+		case 'Î':
+		case 'Ï':
+		case 'í':
+		case 'î':
+		case 'ï':
+			return 'i';
+		case 'Ñ':
+		case 'ñ':
+			return 'n';
+		case 'Ò':
+		case 'Ó':
+		case 'Ô':
+		case 'Õ':
+		case 'Ö':
+		case 'ò':
+		case 'ó':
+		case 'ô':
+		case 'õ':
+		case 'ö':
+			return 'o';
+		case 'Ù':
+		case 'Ú':
+		case 'Û':
+		case 'Ü':
+		case 'ù':
+		case 'ú':
+		case 'û':
+		case 'ü':
+			return 'u';
+		case 'ß':
+			return 'b';
+		case 'ÿ':
+		case 'Ÿ':
+			return 'y';
+		default:
+			return Character.toLowerCase(var0);
 		}
+	}
+
+	@ObfuscatedName("am")
+	@ObfuscatedSignature(
+		descriptor = "(CB)C",
+		garbageValue = "-80"
+	)
+	static char method5515(char var0) {
+		return var0 != 181 && var0 != 402 ? Character.toTitleCase(var0) : var0;
 	}
 }

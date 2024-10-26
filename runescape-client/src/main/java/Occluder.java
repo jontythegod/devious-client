@@ -3,110 +3,113 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 
-@ObfuscatedName("lq")
+@ObfuscatedName("jz")
 @Implements("Occluder")
 public final class Occluder {
-	@ObfuscatedName("aq")
+	@ObfuscatedName("jv")
+	@Export("regions")
+	static int[] regions;
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = 575408093
+		intValue = -1042787705
 	)
 	@Export("minTileX")
 	int minTileX;
-	@ObfuscatedName("ad")
+	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
-		intValue = 877137935
+		intValue = 437852685
 	)
 	@Export("maxTileX")
 	int maxTileX;
 	@ObfuscatedName("ag")
 	@ObfuscatedGetter(
-		intValue = -1022802073
+		intValue = 1488447437
 	)
 	@Export("minTileY")
 	int minTileY;
-	@ObfuscatedName("ak")
+	@ObfuscatedName("am")
 	@ObfuscatedGetter(
-		intValue = -992363163
+		intValue = 702157191
 	)
 	@Export("maxTileY")
 	int maxTileY;
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ax")
 	@ObfuscatedGetter(
-		intValue = 833361189
+		intValue = -1532244041
 	)
 	@Export("type")
 	int type;
-	@ObfuscatedName("an")
+	@ObfuscatedName("aq")
 	@ObfuscatedGetter(
-		intValue = -315839245
+		intValue = 1384818045
 	)
 	@Export("minX")
 	int minX;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("af")
 	@ObfuscatedGetter(
-		intValue = 633592847
+		intValue = 1043206691
 	)
 	@Export("maxX")
 	int maxX;
-	@ObfuscatedName("av")
+	@ObfuscatedName("at")
 	@ObfuscatedGetter(
-		intValue = 1959124921
+		intValue = 566424513
 	)
 	@Export("minZ")
 	int minZ;
-	@ObfuscatedName("ab")
+	@ObfuscatedName("au")
 	@ObfuscatedGetter(
-		intValue = 498239391
+		intValue = -1820248145
 	)
 	@Export("maxZ")
 	int maxZ;
-	@ObfuscatedName("ai")
+	@ObfuscatedName("ar")
 	@ObfuscatedGetter(
-		intValue = -578642149
+		intValue = 1743404645
 	)
 	@Export("minY")
 	int minY;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("al")
 	@ObfuscatedGetter(
-		intValue = 1847650875
+		intValue = 1135123739
 	)
 	@Export("maxY")
 	int maxY;
-	@ObfuscatedName("au")
+	@ObfuscatedName("ad")
 	@ObfuscatedGetter(
-		intValue = -585445525
+		intValue = -481333385
 	)
-	int field3039;
+	int field2750;
 	@ObfuscatedName("ah")
 	@ObfuscatedGetter(
-		intValue = 1137855523
+		intValue = -53982503
 	)
-	int field3043;
+	int field2743;
+	@ObfuscatedName("ap")
+	@ObfuscatedGetter(
+		intValue = 1620765077
+	)
+	int field2755;
+	@ObfuscatedName("ab")
+	@ObfuscatedGetter(
+		intValue = -1125774545
+	)
+	int field2756;
 	@ObfuscatedName("az")
 	@ObfuscatedGetter(
-		intValue = -423343487
+		intValue = -904349407
 	)
-	int field3041;
-	@ObfuscatedName("ax")
+	int field2757;
+	@ObfuscatedName("aa")
 	@ObfuscatedGetter(
-		intValue = 2139834455
+		intValue = 1554590207
 	)
-	int field3044;
-	@ObfuscatedName("ac")
+	int field2748;
+	@ObfuscatedName("ai")
 	@ObfuscatedGetter(
-		intValue = 315870443
+		intValue = 1751243225
 	)
-	int field3031;
-	@ObfuscatedName("al")
-	@ObfuscatedGetter(
-		intValue = 239975763
-	)
-	int field3032;
-	@ObfuscatedName("ay")
-	@ObfuscatedGetter(
-		intValue = 1170254445
-	)
-	int field3045;
+	int field2759;
 
 	Occluder() {
 	}

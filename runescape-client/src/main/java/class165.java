@@ -3,102 +3,95 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("gn")
-public class class165 extends class147 {
-	@ObfuscatedName("aq")
+@ObfuscatedName("gx")
+public class class165 extends class150 {
+	@ObfuscatedName("wc")
+	@Export("foundItemIds")
+	static short[] foundItemIds;
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = 1586739759
+		longValue = -1146938620143981425L
 	)
-	int field1815;
-	@ObfuscatedName("ad")
+	long field1810;
+	@ObfuscatedName("ae")
+	String field1808;
+	@ObfuscatedName("ag")
 	@ObfuscatedGetter(
-		intValue = 1757786379
+		intValue = -1843206009
 	)
-	int field1814;
+	int field1807;
 	// $FF: synthetic field
 	@ObfuscatedSignature(
-		descriptor = "Lfn;"
+		descriptor = "Lfz;"
 	)
-	final class150 this$0;
+	final class153 this$0;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lfn;)V"
+		descriptor = "(Lfz;)V"
 	)
-	class165(class150 var1) {
+	class165(class153 var1) {
 		this.this$0 = var1;
+		this.field1810 = -1L;
+		this.field1808 = null;
+		this.field1807 = 0;
 	}
 
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(Lvp;B)V",
-		garbageValue = "118"
+		descriptor = "(Lvf;B)V",
+		garbageValue = "127"
 	)
-	void vmethod3528(Buffer var1) {
-		this.field1815 = var1.readInt();
-		this.field1814 = var1.readInt();
+	void vmethod3778(Buffer var1) {
+		if (var1.readUnsignedByte() != 255) {
+			--var1.offset;
+			this.field1810 = var1.readLong();
+		}
+
+		this.field1808 = var1.readStringCp1252NullTerminatedOrNull();
+		this.field1807 = var1.readUnsignedShort();
 	}
 
-	@ObfuscatedName("ad")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "(Lgk;B)V",
-		garbageValue = "3"
+		descriptor = "(Lgo;B)V",
+		garbageValue = "32"
 	)
-	void vmethod3530(ClanSettings var1) {
-		var1.method3364(this.field1815, this.field1814);
+	void vmethod3771(ClanSettings var1) {
+		var1.method3603(this.field1810, this.field1808, this.field1807);
 	}
 
-	@ObfuscatedName("aq")
+	@ObfuscatedName("lv")
 	@ObfuscatedSignature(
-		descriptor = "(II)Lgg;",
-		garbageValue = "-1362390097"
+		descriptor = "(Ldd;IIIIIIIIIII)V",
+		garbageValue = "-1812243666"
 	)
-	@Export("WorldMapElement_get")
-	public static WorldMapElement WorldMapElement_get(int var0) {
-		return var0 >= 0 && var0 < WorldMapElement.WorldMapElement_cached.length && WorldMapElement.WorldMapElement_cached[var0] != null ? WorldMapElement.WorldMapElement_cached[var0] : new WorldMapElement(var0);
-	}
+	static void method3680(WorldView var0, int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10) {
+		NodeDeque var11 = var0.pendingSpawns;
+		PendingSpawn var12 = null;
 
-	@ObfuscatedName("aq")
-	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/CharSequence;B)[B",
-		garbageValue = "-53"
-	)
-	public static byte[] method3465(CharSequence var0) {
-		int var1 = var0.length();
-		byte[] var2 = new byte[var1];
-
-		for (int var3 = 0; var3 < var1; ++var3) {
-			char var4 = var0.charAt(var3);
-			if (var4 > 127) {
-				var2[var3] = 63;
-			} else {
-				var2[var3] = (byte)var4;
+		for (PendingSpawn var13 = (PendingSpawn)var11.last(); var13 != null; var13 = (PendingSpawn)var11.previous()) {
+			if (var13.plane == var1 && var2 == var13.x && var3 == var13.y && var4 == var13.type) {
+				var12 = var13;
+				break;
 			}
 		}
 
-		return var2;
-	}
-
-	@ObfuscatedName("ag")
-	@ObfuscatedSignature(
-		descriptor = "(III)I",
-		garbageValue = "-1609232635"
-	)
-	static int method3467(int var0, int var1) {
-		ItemContainer var2 = (ItemContainer)ItemContainer.itemContainers.get((long)var0);
-		if (var2 == null) {
-			return 0;
-		} else if (var1 == -1) {
-			return 0;
-		} else {
-			int var3 = 0;
-
-			for (int var4 = 0; var4 < var2.quantities.length; ++var4) {
-				if (var2.ids[var4] == var1) {
-					var3 += var2.quantities[var4];
-				}
-			}
-
-			return var3;
+		if (var12 == null) {
+			var12 = new PendingSpawn();
+			var12.plane = var1;
+			var12.type = var4;
+			var12.x = var2;
+			var12.y = var3;
+			var12.field1221 = -1;
+			class254.method5223(var0, var12);
+			var11.addFirst(var12);
 		}
+
+		var12.field1215 = var5;
+		var12.field1214 = var6;
+		var12.field1212 = var7;
+		var12.delay = var9;
+		var12.hitpoints = var10;
+		var12.method2628(var8);
 	}
 }

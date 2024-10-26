@@ -3,53 +3,65 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
+import net.runelite.rs.Reflection;
 
-@ObfuscatedName("hq")
+@ObfuscatedName("hr")
 @Implements("KitDefinition")
 public class KitDefinition extends DualNode {
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "Lok;"
+		descriptor = "Lpo;"
 	)
 	@Export("KitDefinition_archive")
 	public static AbstractArchive KitDefinition_archive;
-	@ObfuscatedName("ad")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "Lok;"
+		descriptor = "Lpo;"
 	)
 	@Export("KitDefinition_modelsArchive")
 	public static AbstractArchive KitDefinition_modelsArchive;
-	@ObfuscatedName("ak")
+	@ObfuscatedName("ag")
+	@ObfuscatedGetter(
+		intValue = -2082710201
+	)
+	@Export("KitDefinition_fileCount")
+	public static int KitDefinition_fileCount;
+	@ObfuscatedName("am")
 	@ObfuscatedSignature(
-		descriptor = "Lmo;"
+		descriptor = "Lml;"
 	)
 	@Export("KitDefinition_cached")
 	public static EvictingDualNodeHashTable KitDefinition_cached;
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ay")
+	@Export("osNameLowercase")
+	public static String osNameLowercase;
+	@ObfuscatedName("bb")
+	protected static String field1940;
+	@ObfuscatedName("ax")
 	@ObfuscatedGetter(
-		intValue = 413166461
+		intValue = 1607755959
 	)
 	@Export("bodypartID")
-	public int bodypartID;
-	@ObfuscatedName("an")
+	int bodypartID;
+	@ObfuscatedName("aq")
 	@Export("models2")
 	int[] models2;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("af")
 	@Export("recolorFrom")
 	short[] recolorFrom;
-	@ObfuscatedName("av")
+	@ObfuscatedName("at")
 	@Export("recolorTo")
 	short[] recolorTo;
-	@ObfuscatedName("ab")
+	@ObfuscatedName("au")
 	@Export("retextureFrom")
 	short[] retextureFrom;
-	@ObfuscatedName("ai")
+	@ObfuscatedName("ar")
 	@Export("retextureTo")
 	short[] retextureTo;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("al")
 	@Export("models")
 	int[] models;
-	@ObfuscatedName("au")
+	@ObfuscatedName("ad")
 	@Export("nonSelectable")
 	public boolean nonSelectable;
 
@@ -63,10 +75,10 @@ public class KitDefinition extends DualNode {
 		this.nonSelectable = false;
 	}
 
-	@ObfuscatedName("ad")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "(Lvp;I)V",
-		garbageValue = "463832260"
+		descriptor = "(Lvf;I)V",
+		garbageValue = "919408233"
 	)
 	@Export("decode")
 	void decode(Buffer var1) {
@@ -82,8 +94,8 @@ public class KitDefinition extends DualNode {
 
 	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "(Lvp;IB)V",
-		garbageValue = "1"
+		descriptor = "(Lvf;IB)V",
+		garbageValue = "-22"
 	)
 	@Export("decodeNext")
 	void decodeNext(Buffer var1, int var2) {
@@ -126,10 +138,23 @@ public class KitDefinition extends DualNode {
 
 	}
 
-	@ObfuscatedName("ak")
+	@ObfuscatedName("am")
+	@ObfuscatedSignature(
+		descriptor = "(III)Z",
+		garbageValue = "-560651389"
+	)
+	public boolean method3866(int var1, int var2) {
+		if (var2 == 1) {
+			return this.bodypartID == var1 + 7;
+		} else {
+			return this.bodypartID == var1;
+		}
+	}
+
+	@ObfuscatedName("ax")
 	@ObfuscatedSignature(
 		descriptor = "(I)Z",
-		garbageValue = "2042180474"
+		garbageValue = "-1152299255"
 	)
 	@Export("ready")
 	public boolean ready() {
@@ -148,10 +173,10 @@ public class KitDefinition extends DualNode {
 		}
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("aq")
 	@ObfuscatedSignature(
-		descriptor = "(I)Lkr;",
-		garbageValue = "-1455217912"
+		descriptor = "(B)Ljv;",
+		garbageValue = "-18"
 	)
 	@Export("getModelData")
 	public ModelData getModelData() {
@@ -188,12 +213,12 @@ public class KitDefinition extends DualNode {
 		}
 	}
 
-	@ObfuscatedName("an")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "(B)Z",
-		garbageValue = "-44"
+		descriptor = "(I)Z",
+		garbageValue = "-861896719"
 	)
-	public boolean method3625() {
+	public boolean method3869() {
 		boolean var1 = true;
 
 		for (int var2 = 0; var2 < 5; ++var2) {
@@ -205,10 +230,10 @@ public class KitDefinition extends DualNode {
 		return var1;
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(I)Lkr;",
-		garbageValue = "948604691"
+		descriptor = "(I)Ljv;",
+		garbageValue = "-862604109"
 	)
 	@Export("getKitDefinitionModels")
 	public ModelData getKitDefinitionModels() {
@@ -238,12 +263,84 @@ public class KitDefinition extends DualNode {
 		return var5;
 	}
 
-	@ObfuscatedName("mt")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;Ljava/lang/String;IIIIIB)V",
-		garbageValue = "53"
+		descriptor = "(Lpo;I)V",
+		garbageValue = "438379091"
 	)
-	static final void method3632(String var0, String var1, int var2, int var3, int var4, int var5, int var6) {
-		WorldMapArea.insertMenuItem(var0, var1, var2, var3, var4, var5, var6, false, -1);
+	public static void method3872(AbstractArchive var0) {
+		FloorUnderlayDefinition.FloorUnderlayDefinition_archive = var0;
+	}
+
+	@ObfuscatedName("ae")
+	@ObfuscatedSignature(
+		descriptor = "(CB)Z",
+		garbageValue = "35"
+	)
+	public static boolean method3889(char var0) {
+		if ((var0 <= 0 || var0 >= 128) && (var0 < 160 || var0 > 255)) {
+			if (var0 != 0) {
+				char[] var1 = class416.cp1252AsciiExtension;
+
+				for (int var2 = 0; var2 < var1.length; ++var2) {
+					char var3 = var1[var2];
+					if (var0 == var3) {
+						return true;
+					}
+				}
+			}
+
+			return false;
+		} else {
+			return true;
+		}
+	}
+
+	@ObfuscatedName("ag")
+	@ObfuscatedSignature(
+		descriptor = "(Ljava/lang/String;B)Ljava/lang/Class;",
+		garbageValue = "65"
+	)
+	@Export("loadClassFromDescriptor")
+	static Class loadClassFromDescriptor(String var0) throws ClassNotFoundException {
+		if (var0.equals("B")) {
+			return Byte.TYPE;
+		} else if (var0.equals("I")) {
+			return Integer.TYPE;
+		} else if (var0.equals("S")) {
+			return Short.TYPE;
+		} else if (var0.equals("J")) {
+			return Long.TYPE;
+		} else if (var0.equals("Z")) {
+			return Boolean.TYPE;
+		} else if (var0.equals("F")) {
+			return Float.TYPE;
+		} else if (var0.equals("D")) {
+			return Double.TYPE;
+		} else if (var0.equals("C")) {
+			return Character.TYPE;
+		} else {
+			return var0.equals("void") ? Void.TYPE : Reflection.findClass(var0);
+		}
+	}
+
+	@ObfuscatedName("bx")
+	@ObfuscatedSignature(
+		descriptor = "(I)V",
+		garbageValue = "245120677"
+	)
+	protected static final void method3891() {
+		class354.clock.mark();
+
+		int var0;
+		for (var0 = 0; var0 < 32; ++var0) {
+			GameEngine.graphicsTickTimes[var0] = 0L;
+		}
+
+		for (var0 = 0; var0 < 32; ++var0) {
+			GameEngine.clientTickTimes[var0] = 0L;
+		}
+
+		GameEngine.gameCyclesToDo = 0;
 	}
 }

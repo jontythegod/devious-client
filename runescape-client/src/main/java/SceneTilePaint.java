@@ -1,48 +1,52 @@
+import java.io.InputStream;
+import java.io.OutputStreamWriter;
+import java.net.URL;
+import java.net.URLConnection;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("lt")
+@ObfuscatedName("jl")
 @Implements("SceneTilePaint")
 public final class SceneTilePaint {
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = -1673746339
+		intValue = -1682983483
 	)
 	@Export("swColor")
 	int swColor;
-	@ObfuscatedName("ad")
+	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
-		intValue = -860148807
+		intValue = 1385793473
 	)
 	@Export("seColor")
 	int seColor;
 	@ObfuscatedName("ag")
 	@ObfuscatedGetter(
-		intValue = -1168172891
+		intValue = -1447020527
 	)
 	@Export("neColor")
 	int neColor;
-	@ObfuscatedName("ak")
+	@ObfuscatedName("am")
 	@ObfuscatedGetter(
-		intValue = 716391559
+		intValue = -1755662469
 	)
 	@Export("nwColor")
 	int nwColor;
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ax")
 	@ObfuscatedGetter(
-		intValue = -233451403
+		intValue = 1870095485
 	)
 	@Export("texture")
 	int texture;
-	@ObfuscatedName("an")
+	@ObfuscatedName("aq")
 	@Export("isFlat")
 	boolean isFlat;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("af")
 	@ObfuscatedGetter(
-		intValue = -448594561
+		intValue = 1616083007
 	)
 	@Export("rgb")
 	int rgb;
@@ -58,56 +62,39 @@ public final class SceneTilePaint {
 		this.isFlat = var7;
 	}
 
-	@ObfuscatedName("ln")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(Lde;IIII)V",
-		garbageValue = "464797774"
+		descriptor = "(I)J",
+		garbageValue = "-403784714"
 	)
-	@Export("updateItemPile2")
-	static final void updateItemPile2(WorldView var0, int var1, int var2, int var3) {
-		NodeDeque var4 = var0.groundItems[var1][var2][var3];
-		if (var4 == null) {
-			var0.scene.removeGroundItemPile(var1, var2, var3);
-		} else {
-			long var5 = -99999999L;
-			TileItem var7 = null;
+	static long method5415() {
+		try {
+			URL var0 = new URL(class354.method6858("services", false) + "m=accountappeal/login.ws");
+			URLConnection var1 = var0.openConnection();
+			var1.setRequestProperty("connection", "close");
+			var1.setDoInput(true);
+			var1.setDoOutput(true);
+			var1.setConnectTimeout(5000);
+			OutputStreamWriter var2 = new OutputStreamWriter(var1.getOutputStream());
+			var2.write("data1=req");
+			var2.flush();
+			InputStream var3 = var1.getInputStream();
+			Buffer var4 = new Buffer(new byte[1000]);
 
-			TileItem var8;
-			for (var8 = (TileItem)var4.last(); var8 != null; var8 = (TileItem)var4.previous()) {
-				ItemComposition var9 = class164.ItemDefinition_get(var8.id);
-				long var13 = (long)var9.price;
-				if (var9.isStackable == 1) {
-					var13 *= var8.quantity < Integer.MAX_VALUE ? (long)(var8.quantity + 1) : (long)var8.quantity;
+			do {
+				int var5 = var3.read(var4.array, var4.offset, 1000 - var4.offset);
+				if (var5 == -1) {
+					var4.offset = 0;
+					long var7 = var4.readLong();
+					return var7;
 				}
 
-				if (var13 > var5) {
-					var5 = var13;
-					var7 = var8;
-				}
-			}
+				var4.offset += var5;
+			} while(var4.offset < 1000);
 
-			if (var7 == null) {
-				var0.scene.removeGroundItemPile(var1, var2, var3);
-			} else {
-				var4.addLast(var7);
-				TileItem var15 = null;
-				TileItem var10 = null;
-
-				for (var8 = (TileItem)var4.last(); var8 != null; var8 = (TileItem)var4.previous()) {
-					if (var7.id != var8.id) {
-						if (var15 == null) {
-							var15 = var8;
-						}
-
-						if (var8.id != var15.id && var10 == null) {
-							var10 = var8;
-						}
-					}
-				}
-
-				long var11 = FileSystem.calculateTag(var2, var3, 3, false, 0, var0.id);
-				var0.scene.newGroundItemPile(var1, var2, var3, class169.getTileHeight(var0, class376.method7084(var2), class376.method7084(var3), var1), var7, var11, var15, var10);
-			}
+			return 0L;
+		} catch (Exception var9) {
+			return 0L;
 		}
 	}
 }

@@ -1,65 +1,50 @@
-import java.net.URL;
-import net.runelite.mapping.Export;
+import java.util.Iterator;
 import net.runelite.mapping.Implements;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("oc")
+@ObfuscatedName("ok")
 @Implements("Strings")
 public class Strings {
-	@ObfuscatedName("fh")
-	public static String field4247;
-	@ObfuscatedName("kx")
-	public static String field4293;
-	@ObfuscatedName("ka")
-	public static String field4161;
-	@ObfuscatedName("kt")
-	public static String field4384;
+	@ObfuscatedName("ft")
+	public static String field4267;
+	@ObfuscatedName("kw")
+	public static String field4320;
+	@ObfuscatedName("kq")
+	public static String field4403;
+	@ObfuscatedName("ky")
+	public static String field4187;
+	@ObfuscatedName("pw")
+	@ObfuscatedGetter(
+		intValue = 1043309719
+	)
+	static int field4449;
+	@ObfuscatedName("uc")
+	@ObfuscatedGetter(
+		intValue = 1529744005
+	)
+	static int field4450;
 
 	static {
-		field4247 = "Please visit the support page for assistance.";
-		field4293 = "";
-		field4161 = "Page has opened in the browser.";
-		field4384 = "";
+		field4267 = "Please visit the support page for assistance.";
+		field4320 = "";
+		field4403 = "Page has opened in the browser.";
+		field4187 = "";
 	}
 
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "(I)Z",
-		garbageValue = "-11094289"
+		descriptor = "(III)V",
+		garbageValue = "-161366658"
 	)
-	@Export("loadWorlds")
-	static boolean loadWorlds() {
-		try {
-			if (PlayerCompositionColorTextureOverride.World_request == null) {
-				PlayerCompositionColorTextureOverride.World_request = ByteArrayPool.urlRequester.request(new URL(Archive.field4493));
-			} else if (PlayerCompositionColorTextureOverride.World_request.isDone()) {
-				byte[] var0 = PlayerCompositionColorTextureOverride.World_request.getResponse();
-				Buffer var1 = new Buffer(var0);
-				var1.readInt();
-				World.World_count = var1.readUnsignedShort();
-				class357.World_worlds = new World[World.World_count];
+	public static void method7442(int var0, int var1) {
+		Iterator var2 = class334.field3623.iterator();
 
-				World var3;
-				for (int var2 = 0; var2 < World.World_count; var3.index = var2++) {
-					var3 = class357.World_worlds[var2] = new World();
-					var3.id = var1.readUnsignedShort();
-					var3.properties = var1.readInt();
-					var3.host = var1.readStringCp1252NullTerminated();
-					var3.activity = var1.readStringCp1252NullTerminated();
-					var3.location = var1.readUnsignedByte();
-					var3.population = var1.readShort();
-				}
-
-				AbstractWorldMapData.sortWorlds(class357.World_worlds, 0, class357.World_worlds.length - 1, World.World_sortOption1, World.World_sortOption2);
-				PlayerCompositionColorTextureOverride.World_request = null;
-				return true;
-			}
-		} catch (Exception var4) {
-			var4.printStackTrace();
-			PlayerCompositionColorTextureOverride.World_request = null;
+		while (var2.hasNext()) {
+			class340 var3 = (class340)var2.next();
+			var3.vmethod6713(var0, var1);
 		}
 
-		return false;
 	}
 }

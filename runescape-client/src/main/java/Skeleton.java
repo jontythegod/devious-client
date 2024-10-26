@@ -4,37 +4,32 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ko")
+@ObfuscatedName("jg")
 @Implements("Skeleton")
 public class Skeleton extends Node {
-	@ObfuscatedName("ia")
+	@ObfuscatedName("aq")
 	@ObfuscatedGetter(
-		intValue = -104959579
-	)
-	static int field2915;
-	@ObfuscatedName("an")
-	@ObfuscatedGetter(
-		intValue = 303187343
+		intValue = -210256089
 	)
 	@Export("id")
 	int id;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("af")
 	@ObfuscatedGetter(
-		intValue = 360049709
+		intValue = 1213891965
 	)
 	@Export("count")
 	int count;
-	@ObfuscatedName("av")
+	@ObfuscatedName("at")
 	@Export("transformTypes")
 	int[] transformTypes;
-	@ObfuscatedName("ab")
+	@ObfuscatedName("au")
 	@Export("labels")
 	int[][] labels;
-	@ObfuscatedName("ai")
+	@ObfuscatedName("ar")
 	@ObfuscatedSignature(
-		descriptor = "Lkj;"
+		descriptor = "Ljp;"
 	)
-	class279 field2914;
+	class241 field2629;
 
 	public Skeleton(int var1, byte[] var2) {
 		this.id = var1;
@@ -61,27 +56,27 @@ public class Skeleton extends Node {
 		if (var3.offset < var3.array.length) {
 			var4 = var3.readUnsignedShort();
 			if (var4 > 0) {
-				this.field2914 = new class279(var3, var4);
+				this.field2629 = new class241(var3, var4);
 			}
 		}
 
 	}
 
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(B)I",
-		garbageValue = "-21"
+		descriptor = "(I)I",
+		garbageValue = "-357610485"
 	)
-	public int method5406() {
+	public int method4889() {
 		return this.count;
 	}
 
-	@ObfuscatedName("ad")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "(I)Lkj;",
-		garbageValue = "1927354495"
+		descriptor = "(I)Ljp;",
+		garbageValue = "333832686"
 	)
-	public class279 method5407() {
-		return this.field2914;
+	public class241 method4887() {
+		return this.field2629;
 	}
 }

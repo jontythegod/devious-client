@@ -1,189 +1,163 @@
-import java.lang.reflect.Field;
-import java.lang.reflect.Method;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
-import net.runelite.rs.Reflection;
 
-@ObfuscatedName("gr")
-public class class160 extends class163 {
-	@ObfuscatedName("aq")
-	@ObfuscatedGetter(
-		intValue = -704237327
+@ObfuscatedName("gb")
+public class class160 extends class150 {
+	@ObfuscatedName("kc")
+	@ObfuscatedSignature(
+		descriptor = "[Lvv;"
 	)
-	int field1793;
-	@ObfuscatedName("ad")
-	byte field1791;
-	@ObfuscatedName("ag")
-	@ObfuscatedGetter(
-		intValue = 458286077
+	@Export("mapDotSprites")
+	static SpritePixels[] mapDotSprites;
+	@ObfuscatedName("rm")
+	@ObfuscatedSignature(
+		descriptor = "Lve;"
 	)
-	int field1790;
-	@ObfuscatedName("ak")
-	String field1792;
+	@Export("privateChatMode")
+	static PrivateChatMode privateChatMode;
+	@ObfuscatedName("ac")
+	@ObfuscatedGetter(
+		intValue = -1732495333
+	)
+	int field1759;
+	@ObfuscatedName("ae")
+	String field1758;
 	// $FF: synthetic field
 	@ObfuscatedSignature(
-		descriptor = "Lgi;"
+		descriptor = "Lfz;"
 	)
-	final class164 this$0;
+	final class153 this$0;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lgi;)V"
+		descriptor = "(Lfz;)V"
 	)
-	class160(class164 var1) {
+	class160(class153 var1) {
 		this.this$0 = var1;
-		this.field1793 = -1;
 	}
 
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(Lvp;I)V",
-		garbageValue = "-1435141567"
+		descriptor = "(Lvf;B)V",
+		garbageValue = "127"
 	)
-	void vmethod3524(Buffer var1) {
-		var1.readUnsignedByte();
-		this.field1793 = var1.readUnsignedShort();
-		this.field1791 = var1.readByte();
-		this.field1790 = var1.readUnsignedShort();
-		var1.readLong();
-		this.field1792 = var1.readStringCp1252NullTerminated();
-		var1.readUnsignedByte();
+	void vmethod3778(Buffer var1) {
+		this.field1759 = var1.readInt();
+		this.field1758 = var1.readStringCp1252NullTerminated();
 	}
 
-	@ObfuscatedName("ad")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "(Lgj;I)V",
-		garbageValue = "902480534"
+		descriptor = "(Lgo;B)V",
+		garbageValue = "32"
 	)
-	void vmethod3523(ClanChannel var1) {
-		ClanChannelMember var2 = (ClanChannelMember)var1.members.get(this.field1793);
-		var2.rank = this.field1791;
-		var2.world = this.field1790;
-		var2.username = new Username(this.field1792);
+	void vmethod3771(ClanSettings var1) {
+		var1.method3593(this.field1759, this.field1758);
 	}
 
-	@ObfuscatedName("aq")
+	@ObfuscatedName("am")
 	@ObfuscatedSignature(
-		descriptor = "(Lok;B)V",
-		garbageValue = "104"
+		descriptor = "([BI)Ldt;",
+		garbageValue = "-1882934958"
 	)
-	public static void method3426(AbstractArchive var0) {
-		FloorUnderlayDefinition.FloorUnderlayDefinition_archive = var0;
-	}
+	@Export("newScript")
+	static Script newScript(byte[] var0) {
+		Script var1 = new Script();
+		Buffer var2 = new Buffer(var0);
+		var2.offset = var2.array.length - 2;
+		int var3 = var2.readUnsignedShort();
+		int var4 = var2.array.length - 2 - var3 - 12;
+		var2.offset = var4;
+		int var5 = var2.readInt();
+		var1.localIntCount = var2.readUnsignedShort();
+		var1.localStringCount = var2.readUnsignedShort();
+		var1.intArgumentCount = var2.readUnsignedShort();
+		var1.stringArgumentCount = var2.readUnsignedShort();
+		int var6 = var2.readUnsignedByte();
+		int var7;
+		int var8;
+		if (var6 > 0) {
+			var1.switches = var1.newIterableNodeHashTable(var6);
 
-	@ObfuscatedName("ad")
-	@ObfuscatedSignature(
-		descriptor = "(Lvp;II)V",
-		garbageValue = "39216562"
-	)
-	@Export("readReflectionCheck")
-	public static void readReflectionCheck(Buffer var0, int var1) {
-		ReflectionCheck var2 = new ReflectionCheck();
-		var2.size = var0.readUnsignedByte();
-		var2.id = var0.readInt();
-		var2.operations = new int[var2.size];
-		var2.creationErrors = new int[var2.size];
-		var2.fields = new Field[var2.size];
-		var2.intReplaceValues = new int[var2.size];
-		var2.methods = new Method[var2.size];
-		var2.arguments = new byte[var2.size][][];
+			for (var7 = 0; var7 < var6; ++var7) {
+				var8 = var2.readUnsignedShort();
+				IterableNodeHashTable var9 = new IterableNodeHashTable(var8 > 0 ? class7.method47(var8) : 1);
+				var1.switches[var7] = var9;
 
-		for (int var3 = 0; var3 < var2.size; ++var3) {
-			try {
-				int var4 = var0.readUnsignedByte();
-				String var5;
-				String var6;
-				int var7;
-				if (var4 != 0 && var4 != 1 && var4 != 2) {
-					if (var4 == 3 || var4 == 4) {
-						var5 = var0.readStringCp1252NullTerminated();
-						var6 = var0.readStringCp1252NullTerminated();
-						var7 = var0.readUnsignedByte();
-						String[] var8 = new String[var7];
-
-						for (int var9 = 0; var9 < var7; ++var9) {
-							var8[var9] = var0.readStringCp1252NullTerminated();
-						}
-
-						String var20 = var0.readStringCp1252NullTerminated();
-						byte[][] var10 = new byte[var7][];
-						int var12;
-						if (var4 == 3) {
-							for (int var11 = 0; var11 < var7; ++var11) {
-								var12 = var0.readInt();
-								var10[var11] = new byte[var12];
-								var0.readBytes(var10[var11], 0, var12);
-							}
-						}
-
-						var2.operations[var3] = var4;
-						Class[] var21 = new Class[var7];
-
-						for (var12 = 0; var12 < var7; ++var12) {
-							var21[var12] = UserComparator6.loadClassFromDescriptor(var8[var12]);
-						}
-
-						Class var22 = UserComparator6.loadClassFromDescriptor(var20);
-						if (UserComparator6.loadClassFromDescriptor(var5).getClassLoader() == null) {
-							throw new SecurityException();
-						}
-
-						Method[] var13 = UserComparator6.loadClassFromDescriptor(var5).getDeclaredMethods();
-						Method[] var14 = var13;
-
-						for (int var15 = 0; var15 < var14.length; ++var15) {
-							Method var16 = var14[var15];
-							if (Reflection.getMethodName(var16).equals(var6)) {
-								Class[] var17 = Reflection.getParameterTypes(var16);
-								if (var17.length == var21.length) {
-									boolean var18 = true;
-
-									for (int var19 = 0; var19 < var21.length; ++var19) {
-										if (var17[var19] != var21[var19]) {
-											var18 = false;
-											break;
-										}
-									}
-
-									if (var18 && var22 == var16.getReturnType()) {
-										var2.methods[var3] = var16;
-									}
-								}
-							}
-						}
-
-						var2.arguments[var3] = var10;
-					}
-				} else {
-					var5 = var0.readStringCp1252NullTerminated();
-					var6 = var0.readStringCp1252NullTerminated();
-					var7 = 0;
-					if (var4 == 1) {
-						var7 = var0.readInt();
-					}
-
-					var2.operations[var3] = var4;
-					var2.intReplaceValues[var3] = var7;
-					if (UserComparator6.loadClassFromDescriptor(var5).getClassLoader() == null) {
-						throw new SecurityException();
-					}
-
-					var2.fields[var3] = Reflection.findField(UserComparator6.loadClassFromDescriptor(var5), var6);
+				while (var8-- > 0) {
+					int var10 = var2.readInt();
+					int var11 = var2.readInt();
+					var9.put(new IntegerNode(var11), (long)var10);
 				}
-			} catch (ClassNotFoundException var24) {
-				var2.creationErrors[var3] = -1;
-			} catch (SecurityException var25) {
-				var2.creationErrors[var3] = -2;
-			} catch (NullPointerException var26) {
-				var2.creationErrors[var3] = -3;
-			} catch (Exception var27) {
-				var2.creationErrors[var3] = -4;
-			} catch (Throwable var28) {
-				var2.creationErrors[var3] = -5;
 			}
 		}
 
-		class36.reflectionChecks.addFirst(var2);
+		var2.offset = 0;
+		var1.field1026 = var2.readStringCp1252NullTerminatedOrNull();
+		var1.opcodes = new int[var5];
+		var1.intOperands = new int[var5];
+		var1.stringOperands = new String[var5];
+
+		for (var7 = 0; var2.offset < var4; var1.opcodes[var7++] = var8) {
+			var8 = var2.readUnsignedShort();
+			if (var8 == 3) {
+				var1.stringOperands[var7] = var2.readStringCp1252NullTerminated();
+			} else if (var8 < 100 && var8 != 21 && var8 != 38 && var8 != 39) {
+				var1.intOperands[var7] = var2.readInt();
+			} else {
+				var1.intOperands[var7] = var2.readUnsignedByte();
+			}
+		}
+
+		return var1;
+	}
+
+	@ObfuscatedName("ap")
+	@ObfuscatedSignature(
+		descriptor = "(II)Ljk;",
+		garbageValue = "-830039348"
+	)
+	@Export("getFrames")
+	static Frames getFrames(int var0) {
+		Frames var1 = (Frames)SequenceDefinition.SequenceDefinition_cachedFrames.get((long)var0);
+		if (var1 != null) {
+			return var1;
+		} else {
+			AbstractArchive var3 = class158.SequenceDefinition_animationsArchive;
+			AbstractArchive var4 = class187.SequenceDefinition_skeletonsArchive;
+			boolean var5 = true;
+			int[] var6 = var3.getGroupFileIds(var0);
+
+			for (int var7 = 0; var7 < var6.length; ++var7) {
+				byte[] var8 = var3.getFile(var0, var6[var7]);
+				if (var8 == null) {
+					var5 = false;
+				} else {
+					int var9 = (var8[0] & 255) << 8 | var8[1] & 255;
+					byte[] var10 = var4.getFile(var9, 0);
+					if (var10 == null) {
+						var5 = false;
+					}
+				}
+			}
+
+			Frames var2;
+			if (!var5) {
+				var2 = null;
+			} else {
+				try {
+					var2 = new Frames(var3, var4, var0, false);
+				} catch (Exception var12) {
+					var2 = null;
+				}
+			}
+
+			if (var2 != null) {
+				SequenceDefinition.SequenceDefinition_cachedFrames.put(var2, (long)var0);
+			}
+
+			return var2;
+		}
 	}
 }

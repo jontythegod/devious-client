@@ -1,102 +1,79 @@
+import java.io.DataInputStream;
+import java.net.URL;
 import net.runelite.mapping.Export;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("gf")
-public class class171 extends class147 {
-	@ObfuscatedName("su")
-	@Export("ClanChat_inClanChat")
-	static boolean ClanChat_inClanChat;
-	@ObfuscatedName("aq")
-	@ObfuscatedGetter(
-		intValue = 1118752625
-	)
-	int field1840;
-	@ObfuscatedName("ad")
-	@ObfuscatedGetter(
-		longValue = 2806569176464727727L
-	)
-	long field1841;
-	// $FF: synthetic field
+@ObfuscatedName("gc")
+public class class171 {
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "Lfn;"
+		descriptor = "(Ljava/lang/String;Ljava/lang/Throwable;B)V",
+		garbageValue = "-15"
 	)
-	final class150 this$0;
-
-	@ObfuscatedSignature(
-		descriptor = "(Lfn;)V"
-	)
-	class171(class150 var1) {
-		this.this$0 = var1;
-	}
-
-	@ObfuscatedName("aq")
-	@ObfuscatedSignature(
-		descriptor = "(Lvp;B)V",
-		garbageValue = "118"
-	)
-	void vmethod3528(Buffer var1) {
-		this.field1840 = var1.readInt();
-		this.field1841 = var1.readLong();
-	}
-
-	@ObfuscatedName("ad")
-	@ObfuscatedSignature(
-		descriptor = "(Lgk;B)V",
-		garbageValue = "3"
-	)
-	void vmethod3530(ClanSettings var1) {
-		var1.method3366(this.field1840, this.field1841);
-	}
-
-	@ObfuscatedName("ak")
-	@ObfuscatedSignature(
-		descriptor = "(IZIZI)V",
-		garbageValue = "181214809"
-	)
-	@Export("sortWorldList")
-	static void sortWorldList(int var0, boolean var1, int var2, boolean var3) {
-		if (class357.World_worlds != null) {
-			PlatformInfo.doWorldSorting(0, class357.World_worlds.length - 1, var0, var1, var2, var3);
-		}
-
-	}
-
-	@ObfuscatedName("ap")
-	@ObfuscatedSignature(
-		descriptor = "([I[IIIB)V",
-		garbageValue = "0"
-	)
-	public static void method3529(int[] var0, int[] var1, int var2, int var3) {
-		if (var2 < var3) {
-			int var4 = (var3 + var2) / 2;
-			int var5 = var2;
-			int var6 = var0[var4];
-			var0[var4] = var0[var3];
-			var0[var3] = var6;
-			int var7 = var1[var4];
-			var1[var4] = var1[var3];
-			var1[var3] = var7;
-			int var8 = var6 == Integer.MAX_VALUE ? 0 : 1;
-
-			for (int var9 = var2; var9 < var3; ++var9) {
-				if (var0[var9] < (var9 & var8) + var6) {
-					int var10 = var0[var9];
-					var0[var9] = var0[var5];
-					var0[var5] = var10;
-					int var11 = var1[var9];
-					var1[var9] = var1[var5];
-					var1[var5++] = var11;
+	@Export("RunException_sendStackTrace")
+	public static void RunException_sendStackTrace(String var0, Throwable var1) {
+		if (var1 != null) {
+			var1.printStackTrace();
+		} else {
+			try {
+				String var2 = "";
+				if (var1 != null) {
+					var2 = Buddy.method8988(var1);
 				}
+
+				if (var0 != null) {
+					if (var1 != null) {
+						var2 = var2 + " | ";
+					}
+
+					var2 = var2 + var0;
+				}
+
+				System.out.println("Error: " + var2);
+				var2 = var2.replace(':', '.');
+				var2 = var2.replace('@', '_');
+				var2 = var2.replace('&', '_');
+				var2 = var2.replace('#', '_');
+				if (RunException.RunException_applet == null) {
+					return;
+				}
+
+				URL var3 = new URL(RunException.RunException_applet.getCodeBase(), "clienterror.ws?cv=" + class453.RunException_revision + "&cs=" + WorldMapDecoration.field3214 + "&u=" + class436.field4791 + "&v1=" + TaskHandler.javaVendor + "&v2=" + TaskHandler.javaVersion + "&ct=" + class365.field4014 + "&e=" + var2);
+				DataInputStream var4 = new DataInputStream(var3.openStream());
+				var4.read();
+				var4.close();
+			} catch (Exception var5) {
 			}
 
-			var0[var3] = var0[var5];
-			var0[var5] = var6;
-			var1[var3] = var1[var5];
-			var1[var5] = var7;
-			method3529(var0, var1, var2, var5 - 1);
-			method3529(var0, var1, var5 + 1, var3);
+		}
+	}
+
+	@ObfuscatedName("ac")
+	@ObfuscatedSignature(
+		descriptor = "(I)V",
+		garbageValue = "294720589"
+	)
+	static void method3743() {
+		ModelData0.field2920 = new int[2000];
+		int var0 = 0;
+		int var1 = 240;
+
+		int var3;
+		for (byte var2 = 12; var0 < 16; var1 -= var2) {
+			var3 = class47.method896((double)((float)var1 / 360.0F), 0.9998999834060669D, (double)(0.075F + (float)var0 * 0.425F / 16.0F));
+			ModelData0.field2920[var0] = var3;
+			++var0;
+		}
+
+		var1 = 48;
+
+		for (int var5 = var1 / 6; var0 < ModelData0.field2920.length; var1 -= var5) {
+			var3 = var0 * 2;
+
+			for (int var4 = class47.method896((double)((float)var1 / 360.0F), 0.9998999834060669D, 0.5D); var0 < var3 && var0 < ModelData0.field2920.length; ++var0) {
+				ModelData0.field2920[var0] = var4;
+			}
 		}
 
 	}

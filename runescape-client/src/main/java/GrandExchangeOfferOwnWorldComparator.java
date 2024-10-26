@@ -1,38 +1,35 @@
-import java.io.InputStream;
-import java.io.OutputStreamWriter;
-import java.net.URL;
-import java.net.URLConnection;
 import java.util.Comparator;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
+import net.runelite.rs.ScriptOpcodes;
 
-@ObfuscatedName("cs")
+@ObfuscatedName("cc")
 @Implements("GrandExchangeOfferOwnWorldComparator")
 public class GrandExchangeOfferOwnWorldComparator implements Comparator {
-	@ObfuscatedName("ih")
-	@ObfuscatedSignature(
-		descriptor = "Lqh;"
+	@ObfuscatedName("af")
+	@ObfuscatedGetter(
+		intValue = -77588071
 	)
-	@Export("fontPlain11")
-	static Font fontPlain11;
-	@ObfuscatedName("os")
+	static int field482;
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "Lnx;"
+		descriptor = "Lvt;"
 	)
-	static Widget field466;
-	@ObfuscatedName("aq")
+	static IndexedSprite field486;
+	@ObfuscatedName("ac")
 	@Export("filterWorlds")
 	boolean filterWorlds;
 
 	GrandExchangeOfferOwnWorldComparator() {
 	}
 
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(Lpm;Lpm;I)I",
-		garbageValue = "-1263083412"
+		descriptor = "(Lpv;Lpv;I)I",
+		garbageValue = "2061096132"
 	)
 	@Export("compare_bridged")
 	int compare_bridged(GrandExchangeEvent var1, GrandExchangeEvent var2) {
@@ -53,70 +50,77 @@ public class GrandExchangeOfferOwnWorldComparator implements Comparator {
 		}
 	}
 
-	public boolean equals(Object var1) {
-		return super.equals(var1);
-	}
-
 	public int compare(Object var1, Object var2) {
 		return this.compare_bridged((GrandExchangeEvent)var1, (GrandExchangeEvent)var2);
 	}
 
-	@ObfuscatedName("aq")
-	@ObfuscatedSignature(
-		descriptor = "(I)J",
-		garbageValue = "-2098483687"
-	)
-	static long method1234() {
-		try {
-			URL var0 = new URL(LoginState.method1248("services", false) + "m=accountappeal/login.ws");
-			URLConnection var1 = var0.openConnection();
-			var1.setRequestProperty("connection", "close");
-			var1.setDoInput(true);
-			var1.setDoOutput(true);
-			var1.setConnectTimeout(5000);
-			OutputStreamWriter var2 = new OutputStreamWriter(var1.getOutputStream());
-			var2.write("data1=req");
-			var2.flush();
-			InputStream var3 = var1.getInputStream();
-			Buffer var4 = new Buffer(new byte[1000]);
+	public boolean equals(Object var1) {
+		return super.equals(var1);
+	}
 
-			do {
-				int var5 = var3.read(var4.array, var4.offset, 1000 - var4.offset);
-				if (var5 == -1) {
-					var4.offset = 0;
-					long var7 = var4.readLong();
-					return var7;
+	@ObfuscatedName("as")
+	@ObfuscatedSignature(
+		descriptor = "(ILdt;ZI)I",
+		garbageValue = "1571534553"
+	)
+	static int method1257(int var0, Script var1, boolean var2) {
+		Widget var7;
+		if (var0 != ScriptOpcodes.CC_CALLONRESIZE && var0 != ScriptOpcodes.IF_CALLONRESIZE) {
+			int var4;
+			if (var0 == ScriptOpcodes.CC_TRIGGEROP) {
+				var7 = var2 ? Interpreter.scriptDotWidget : class464.scriptActiveWidget;
+				var4 = Interpreter.Interpreter_intStack[--class320.Interpreter_intStackSize];
+				if (var4 >= 1 && var4 <= 10) {
+					class107 var8 = new class107(var4, var7.id, var7.childIndex, var7.itemId);
+					Interpreter.field870.add(var8);
+					return 1;
+				} else {
+					throw new RuntimeException();
 				}
+			} else if (var0 == ScriptOpcodes.IF_TRIGGEROP) {
+				class320.Interpreter_intStackSize -= 3;
+				int var3 = Interpreter.Interpreter_intStack[class320.Interpreter_intStackSize];
+				var4 = Interpreter.Interpreter_intStack[class320.Interpreter_intStackSize + 1];
+				int var5 = Interpreter.Interpreter_intStack[class320.Interpreter_intStackSize + 2];
+				if (var5 >= 1 && var5 <= 10) {
+					class107 var6 = new class107(var5, var3, var4, TaskHandler.widgetDefinition.method6841(var3).itemId);
+					Interpreter.field870.add(var6);
+					return 1;
+				} else {
+					throw new RuntimeException();
+				}
+			} else {
+				return 2;
+			}
+		} else if (Interpreter.field885 >= 10) {
+			throw new RuntimeException();
+		} else {
+			if (var0 >= 2000) {
+				var7 = TaskHandler.widgetDefinition.method6841(Interpreter.Interpreter_intStack[--class320.Interpreter_intStackSize]);
+			} else {
+				var7 = var2 ? Interpreter.scriptDotWidget : class464.scriptActiveWidget;
+			}
 
-				var4.offset += var5;
-			} while(var4.offset < 1000);
-
-			return 0L;
-		} catch (Exception var9) {
-			return 0L;
+			if (var7.onResize == null) {
+				return 0;
+			} else {
+				ScriptEvent var9 = new ScriptEvent();
+				var9.widget = var7;
+				var9.args = var7.onResize;
+				var9.field1099 = Interpreter.field885 + 1;
+				Client.scriptEvents.addFirst(var9);
+				return 1;
+			}
 		}
 	}
 
-	@ObfuscatedName("jb")
+	@ObfuscatedName("ny")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "18890283"
+		descriptor = "(II)V",
+		garbageValue = "-1986103346"
 	)
-	static void method1227() {
-		if (VertexNormal.worldMap != null) {
-			VertexNormal.worldMap.method9011(class511.topLevelWorldView.plane, (StudioGame.field4084.vmethod8670() >> 7) + class511.topLevelWorldView.baseX, (StudioGame.field4084.vmethod8671() >> 7) + class511.topLevelWorldView.baseY, false);
-			VertexNormal.worldMap.loadCache();
-		}
-
-	}
-
-	@ObfuscatedName("jz")
-	@ObfuscatedSignature(
-		descriptor = "(B)I",
-		garbageValue = "1"
-	)
-	@Export("getWindowedMode")
-	static int getWindowedMode() {
-		return Client.isResizable ? 2 : 1;
+	static final void method1267(int var0) {
+		var0 = Math.min(Math.max(var0, 0), 127);
+		class461.clientPreferences.updateAreaSoundEffectsVolume(var0);
 	}
 }

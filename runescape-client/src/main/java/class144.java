@@ -1,70 +1,33 @@
-import net.runelite.mapping.ObfuscatedGetter;
+import java.util.concurrent.Callable;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("fk")
-public class class144 extends class147 {
-	@ObfuscatedName("aq")
-	@ObfuscatedGetter(
-		intValue = 220879453
-	)
-	int field1679;
-	@ObfuscatedName("ad")
-	@ObfuscatedGetter(
-		intValue = 1092215929
-	)
-	int field1677;
-	@ObfuscatedName("ag")
-	@ObfuscatedGetter(
-		intValue = -1641898427
-	)
-	int field1676;
-	@ObfuscatedName("ak")
-	@ObfuscatedGetter(
-		intValue = -234504907
-	)
-	int field1680;
+@ObfuscatedName("fh")
+class class144 implements Callable {
 	// $FF: synthetic field
 	@ObfuscatedSignature(
-		descriptor = "Lfn;"
+		descriptor = "Lfo;"
 	)
-	final class150 this$0;
+	final class145 this$0;
+	// $FF: synthetic field
+	@ObfuscatedSignature(
+		descriptor = "Lvf;"
+	)
+	final Buffer val$p;
+	// $FF: synthetic field
+	final int val$version;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lfn;)V"
+		descriptor = "(Lfo;Lvf;I)V"
 	)
-	class144(class150 var1) {
+	class144(class145 var1, Buffer var2, int var3) {
 		this.this$0 = var1;
-		this.field1679 = -1;
+		this.val$p = var2;
+		this.val$version = var3;
 	}
 
-	@ObfuscatedName("aq")
-	@ObfuscatedSignature(
-		descriptor = "(Lvp;B)V",
-		garbageValue = "118"
-	)
-	void vmethod3528(Buffer var1) {
-		this.field1679 = var1.readUnsignedShort();
-		this.field1677 = var1.readInt();
-		this.field1676 = var1.readUnsignedByte();
-		this.field1680 = var1.readUnsignedByte();
-	}
-
-	@ObfuscatedName("ad")
-	@ObfuscatedSignature(
-		descriptor = "(Lgk;B)V",
-		garbageValue = "3"
-	)
-	void vmethod3530(ClanSettings var1) {
-		var1.method3363(this.field1679, this.field1677, this.field1676, this.field1680);
-	}
-
-	@ObfuscatedName("ak")
-	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "-33"
-	)
-	public static void method3244() {
-		VarbitComposition.VarbitDefinition_cached.clear();
+	public Object call() {
+		this.this$0.method3416(this.val$p, this.val$version);
+		return null;
 	}
 }

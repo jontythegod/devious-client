@@ -3,71 +3,35 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ix")
+@ObfuscatedName("im")
 @Implements("Clock")
 public abstract class Clock {
 	Clock() {
 	}
 
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-246153511"
+		descriptor = "(B)V",
+		garbageValue = "10"
 	)
 	@Export("mark")
 	public abstract void mark();
 
-	@ObfuscatedName("ad")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
 		descriptor = "(III)I",
-		garbageValue = "-1597628099"
+		garbageValue = "497587420"
 	)
 	@Export("wait")
 	public abstract int wait(int var1, int var2);
 
-	@ObfuscatedName("ad")
+	@ObfuscatedName("py")
 	@ObfuscatedSignature(
-		descriptor = "(IIIB)Ldg;",
-		garbageValue = "-59"
+		descriptor = "(Lvf;II)V",
+		garbageValue = "-371161429"
 	)
-	@Export("getWorldMapScript")
-	static Script getWorldMapScript(int var0, int var1, int var2) {
-		int var3 = class210.shift8LeftAndAdd(var1, var0);
-		Script var4 = class141.getScript(var3, var0);
-		if (var4 != null) {
-			return var4;
-		} else {
-			int var5 = (-3 - var2 << 8) + var0;
-			var4 = class141.getScript(var5, var0);
-			if (var4 != null) {
-				return var4;
-			} else {
-				var3 = class166.method3473(var0);
-				var4 = class141.getScript(var3, var0);
-				return var4 != null ? var4 : null;
-			}
-		}
-	}
-
-	@ObfuscatedName("ad")
-	@ObfuscatedSignature(
-		descriptor = "(IIIIIII)I",
-		garbageValue = "907811651"
-	)
-	public static int method4344(int var0, int var1, int var2, int var3, int var4, int var5) {
-		if ((var5 & 1) == 1) {
-			int var6 = var3;
-			var3 = var4;
-			var4 = var6;
-		}
-
-		var2 &= 3;
-		if (var2 == 0) {
-			return var0;
-		} else if (var2 == 1) {
-			return var1;
-		} else {
-			return var2 == 2 ? 7 - var0 - (var3 - 1) : 7 - var1 - (var4 - 1);
-		}
+	static void method4630(Buffer var0, int var1) {
+		FloorOverlayDefinition.method4308(var0.array, var1);
+		HitSplatDefinition.method4155(var0, var1);
 	}
 }

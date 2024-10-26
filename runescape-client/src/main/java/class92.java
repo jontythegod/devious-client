@@ -3,68 +3,103 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("da")
+@ObfuscatedName("dm")
 public enum class92 implements Enum {
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "Lda;"
+		descriptor = "Ldm;"
 	)
-	field1116(0, -1),
-	@ObfuscatedName("ad")
+	field1128(0, -1),
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "Lda;"
+		descriptor = "Ldm;"
 	)
-	field1109(1, 2),
+	field1125(1, 1),
 	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "Lda;"
+		descriptor = "Ldm;"
 	)
-	field1110(2, 3),
-	@ObfuscatedName("ak")
+	field1126(2, 7),
+	@ObfuscatedName("am")
 	@ObfuscatedSignature(
-		descriptor = "Lda;"
+		descriptor = "Ldm;"
 	)
-	field1117(3, 4),
-	@ObfuscatedName("ap")
+	field1127(3, 8),
+	@ObfuscatedName("ax")
 	@ObfuscatedSignature(
-		descriptor = "Lda;"
+		descriptor = "Ldm;"
 	)
-	field1112(4, 5),
-	@ObfuscatedName("an")
-	@ObfuscatedSignature(
-		descriptor = "Lda;"
-	)
-	field1113(5, 6);
-
-	@ObfuscatedName("oe")
-	@ObfuscatedGetter(
-		intValue = 1157769719
-	)
-	@Export("selectedSpellFlags")
-	static int selectedSpellFlags;
-	@ObfuscatedName("aj")
-	@ObfuscatedGetter(
-		intValue = 1580717867
-	)
-	final int field1108;
-	@ObfuscatedName("av")
-	@ObfuscatedGetter(
-		intValue = -2123916961
-	)
-	final int field1115;
-
-	class92(int var3, int var4) {
-		this.field1108 = var3;
-		this.field1115 = var4;
-	}
+	field1124(4, 9);
 
 	@ObfuscatedName("aq")
+	@ObfuscatedGetter(
+		intValue = -1085106181
+	)
+	final int field1129;
+	@ObfuscatedName("af")
+	@ObfuscatedGetter(
+		intValue = 133580385
+	)
+	final int field1130;
+
+	class92(int var3, int var4) {
+		this.field1129 = var3;
+		this.field1130 = var4;
+	}
+
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",
-		garbageValue = "2071992588"
+		garbageValue = "-350930589"
 	)
 	@Export("rsOrdinal")
 	public int rsOrdinal() {
-		return this.field1115;
+		return this.field1130;
+	}
+
+	@ObfuscatedName("al")
+	@ObfuscatedSignature(
+		descriptor = "(Lny;IIII)V",
+		garbageValue = "-1007661332"
+	)
+	@Export("Widget_setKeyRate")
+	static final void Widget_setKeyRate(Widget var0, int var1, int var2, int var3) {
+		if (var0.field3931 == null) {
+			throw new RuntimeException();
+		} else {
+			var0.field3931[var1] = var2;
+			var0.field3997[var1] = var3;
+		}
+	}
+
+	@ObfuscatedName("bl")
+	@ObfuscatedSignature(
+		descriptor = "([BII)I",
+		garbageValue = "537493253"
+	)
+	public static int method2535(byte[] var0, int var1) {
+		int var3 = -1;
+
+		for (int var4 = 0; var4 < var1; ++var4) {
+			var3 = var3 >>> 8 ^ Buffer.field5415[(var3 ^ var0[var4]) & 255];
+		}
+
+		var3 = ~var3;
+		return var3;
+	}
+
+	@ObfuscatedName("hh")
+	@ObfuscatedSignature(
+		descriptor = "(IZZZZI)Lof;",
+		garbageValue = "2028635179"
+	)
+	@Export("newArchive")
+	static Archive newArchive(int var0, boolean var1, boolean var2, boolean var3, boolean var4) {
+		ArchiveDisk var5 = null;
+		if (JagexCache.JagexCache_dat2File != null) {
+			var5 = new ArchiveDisk(var0, JagexCache.JagexCache_dat2File, class215.JagexCache_idxFiles[var0], 1000000);
+		}
+
+		return new Archive(var5, class382.masterDisk, FontName.field5260, var0, var1, var2, var3, var4, false);
 	}
 }
